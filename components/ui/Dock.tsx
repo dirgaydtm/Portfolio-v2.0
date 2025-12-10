@@ -13,9 +13,8 @@ import React, { Children, cloneElement, useEffect, useMemo, useRef, useState } f
 
 export type DockItemData = {
   icon: React.ReactNode;
-  label: React.ReactNode;
+  label: string;
   onClick: () => void;
-  className?: string;
 };
 
 export type DockProps = {
@@ -76,7 +75,7 @@ function DockItem({
       onFocus={() => isHovered.set(1)}
       onBlur={() => isHovered.set(0)}
       onClick={onClick}
-      className={`relative inline-flex items-center justify-center rounded-full bg-[#060010] border-neutral-700 border-2 shadow-md ${className}`}
+      className={`relative inline-flex items-center justify-center backdrop-blur-md rounded-lg hover:bg-accent border border-border shadow-sm transition-colors ${className}`}
       tabIndex={0}
       role="button"
       aria-haspopup="true"
@@ -115,7 +114,7 @@ function DockLabel({ children, className = '', isHovered }: DockLabelProps) {
           animate={{ opacity: 1, y: -10 }}
           exit={{ opacity: 0, y: 0 }}
           transition={{ duration: 0.2 }}
-          className={`${className} absolute -top-6 left-1/2 w-fit whitespace-pre rounded-md border border-neutral-700 bg-[#060010] px-2 py-0.5 text-xs text-white`}
+          className={`${className} absolute -top-6 left-1/2 hidden lg:flex w-fit whitespace-pre rounded-md border border-border bg-popover px-2 py-0.5 text-xs text-popover-foreground shadow-md`}
           role="tooltip"
           style={{ x: '-50%' }}
         >
@@ -149,7 +148,7 @@ export default function Dock({
   const mouseX = useMotionValue(Infinity);
   const isHovered = useMotionValue(0);
 
-  const maxHeight = useMemo(() => Math.max(dockHeight, magnification + magnification / 2 + 4), [magnification]);
+  const maxHeight = useMemo(() => Math.max(dockHeight, magnification + magnification / 2 + 4), [dockHeight, magnification]);
   const heightRow = useTransform(isHovered, [0, 1], [panelHeight, maxHeight]);
   const height = useSpring(heightRow, spring);
 
@@ -164,7 +163,7 @@ export default function Dock({
           isHovered.set(0);
           mouseX.set(Infinity);
         }}
-        className={`${className} absolute bottom-2 left-1/2 transform -translate-x-1/2 flex items-end w-fit gap-4 rounded-2xl border-neutral-700 border-2 pb-2 px-4`}
+        className={`${className} absolute bottom-2 left-1/2 transform -translate-x-1/2 flex items-end w-fit gap-4 rounded-2xl border border-border bg-card/80 backdrop-blur-md pb-2 px-4 shadow-lg`}
         style={{ height: panelHeight }}
         role="toolbar"
         aria-label="Application dock"
@@ -173,7 +172,6 @@ export default function Dock({
           <DockItem
             key={index}
             onClick={item.onClick}
-            className={item.className}
             mouseX={mouseX}
             spring={spring}
             distance={distance}

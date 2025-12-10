@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 
@@ -37,9 +38,14 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="relative flex min-h-screen flex-col bg-white dark:bg-zinc-950">
-            <Navbar />
-            <main className="flex-1">{children}</main>
+            {/* Theme Toggle - Fixed Top Right */}
+            <div className="fixed top-4 right-4 z-50">
+              <ThemeToggle />
+            </div>
+
+            <main className="flex-1 pb-24">{children}</main>
             <Footer />
+            <Navbar />
           </div>
         </ThemeProvider>
       </body>
