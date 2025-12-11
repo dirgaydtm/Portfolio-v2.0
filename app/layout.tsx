@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { SplashScreen } from "@/components/splash-screen";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,8 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Dirga Yudhatama | Full Stack Developer",
-  description: "Full Stack Developer passionate about building modern web applications with React, Next.js, and Node.js.",
+  title: "Dirga Yuditama | Full Stack Developer",
 };
 
 export default function RootLayout({
@@ -37,6 +37,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <SplashScreen />
           <div className="relative flex min-h-screen flex-col bg-white dark:bg-zinc-950">
             {/* Theme Toggle - Fixed Top Right */}
             <div className="fixed top-4 right-4 z-50">
