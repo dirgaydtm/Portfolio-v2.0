@@ -2,7 +2,7 @@
 
 import { useMemo } from "react";
 import { User, Code2, Briefcase, FolderKanban, Mail } from "lucide-react";
-import Dock, { type DockItemData } from "./ui/Dock";
+import Dock, { type DockItemData } from "@/components/blocks/Dock";
 import { scrollToSection } from "@/lib/utils";
 
 export function Navbar() {

@@ -6,7 +6,7 @@ import {
     Terminal,
     TypingAnimation,
     AnimatedSpan,
-} from "@/components/ui/terminal";
+} from "@/components/blocks/terminal";
 
 export function SplashScreen() {
     const [show, setShow] = useState(true);
