@@ -25,8 +25,9 @@ export function TechStackSection() {
     ).map(([groupName, skills]) => ({ groupName, skills }));
 
     return (
-        <section id="skills" className="min-h-[70vh] px-4 py-20 sm:px-6 overflow-hidden">
-            <div className="mx-auto max-w-5xl">
+        <section id="skills" className="min-h-[80vh] px-4 py-20 sm:px-6 overflow-hidden">
+                
+            <div className="mx-auto max-w-7xl z-1 flex flex-col items-center">
                 {/* Section Header */}
                 <div className="text-center">
                     <Badge variant="outline" className="mb-4">
@@ -47,13 +48,13 @@ export function TechStackSection() {
                 <Separator className="mx-auto my-10 w-24" />
 
                 {/* Tech Stack Overview */}
-                <TechStackOverview groups={skillGroups} className="hidden md:grid" />
+                <TechStackOverview groups={skillGroups} className="hidden md:grid max-w-5xl z-1" />
 
                 {/* Tech Stack Badges */}
                 <div className="mt-8 flex flex-wrap justify-center md:hidden gap-2">
                     {techStack.map((tech) => (
                         <Badge
-                            key={tech.id}
+                            key={tech.name}
                             variant="secondary"
                             className="text-xs"
                         >
