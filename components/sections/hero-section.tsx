@@ -7,7 +7,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
 import { profile } from "@/lib/data";
 import { scrollToSection, getInitials } from "@/lib/utils";
-import LetterGlitch from "@/components/ui/letter-glitch";
+import LetterGlitch from "@/components/blocks/letter-glitch";
 
 export function HeroSection() {
     return (

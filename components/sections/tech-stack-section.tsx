@@ -2,8 +2,8 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { TechStacksCarousel } from "@/components/ui/tech-stack-carousel";
-import { TechStackOverview } from "@/components/ui/tech-stack-overview";
+import { TechStacksCarousel } from "@/components/blocks/tech-stack-carousel";
+import { TechStackOverview } from "@/components/blocks/tech-stack-overview";
 import { techStack } from "@/lib/data";
 
 export function TechStackSection() {
