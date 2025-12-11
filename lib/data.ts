@@ -1,10 +1,4 @@
-import {
-    Github,
-    Linkedin,
-    Instagram,
-    type LucideIcon,
-} from "lucide-react";
-import { IconType } from "react-icons";
+import { Github, Linkedin, Instagram } from "lucide-react";
 import {
     SiJavascript,
     SiTypescript,
@@ -33,66 +27,21 @@ import {
 import { FaJava } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
 
-export interface SocialLink {
-    name: string;
-    url: string;
-    icon: LucideIcon;
-}
+import type {
+    Profile,
+    TechStack,
+    Experience,
+    Project,
+} from "./types";
 
-export interface Profile {
-    name: string;
-    title: string;
-    bio: string;
-    avatar: string;
-    location: string;
-    email: string;
-    resumeUrl: string;
-    availableForWork: boolean;
-    socials: SocialLink[];
-}
-
-export interface TechStack {
-    id: string;
-    name: string;
-    icon: IconType;
-    category: string;
-    group: string;
-    className?: string;
-}
-
-export interface TechCategory {
-    name: string;
-    icon: LucideIcon;
-    skills: string[];
-}
-
-export interface Experience {
-    id: string;
-    company: string;
-    role: string;
-    period: string;
-    location: string;
-    description: string;
-    achievements: string[];
-    technologies: string[];
-    logo?: string;
-}
-
-export interface Project {
-    slug: string;
-    title: string;
-    shortDescription: string;
-    fullDescription: string;
-    thumbnail: string;
-    images: string[];
-    technologies: string[];
-    features: string[];
-    liveUrl?: string;
-    githubUrl?: string;
-    category: string;
-    year: string;
-    status: "completed" | "in-progress" | "archived";
-}
+// Re-export types for convenience
+export type {
+    Profile,
+    TechStack,
+    Experience,
+    Project,
+    SocialLink,
+} from "./types";
 
 // ============ PROFILE DATA ============
 export const profile: Profile = {
@@ -114,43 +63,43 @@ export const profile: Profile = {
 // ============ TECH STACK DATA ============
 export const techStack: TechStack[] = [
     // Languages
-    { id: "javascript", name: "JavaScript", category: "Language", group: "Languages", icon: SiJavascript },
-    { id: "typescript", name: "TypeScript", category: "Language", group: "Languages", icon: SiTypescript },
-    { id: "java", name: "Java", category: "Language", group: "Languages", icon: FaJava },
-    { id: "kotlin", name: "Kotlin", category: "Language", group: "Languages", icon: SiKotlin },
-    { id: "dart", name: "Dart", category: "Language", group: "Languages", icon: SiDart },
+    { name: "JavaScript", category: "Language", group: "Languages", icon: SiJavascript },
+    { name: "TypeScript", category: "Language", group: "Languages", icon: SiTypescript },
+    { name: "Java", category: "Language", group: "Languages", icon: FaJava },
+    { name: "Kotlin", category: "Language", group: "Languages", icon: SiKotlin },
+    { name: "Dart", category: "Language", group: "Languages", icon: SiDart },
 
     // Frontend
-    { id: "react", name: "React", category: "Framework", group: "Frontend", icon: SiReact },
-    { id: "nextjs", name: "Next.js", category: "Framework", group: "Frontend", icon: SiNextdotjs },
-    { id: "tailwind", name: "Tailwind CSS", category: "Styling", group: "Frontend", icon: SiTailwindcss },
-    { id: "bootstrap", name: "Bootstrap", category: "Styling", group: "Frontend", icon: SiBootstrap },
+    { name: "React", category: "Framework", group: "Frontend", icon: SiReact },
+    { name: "Next.js", category: "Framework", group: "Frontend", icon: SiNextdotjs },
+    { name: "Tailwind CSS", category: "Styling", group: "Frontend", icon: SiTailwindcss },
+    { name: "Bootstrap", category: "Styling", group: "Frontend", icon: SiBootstrap },
 
     // Backend
-    { id: "nodejs", name: "Node.js", category: "Runtime", group: "Backend", icon: SiNodedotjs },
-    { id: "express", name: "Express", category: "Framework", group: "Backend", icon: SiExpress },
-    { id: "bun", name: "Bun", category: "Runtime", group: "Backend", icon: SiBun },
+    { name: "Node.js", category: "Runtime", group: "Backend", icon: SiNodedotjs },
+    { name: "Express", category: "Framework", group: "Backend", icon: SiExpress },
+    { name: "Bun", category: "Runtime", group: "Backend", icon: SiBun },
 
     // Database
-    { id: "mysql", name: "MySQL", category: "SQL", group: "Database", icon: SiMysql },
-    { id: "mongodb", name: "MongoDB", category: "NoSQL", group: "Database", icon: SiMongodb },
-    { id: "firebase", name: "Firebase", category: "BaaS", group: "Database", icon: SiFirebase },
+    { name: "MySQL", category: "SQL", group: "Database", icon: SiMysql },
+    { name: "MongoDB", category: "NoSQL", group: "Database", icon: SiMongodb },
+    { name: "Firebase", category: "BaaS", group: "Database", icon: SiFirebase },
 
     // Mobile
-    { id: "flutter", name: "Flutter", category: "Framework", group: "Mobile", icon: SiFlutter },
-    { id: "compose", name: "Jetpack Compose", category: "Framework", group: "Mobile", icon: SiJetpackcompose },
+    { name: "Flutter", category: "Framework", group: "Mobile", icon: SiFlutter },
+    { name: "Jetpack Compose", category: "Framework", group: "Mobile", icon: SiJetpackcompose },
 
     // DevOps
-    { id: "docker", name: "Docker", category: "Container", group: "DevOps", icon: SiDocker },
-    { id: "vercel", name: "Vercel", category: "Hosting", group: "DevOps", icon: SiVercel },
-    { id: "linux", name: "Linux", category: "OS", group: "DevOps", icon: SiLinux },
-    { id: "archlinux", name: "Arch Linux", category: "OS", group: "DevOps", icon: SiArchlinux },
+    { name: "Docker", category: "Container", group: "DevOps", icon: SiDocker },
+    { name: "Vercel", category: "Hosting", group: "DevOps", icon: SiVercel },
+    { name: "Linux", category: "OS", group: "DevOps", icon: SiLinux },
+    { name: "Arch Linux", category: "OS", group: "DevOps", icon: SiArchlinux },
 
     // Tools
-    { id: "git", name: "Git", category: "VCS", group: "Tools", icon: SiGit },
-    { id: "vscode", name: "VS Code", category: "Editor", group: "Tools", icon: VscVscode },
-    { id: "figma", name: "Figma", category: "Design", group: "Tools", icon: SiFigma },
-    { id: "postman", name: "Postman", category: "API Testing", group: "Tools", icon: SiPostman },
+    { name: "Git", category: "VCS", group: "Tools", icon: SiGit },
+    { name: "VS Code", category: "Editor", group: "Tools", icon: VscVscode },
+    { name: "Figma", category: "Design", group: "Tools", icon: SiFigma },
+    { name: "Postman", category: "API Testing", group: "Tools", icon: SiPostman },
 ];
 
 // ============ EXPERIENCE DATA ============
