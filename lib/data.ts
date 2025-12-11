@@ -1,16 +1,37 @@
 import {
     Github,
     Linkedin,
-    Twitter,
-    Mail,
-    Globe,
-    Smartphone,
-    Server,
-    Database,
-    GitBranch,
-    Cloud,
+    Instagram,
     type LucideIcon,
 } from "lucide-react";
+import { IconType } from "react-icons";
+import {
+    SiJavascript,
+    SiTypescript,
+    SiKotlin,
+    SiDart,
+    SiReact,
+    SiNextdotjs,
+    SiTailwindcss,
+    SiBootstrap,
+    SiNodedotjs,
+    SiExpress,
+    SiBun,
+    SiMysql,
+    SiMongodb,
+    SiFirebase,
+    SiFlutter,
+    SiJetpackcompose,
+    SiDocker,
+    SiVercel,
+    SiLinux,
+    SiArchlinux,
+    SiGit,
+    SiFigma,
+    SiPostman,
+} from "react-icons/si";
+import { FaJava } from "react-icons/fa";
+import { VscVscode } from "react-icons/vsc";
 
 export interface SocialLink {
     name: string;
@@ -26,7 +47,17 @@ export interface Profile {
     location: string;
     email: string;
     resumeUrl: string;
+    availableForWork: boolean;
     socials: SocialLink[];
+}
+
+export interface TechStack {
+    id: string;
+    name: string;
+    icon: IconType;
+    category: string;
+    group: string;
+    className?: string;
 }
 
 export interface TechCategory {
@@ -67,51 +98,59 @@ export interface Project {
 export const profile: Profile = {
     name: "Dirga Yudhatama",
     title: "Full Stack Developer",
-    bio: "Passionate developer with 3+ years of experience building modern web applications. I love creating elegant solutions to complex problems and constantly learning new technologies.",
-    avatar: "/avatar.jpg",
+    bio: "I love creating elegant solutions to complex problems and constantly learning new technologies.",
+    avatar: "/Avatar.jpeg",
     location: "Jakarta, Indonesia",
     email: "hello@dirgayudhatama.dev",
     resumeUrl: "/resume.pdf",
+    availableForWork: true,
     socials: [
         { name: "GitHub", url: "https://github.com/dirgaydtm", icon: Github },
         { name: "LinkedIn", url: "https://linkedin.com/in/dirgaydtm", icon: Linkedin },
-        { name: "Twitter", url: "https://twitter.com/dirgaydtm", icon: Twitter },
-        { name: "Email", url: "mailto:hello@dirgayudhatama.dev", icon: Mail },
+        { name: "Instagram", url: "https://instagram.com/dirgaa.yd", icon: Instagram },
     ],
 };
 
 // ============ TECH STACK DATA ============
-export const techStack: TechCategory[] = [
-    {
-        name: "Frontend",
-        icon: Globe,
-        skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    },
-    {
-        name: "Backend",
-        icon: Server,
-        skills: ["Node.js", "Express", "Python", "FastAPI", "GraphQL"],
-    },
-    {
-        name: "Database",
-        icon: Database,
-        skills: ["PostgreSQL", "MongoDB", "Redis", "Prisma", "Supabase"],
-    },
-    {
-        name: "Mobile",
-        icon: Smartphone,
-        skills: ["React Native", "Expo", "Flutter"],
-    },
-    {
-        name: "DevOps",
-        icon: Cloud,
-        skills: ["Docker", "AWS", "Vercel", "GitHub Actions", "Linux"],
-    },
-    {
-        name: "Tools",
-        icon: GitBranch,
-        skills: ["Git", "VS Code", "Figma", "Postman", "Jira"],
-    },
+export const techStack: TechStack[] = [
+    // Languages
+    { id: "javascript", name: "JavaScript", category: "Language", group: "Languages", icon: SiJavascript },
+    { id: "typescript", name: "TypeScript", category: "Language", group: "Languages", icon: SiTypescript },
+    { id: "java", name: "Java", category: "Language", group: "Languages", icon: FaJava },
+    { id: "kotlin", name: "Kotlin", category: "Language", group: "Languages", icon: SiKotlin },
+    { id: "dart", name: "Dart", category: "Language", group: "Languages", icon: SiDart },
+
+    // Frontend
+    { id: "react", name: "React", category: "Framework", group: "Frontend", icon: SiReact },
+    { id: "nextjs", name: "Next.js", category: "Framework", group: "Frontend", icon: SiNextdotjs },
+    { id: "tailwind", name: "Tailwind CSS", category: "Styling", group: "Frontend", icon: SiTailwindcss },
+    { id: "bootstrap", name: "Bootstrap", category: "Styling", group: "Frontend", icon: SiBootstrap },
+
+    // Backend
+    { id: "nodejs", name: "Node.js", category: "Runtime", group: "Backend", icon: SiNodedotjs },
+    { id: "express", name: "Express", category: "Framework", group: "Backend", icon: SiExpress },
+    { id: "bun", name: "Bun", category: "Runtime", group: "Backend", icon: SiBun },
+
+    // Database
+    { id: "mysql", name: "MySQL", category: "SQL", group: "Database", icon: SiMysql },
+    { id: "mongodb", name: "MongoDB", category: "NoSQL", group: "Database", icon: SiMongodb },
+    { id: "firebase", name: "Firebase", category: "BaaS", group: "Database", icon: SiFirebase },
+
+    // Mobile
+    { id: "flutter", name: "Flutter", category: "Framework", group: "Mobile", icon: SiFlutter },
+    { id: "compose", name: "Jetpack Compose", category: "Framework", group: "Mobile", icon: SiJetpackcompose },
+
+    // DevOps
+    { id: "docker", name: "Docker", category: "Container", group: "DevOps", icon: SiDocker },
+    { id: "vercel", name: "Vercel", category: "Hosting", group: "DevOps", icon: SiVercel },
+    { id: "linux", name: "Linux", category: "OS", group: "DevOps", icon: SiLinux },
+    { id: "archlinux", name: "Arch Linux", category: "OS", group: "DevOps", icon: SiArchlinux },
+
+    // Tools
+    { id: "git", name: "Git", category: "VCS", group: "Tools", icon: SiGit },
+    { id: "vscode", name: "VS Code", category: "Editor", group: "Tools", icon: VscVscode },
+    { id: "figma", name: "Figma", category: "Design", group: "Tools", icon: SiFigma },
+    { id: "postman", name: "Postman", category: "API Testing", group: "Tools", icon: SiPostman },
 ];
 
 // ============ EXPERIENCE DATA ============

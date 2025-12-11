@@ -38,7 +38,7 @@ export function SplashScreen() {
                             duration: 1,
                             ease: [0.43, 0.13, 0.23, 0.96]
                         }}
-                        className="fixed inset-0 z-100 flex items-center justify-center bg-background/95 backdrop-blur-sm"
+                        className="fixed inset-0 z-100 flex items-center justify-center bg-background"
                     >
                         <motion.div
                             initial={{ scale: 0.9, opacity: 0, y: 20 }}
