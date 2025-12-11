@@ -8,3 +8,7 @@ export function cn(...inputs: ClassValue[]) {
 export function scrollToSection(id: string) {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 }
+
+export function getInitials(name: string) {
+  return name.split(" ").map((n) => n[0]).join("");
+}
