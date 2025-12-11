@@ -96,7 +96,7 @@ export interface Project {
 
 // ============ PROFILE DATA ============
 export const profile: Profile = {
-    name: "Dirga Yudhatama",
+    name: "Dirga Yuditama",
     title: "Full Stack Developer",
     bio: "I love creating elegant solutions to complex problems and constantly learning new technologies.",
     avatar: "/Avatar.jpeg",
