@@ -80,16 +80,16 @@ export function ProjectContent({ project }: { project: Project }) {
                         <Badge variant="outline">{project.category}</Badge>
                     </div>
 
-                    <h1 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-4xl md:text-5xl">
+                    <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl">
                         {project.title}
                     </h1>
 
-                    <p className="mt-4 text-lg text-zinc-600 dark:text-zinc-400">
+                    <p className="mt-4 text-lg text-muted-foreground">
                         {project.shortDescription}
                     </p>
 
                     {/* Meta Info */}
-                    <div className="mt-6 flex flex-wrap items-center gap-6 text-sm text-zinc-500">
+                    <div className="mt-6 flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
                         <span className="flex items-center gap-2">
                             <Calendar className="h-4 w-4" />
                             {project.year}
@@ -125,7 +125,7 @@ export function ProjectContent({ project }: { project: Project }) {
 
                 {/* Image Gallery Carousel */}
                 <section className="mb-12">
-                    <h2 className="mb-6 text-2xl font-bold text-zinc-900 dark:text-zinc-50">
+                    <h2 className="mb-6 text-2xl font-bold text-foreground">
                         Project Gallery
                     </h2>
 
@@ -176,8 +176,8 @@ export function ProjectContent({ project }: { project: Project }) {
                             <button
                                 key={index}
                                 className={`h-16 w-24 overflow-hidden rounded-md border-2 transition-all ${selectedImage === index
-                                        ? "border-zinc-900 dark:border-zinc-50"
-                                        : "border-transparent opacity-60 hover:opacity-100"
+                                    ? "border-foreground"
+                                    : "border-transparent opacity-60 hover:opacity-100"
                                     }`}
                                 onClick={() => setSelectedImage(index)}
                             >
@@ -197,19 +197,19 @@ export function ProjectContent({ project }: { project: Project }) {
                     {/* Main Content */}
                     <div className="lg:col-span-2 space-y-8">
                         {/* Description */}
-                        <Card className="border-zinc-200 dark:border-zinc-800">
+                        <Card className="border-border">
                             <CardHeader>
                                 <CardTitle>About the Project</CardTitle>
                             </CardHeader>
                             <CardContent>
-                                <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                                <p className="text-muted-foreground leading-relaxed">
                                     {project.fullDescription}
                                 </p>
                             </CardContent>
                         </Card>
 
                         {/* Features */}
-                        <Card className="border-zinc-200 dark:border-zinc-800">
+                        <Card className="border-border">
                             <CardHeader>
                                 <CardTitle>Key Features</CardTitle>
                                 <CardDescription>
@@ -222,7 +222,7 @@ export function ProjectContent({ project }: { project: Project }) {
                                         {project.features.map((feature, index) => (
                                             <li
                                                 key={index}
-                                                className="flex items-start gap-2 text-zinc-600 dark:text-zinc-400"
+                                                className="flex items-start gap-2 text-muted-foreground"
                                             >
                                                 <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-500" />
                                                 <span>{feature}</span>
@@ -237,7 +237,7 @@ export function ProjectContent({ project }: { project: Project }) {
                     {/* Sidebar */}
                     <div className="space-y-6">
                         {/* Technologies */}
-                        <Card className="border-zinc-200 dark:border-zinc-800">
+                        <Card className="border-border">
                             <CardHeader>
                                 <CardTitle>Technologies</CardTitle>
                                 <CardDescription>Built with</CardDescription>
@@ -254,7 +254,7 @@ export function ProjectContent({ project }: { project: Project }) {
                         </Card>
 
                         {/* Quick Links */}
-                        <Card className="border-zinc-200 dark:border-zinc-800">
+                        <Card className="border-border">
                             <CardHeader>
                                 <CardTitle>Links</CardTitle>
                             </CardHeader>
@@ -283,7 +283,7 @@ export function ProjectContent({ project }: { project: Project }) {
                 {/* Other Projects */}
                 <section className="mt-16">
                     <Separator className="mb-8" />
-                    <h2 className="mb-6 text-2xl font-bold text-zinc-900 dark:text-zinc-50">
+                    <h2 className="mb-6 text-2xl font-bold text-foreground">
                         Other Projects
                     </h2>
                     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -293,7 +293,7 @@ export function ProjectContent({ project }: { project: Project }) {
                             .map((p) => (
                                 <Card
                                     key={p.slug}
-                                    className="group border-zinc-200 transition-all hover:border-zinc-400 hover:shadow-md dark:border-zinc-800 dark:hover:border-zinc-600"
+                                    className="group border-border transition-all hover:border-muted-foreground hover:shadow-md"
                                 >
                                     <Link href={`/projects/${p.slug}`}>
                                         <div className="relative overflow-hidden">

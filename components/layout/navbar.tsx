@@ -37,17 +37,16 @@ export function Navbar() {
 
     return (
         <nav
-            className="fixed bottom-0 left-0 right-0 z-50 flex justify-center pb-4"
+            className="fixed bottom-0 inset-x-0 z-50"
             aria-label="Main navigation"
         >
             <Dock
                 items={dockItems}
                 baseItemSize={50}
-                magnification={70}
                 distance={150}
                 panelHeight={68}
                 dockHeight={68}
-                className="backdrop-blur-md"
+                className="backdrop-blur-xs"
             />
         </nav>
     );

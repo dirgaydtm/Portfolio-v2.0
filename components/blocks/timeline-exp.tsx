@@ -27,7 +27,7 @@ export function TimelineExp({ items, className }: TimelineExpProps) {
       <div className="relative">
         {/* Timeline line */}
         <div
-          className="absolute top-0 w-0.5 bg-zinc-700 left-5 md:left-1/2 md:-translate-x-1/2"
+          className="absolute top-0 w-0.5 bg-border left-5 md:left-1/2 md:-translate-x-1/2"
           style={{ height: `${lineHeight}%` }}
         />
 
@@ -41,8 +41,8 @@ export function TimelineExp({ items, className }: TimelineExpProps) {
               className={`relative flex items-start pb-12 last:pb-0 ${isRight ? "md:justify-end" : "md:justify-start"}`}
             >
               {/* Icon */}
-              <div className="absolute left-5 md:left-1/2 -translate-x-1/2 size-10 flex items-center justify-center rounded-full border-2 border-zinc-700 bg-zinc-900">
-                <Icon className="size-5 text-zinc-400" />
+              <div className="absolute left-5 md:left-1/2 -translate-x-1/2 size-10 flex items-center justify-center rounded-full border-2 border-border bg-card">
+                <Icon className="size-5 text-muted-foreground" />
               </div>
 
               {/* Content */}
@@ -51,24 +51,24 @@ export function TimelineExp({ items, className }: TimelineExpProps) {
               >
                 <div className={`flex items-center gap-2.5 ${isRight ? "md:flex-row" : "md:flex-row-reverse"}`}>
                   <div className="shrink-0 size-9 rounded-full flex items-center justify-center">
-                    <Building2 className="size-5 text-zinc-500" />
+                    <Building2 className="size-5 text-muted-foreground" />
                   </div>
-                  <span className="text-base font-medium text-zinc-50">
+                  <span className="text-base font-medium text-foreground">
                     {item.company}
                   </span>
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold tracking-tight text-zinc-50">
+                  <h3 className="text-xl font-semibold tracking-tight text-foreground">
                     {item.title}
                   </h3>
-                  <div className={`flex items-center gap-2 mt-1 text-sm text-zinc-500 ${isRight ? "md:justify-start" : "md:justify-end"}`}>
+                  <div className={`flex items-center gap-2 mt-1 text-sm text-mutedforeground ${isRight ? "md:justify-start" : "md:justify-end"}`}>
                     <Calendar className="size-4" />
                     <span>{item.period}</span>
                   </div>
                 </div>
 
-                <p className="text-sm sm:text-base text-zinc-400 leading-relaxed">
+                <p className="text-sm sm:text-base text-primary leading-relaxed">
                   {item.description}
                 </p>
 

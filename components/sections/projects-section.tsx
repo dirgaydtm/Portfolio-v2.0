@@ -26,10 +26,10 @@ export function ProjectsSection() {
                     <Badge variant="outline" className="mb-4">
                         Portfolio
                     </Badge>
-                    <h2 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-4xl">
+                    <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
                         Featured Projects
                     </h2>
-                    <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-600 dark:text-zinc-400">
+                    <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
                         A selection of projects I&apos;ve worked on, from full-stack applications to
                         mobile apps.
                     </p>
@@ -42,7 +42,7 @@ export function ProjectsSection() {
                     {projects.map((project) => (
                         <Card
                             key={project.slug}
-                            className="group flex flex-col overflow-hidden border-zinc-200 transition-all hover:border-zinc-400 hover:shadow-lg dark:border-zinc-800 dark:hover:border-zinc-600"
+                            className="group flex flex-col overflow-hidden border-border transition-all hover:border-muted-foreground hover:shadow-lg"
                         >
                             {/* Thumbnail */}
                             <div className="relative overflow-hidden">
@@ -91,7 +91,7 @@ export function ProjectsSection() {
                             </CardHeader>
 
                             <CardContent className="flex-1 pb-2">
-                                <p className="line-clamp-2 text-sm text-zinc-600 dark:text-zinc-400">
+                                <p className="line-clamp-2 text-sm text-muted-foreground">
                                     {project.shortDescription}
                                 </p>
 

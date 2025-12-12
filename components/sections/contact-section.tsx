@@ -38,7 +38,7 @@ export function ContactSection() {
     return (
         <section
             id="contact"
-            className="bg-zinc-50 px-4 py-20 dark:bg-zinc-900/50 sm:px-6"
+            className="bg-muted px-4 py-20 sm:px-6"
         >
             <div className="mx-auto max-w-5xl">
                 {/* Section Header */}
@@ -46,10 +46,10 @@ export function ContactSection() {
                     <Badge variant="outline" className="mb-4">
                         Contact
                     </Badge>
-                    <h2 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-4xl">
+                    <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
                         Get In Touch
                     </h2>
-                    <p className="mx-auto mt-4 max-w-2xl text-lg text-zinc-600 dark:text-zinc-400">
+                    <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
                         Have a project in mind or just want to say hi? Feel free to reach out.
                         I&apos;m always open to discussing new opportunities.
                     </p>
@@ -60,10 +60,10 @@ export function ContactSection() {
                 <div className="grid gap-8 lg:grid-cols-2">
                     {/* Contact Info */}
                     <div className="space-y-6">
-                        <Card className="border-zinc-200 dark:border-zinc-800">
+                        <Card className="border-border">
                             <CardHeader>
                                 <CardTitle className="flex items-center gap-2">
-                                    <Mail className="h-5 w-5 text-zinc-500" />
+                                    <Mail className="h-5 w-5 text-muted-foreground" />
                                     Email
                                 </CardTitle>
                                 <CardDescription>
@@ -73,17 +73,17 @@ export function ContactSection() {
                             <CardContent>
                                 <a
                                     href={`mailto:${profile.email}`}
-                                    className="text-lg font-medium text-zinc-900 hover:underline dark:text-zinc-50"
+                                    className="text-lg font-medium text-foreground hover:underline"
                                 >
                                     {profile.email}
                                 </a>
                             </CardContent>
                         </Card>
 
-                        <Card className="border-zinc-200 dark:border-zinc-800">
+                        <Card className="border-border">
                             <CardHeader>
                                 <CardTitle className="flex items-center gap-2">
-                                    <MapPin className="h-5 w-5 text-zinc-500" />
+                                    <MapPin className="h-5 w-5 text-muted-foreground" />
                                     Location
                                 </CardTitle>
                                 <CardDescription>
@@ -91,14 +91,14 @@ export function ContactSection() {
                                 </CardDescription>
                             </CardHeader>
                             <CardContent>
-                                <p className="text-lg font-medium text-zinc-900 dark:text-zinc-50">
+                                <p className="text-lg font-medium text-foreground">
                                     {profile.location}
                                 </p>
                             </CardContent>
                         </Card>
 
                         {/* Social Links */}
-                        <Card className="border-zinc-200 dark:border-zinc-800">
+                        <Card className="border-border">
                             <CardHeader>
                                 <CardTitle>Connect with me</CardTitle>
                                 <CardDescription>
@@ -125,7 +125,7 @@ export function ContactSection() {
                     </div>
 
                     {/* Contact Form */}
-                    <Card className="border-zinc-200 dark:border-zinc-800">
+                    <Card className="border-border">
                         <CardHeader>
                             <CardTitle>Send a Message</CardTitle>
                             <CardDescription>

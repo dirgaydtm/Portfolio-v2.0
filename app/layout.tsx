@@ -38,7 +38,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <SplashScreen />
-          <div className="relative flex min-h-screen flex-col bg-white dark:bg-zinc-950">
+          <div className="relative flex min-h-screen flex-col bg-background">
             {/* Theme Toggle - Fixed Top Right */}
             <div className="fixed top-4 right-4 z-50">
               <ThemeToggle />

@@ -55,15 +55,15 @@ const TechStackOverview = ({ groups, className }: SkillsOverviewProps) => {
                 return (
                     <HoverCard key={groupName}>
                         <HoverCardTrigger asChild>
-                            <Card className="group cursor-pointer border-zinc-200 transition-all hover:border-zinc-400 hover:shadow-md dark:border-zinc-800 dark:hover:border-zinc-600">
+                            <Card className="group cursor-pointer border-border transition-all hover:border-muted-foreground hover:shadow-md">
                                 <CardContent className="flex flex-col items-center  text-center">
-                                    <div className="mb-3 rounded-lg bg-zinc-100 p-3 transition-colors group-hover:bg-zinc-200 dark:bg-zinc-800 dark:group-hover:bg-zinc-700">
-                                        <Icon className="h-6 w-6 text-zinc-700 dark:text-zinc-300" />
+                                    <div className="mb-3 rounded-lg bg-accent p-3 transition-colors group-hover:bg-accent/80">
+                                        <Icon className="h-6 w-6 text-muted-foreground" />
                                     </div>
-                                    <h3 className="font-medium text-zinc-900 dark:text-zinc-50">
+                                    <h3 className="font-medium text-foreground">
                                         {groupName}
                                     </h3>
-                                    <p className="mt-1 text-xs text-zinc-500">
+                                    <p className="mt-1 text-xs text-muted-foreground">
                                         {skills.length} skills
                                     </p>
                                 </CardContent>
@@ -71,7 +71,7 @@ const TechStackOverview = ({ groups, className }: SkillsOverviewProps) => {
                         </HoverCardTrigger>
                         <HoverCardContent className="w-80">
                             <div className="space-y-3">
-                                <h4 className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">
+                                <h4 className="text-sm font-semibold text-foreground">
                                     {groupName}
                                 </h4>
                                 <div className="flex flex-wrap gap-2">

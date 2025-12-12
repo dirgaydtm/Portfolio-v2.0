@@ -26,17 +26,17 @@ export function TechStackSection() {
 
     return (
         <section id="skills" className="min-h-[60vh] px-4 py-10 sm:px-6 overflow-hidden">
-                
+
             <div className="mx-auto max-w-7xl z-1 flex flex-col items-center">
                 {/* Section Header */}
                 <div className="text-center">
                     <Badge variant="outline" className="mb-4">
                         Tech Stack
                     </Badge>
-                    <h2 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-4xl">
+                    <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
                         Skills & Technologies
                     </h2>
-                    <p className="mx-auto mt-4 max-w-2xl text-md text-zinc-600 dark:text-zinc-400">
+                    <p className="mx-auto mt-4 max-w-2xl text-md text-muted-foreground">
                         Here are the technologies I work with on a daily basis to build modern,
                         scalable applications.
                     </p>
@@ -48,10 +48,10 @@ export function TechStackSection() {
                 <Separator className="mx-auto my-10 w-24" />
 
                 {/* Tech Stack Overview */}
-                <TechStackOverview groups={skillGroups} className="hidden md:grid max-w-5xl z-1" />
+                <TechStackOverview groups={skillGroups} className="hidden md:grid max-w-5xl" />
 
                 {/* Tech Stack Badges */}
-                <div className="mt-8 flex flex-wrap justify-center md:hidden gap-2">
+                <div className="flex flex-wrap justify-center md:hidden gap-2">
                     {techStack.map((tech) => (
                         <Badge
                             key={tech.name}

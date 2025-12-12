@@ -22,7 +22,7 @@ export function HeroSection() {
                     glitchSpeed={100}
                     glitchColors={["#111111", "#111111", "#ffffff"]}
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950 to-zinc-950/50" />
+                <div className="absolute inset-0 bg-linear-to-t from-background via-background to-background/50" />
             </div>
 
             {/* Main content */}
@@ -56,16 +56,16 @@ export function HeroSection() {
                 </div>
 
                 {/* Name & Title */}
-                <h1 className="mt-6 text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 md:text-4xl">
+                <h1 className="mt-6 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
                     {profile.name}
                 </h1>
 
-                <p className="mt-1 text-xl font-medium text-zinc-600 dark:text-zinc-400">
+                <p className="mt-1 text-xl font-medium text-muted-foreground">
                     {profile.title}
                 </p>
 
                 {/* Location */}
-                <div className="mt-2 flex items-center gap-2 text-zinc-500">
+                <div className="mt-2 flex items-center gap-2 text-muted-foreground">
                     <MapPin className="h-4 w-4" />
                     <span>{profile.location}</span>
                 </div>
@@ -73,7 +73,7 @@ export function HeroSection() {
                 <Separator className="my-6 w-24" />
 
                 {/* Bio */}
-                <p className="max-w-xl text-md leading-relaxed text-zinc-600 dark:text-zinc-400">
+                <p className="max-w-xl text-md leading-relaxed text-muted-foreground">
                     {profile.bio}
                 </p>
 
