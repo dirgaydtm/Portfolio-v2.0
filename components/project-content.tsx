@@ -57,26 +57,7 @@ export function ProjectContent({ project }: { project: Project }) {
                 {/* Header */}
                 <div className="mb-8">
                     <div className="flex flex-wrap items-center gap-3 mb-4">
-                        <Badge
-                            variant={
-                                project.status === "completed"
-                                    ? "default"
-                                    : project.status === "in-progress"
-                                        ? "secondary"
-                                        : "outline"
-                            }
-                            className={
-                                project.status === "completed"
-                                    ? "bg-emerald-500 hover:bg-emerald-600"
-                                    : ""
-                            }
-                        >
-                            {project.status === "completed"
-                                ? "Completed"
-                                : project.status === "in-progress"
-                                    ? "In Progress"
-                                    : "Archived"}
-                        </Badge>
+                        {/* Status badge removed */}
                         <Badge variant="outline">{project.category}</Badge>
                     </div>
 
@@ -295,16 +276,9 @@ export function ProjectContent({ project }: { project: Project }) {
                                     key={p.slug}
                                     className="group border-border transition-all hover:border-muted-foreground hover:shadow-md"
                                 >
-                                    <Link href={`/projects/${p.slug}`}>
+                                    <Link href={`/home/projects/${p.slug}`}>
                                         <div className="relative overflow-hidden">
-                                            <AspectRatio ratio={16 / 10}>
-                                                <Image
-                                                    src={p.thumbnail}
-                                                    alt={p.title}
-                                                    fill
-                                                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                                                />
-                                            </AspectRatio>
+                                            {/* Thumbnail removed */}
                                         </div>
                                         <CardHeader className="pb-2">
                                             <CardTitle className="text-lg">{p.title}</CardTitle>

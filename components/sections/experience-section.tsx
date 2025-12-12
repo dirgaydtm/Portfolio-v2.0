@@ -23,9 +23,7 @@ export function ExperienceSection() {
                     growing as a developer.
                 </p>
 
-                <Separator className="mx-auto my-10 w-24" />
-
-                <TimelineExp items={experiences} />
+                <TimelineExp className="pt-10" items={experiences} />
             </div>
 
             <div className="absolute inset-0 h-20 bg-background [clip-path:polygon(100%_0,100%_100%,0_0)]" />

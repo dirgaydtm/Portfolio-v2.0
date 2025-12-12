@@ -47,13 +47,12 @@ export interface Project {
     title: string;
     shortDescription: string;
     fullDescription: string;
-    thumbnail: string;
     images: string[];
     technologies: string[];
     features: string[];
+    logo: string; // URL or path to project logo
     liveUrl?: string;
     githubUrl?: string;
     category: string;
     year: string;
-    status: "completed" | "in-progress" | "archived";
 }
