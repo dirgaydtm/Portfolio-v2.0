@@ -22,7 +22,6 @@ export function HeroSection() {
                     glitchSpeed={100}
                     glitchColors={["#111111", "#111111", "#ffffff"]}
                 />
-
                 <div className="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950 to-zinc-950/50" />
             </div>
 

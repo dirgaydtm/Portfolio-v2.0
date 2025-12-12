@@ -17,8 +17,10 @@ import { projects } from "@/lib/data";
 
 export function ProjectsSection() {
     return (
-        <section id="projects" className="px-4 py-20 sm:px-6">
-            <div className="mx-auto max-w-5xl">
+        <section id="projects" className="relative px-4 py-20 sm:px-6">
+
+            {/* Content */}
+            <div className="relative mx-auto max-w-5xl z-1">
                 {/* Section Header */}
                 <div className="text-center">
                     <Badge variant="outline" className="mb-4">

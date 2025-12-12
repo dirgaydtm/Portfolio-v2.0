@@ -1,4 +1,4 @@
-import { Github, Linkedin, Instagram } from "lucide-react";
+import { Github, Linkedin, Instagram, Briefcase, Layers, Code } from "lucide-react";
 import {
     SiJavascript,
     SiTypescript,
@@ -105,55 +105,31 @@ export const techStack: TechStack[] = [
 // ============ EXPERIENCE DATA ============
 export const experiences: Experience[] = [
     {
-        id: "exp-1",
+        title: "Senior Full Stack Developer",
         company: "Tech Innovators Inc.",
-        role: "Senior Full Stack Developer",
         period: "2023 - Present",
-        location: "Jakarta, Indonesia",
         description:
             "Leading the development of enterprise-level web applications, mentoring junior developers, and implementing best practices across the team.",
-        achievements: [
-            "Led a team of 5 developers to deliver a major product launch",
-            "Reduced application load time by 40% through optimization",
-            "Implemented CI/CD pipelines reducing deployment time by 60%",
-            "Architected microservices handling 1M+ daily requests",
-        ],
         technologies: ["Next.js", "TypeScript", "PostgreSQL", "AWS", "Docker"],
-        logo: "/companies/tech-innovators.png",
+        icon: Briefcase,
     },
     {
-        id: "exp-2",
+        title: "Full Stack Developer",
         company: "Digital Solutions Co.",
-        role: "Full Stack Developer",
         period: "2021 - 2023",
-        location: "Bandung, Indonesia",
         description:
             "Developed and maintained multiple client projects, from e-commerce platforms to internal tools.",
-        achievements: [
-            "Built 10+ production-ready web applications",
-            "Integrated payment gateways processing $500K+ monthly",
-            "Developed real-time notification system using WebSockets",
-            "Created reusable component library adopted company-wide",
-        ],
         technologies: ["React", "Node.js", "MongoDB", "Redis", "Tailwind CSS"],
-        logo: "/companies/digital-solutions.png",
+        icon: Layers,
     },
     {
-        id: "exp-3",
+        title: "Junior Developer",
         company: "StartUp Hub",
-        role: "Junior Developer",
         period: "2020 - 2021",
-        location: "Jakarta, Indonesia",
         description:
             "Started my professional journey building MVPs for early-stage startups and learning industry best practices.",
-        achievements: [
-            "Contributed to 5 successful MVP launches",
-            "Learned agile methodology and scrum practices",
-            "Built responsive UIs with modern CSS frameworks",
-            "Participated in code reviews and pair programming",
-        ],
         technologies: ["JavaScript", "React", "Express", "MySQL", "Bootstrap"],
-        logo: "/companies/startup-hub.png",
+        icon: Code,
     },
 ];
 

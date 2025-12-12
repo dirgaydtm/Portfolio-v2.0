@@ -25,7 +25,7 @@ export function TechStackSection() {
     ).map(([groupName, skills]) => ({ groupName, skills }));
 
     return (
-        <section id="skills" className="min-h-[80vh] px-4 py-20 sm:px-6 overflow-hidden">
+        <section id="skills" className="min-h-[60vh] px-4 py-10 sm:px-6 overflow-hidden">
                 
             <div className="mx-auto max-w-7xl z-1 flex flex-col items-center">
                 {/* Section Header */}

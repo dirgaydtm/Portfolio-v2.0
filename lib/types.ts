@@ -32,15 +32,12 @@ export interface TechStack {
 
 // ============ EXPERIENCE TYPES ============
 export interface Experience {
-    id: string;
+    title: string;
     company: string;
-    role: string;
     period: string;
-    location: string;
     description: string;
-    achievements: string[];
     technologies: string[];
-    logo?: string;
+    icon?: LucideIcon;
 }
 
 // ============ PROJECT TYPES ============
