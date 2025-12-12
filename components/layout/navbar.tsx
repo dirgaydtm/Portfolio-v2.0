@@ -37,7 +37,7 @@ export function Navbar() {
 
     return (
         <nav
-            className="fixed bottom-0 inset-x-0 z-50"
+            className="fixed bottom-0 md:bottom-5 lg:bottom-10 inset-x-0 z-50"
             aria-label="Main navigation"
         >
             <Dock
