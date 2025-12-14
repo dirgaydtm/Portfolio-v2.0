@@ -34,21 +34,13 @@ import type {
     Project,
 } from "./types";
 
-// Re-export types for convenience
-export type {
-    Profile,
-    TechStack,
-    Experience,
-    Project,
-    SocialLink,
-} from "./types";
-
 // ============ PROFILE DATA ============
 export const profile: Profile = {
     name: "Dirga Yuditama",
     title: "Full Stack Developer",
     bio: "I love creating elegant solutions to complex problems and constantly learning new technologies.",
     avatar: "/Avatar.jpeg",
+    logo: "/LogoDirgaaBlack.svg",
     location: "Jakarta, Indonesia",
     email: "hello@dirgayudhatama.dev",
     resumeUrl: "/resume.pdf",
@@ -142,7 +134,6 @@ export const projects: Project[] = [
             "A full-featured e-commerce platform with real-time inventory management and payment processing.",
         fullDescription:
             "Built a comprehensive e-commerce solution featuring user authentication, product catalog, shopping cart, order management, and integrated payment processing. The platform includes an admin dashboard for inventory management and analytics.",
-        // thumbnail removed
         images: [
             "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=800&fit=crop",
             "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&h=800&fit=crop",
@@ -162,7 +153,6 @@ export const projects: Project[] = [
         githubUrl: "https://github.com/dirgaydtm/ecommerce-platform",
         category: "Full Stack",
         year: "2024",
-        // status removed
     },
     {
         slug: "task-management-app",
@@ -171,7 +161,6 @@ export const projects: Project[] = [
             "A collaborative task management application with real-time updates and team features.",
         fullDescription:
             "Developed a Trello-like task management application that allows teams to organize projects, assign tasks, set deadlines, and track progress. Features include drag-and-drop functionality, real-time collaboration, and detailed reporting.",
-        // thumbnail removed
         images: [
             "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=1200&h=800&fit=crop",
             "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=1200&h=800&fit=crop",
@@ -191,7 +180,6 @@ export const projects: Project[] = [
         githubUrl: "https://github.com/dirgaydtm/task-manager",
         category: "Productivity",
         year: "2024",
-        // status removed
     },
     {
         slug: "ai-chat-assistant",
@@ -200,7 +188,6 @@ export const projects: Project[] = [
             "An intelligent chatbot powered by OpenAI with context-aware conversations.",
         fullDescription:
             "Created an AI-powered chat assistant that can answer questions, help with coding problems, and engage in natural conversations. Features include conversation history, context awareness, and customizable personality settings.",
-        // thumbnail removed
         images: [
             "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=800&fit=crop",
             "https://images.unsplash.com/photo-1676299081847-824916de030a?w=1200&h=800&fit=crop",
@@ -220,7 +207,6 @@ export const projects: Project[] = [
         githubUrl: "https://github.com/dirgaydtm/ai-chat",
         category: "AI/ML",
         year: "2024",
-        // status removed
     },
     {
         slug: "fitness-tracker",
@@ -229,7 +215,6 @@ export const projects: Project[] = [
             "A mobile-first fitness application for tracking workouts and nutrition.",
         fullDescription:
             "Built a comprehensive fitness tracking application that helps users monitor their workouts, track nutrition, set goals, and visualize progress over time. Includes workout plans, exercise library, and social features.",
-        // thumbnail removed
         images: [
             "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=1200&h=800&fit=crop",
             "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&h=800&fit=crop",
@@ -249,7 +234,6 @@ export const projects: Project[] = [
         githubUrl: "https://github.com/dirgaydtm/fitness-tracker",
         category: "Mobile",
         year: "2023",
-        // status removed
     },
     {
         slug: "portfolio-website",
@@ -258,7 +242,6 @@ export const projects: Project[] = [
             "A modern, responsive portfolio website built with Next.js and Shadcn UI.",
         fullDescription:
             "The website you're currently viewing! Built with Next.js 14, Tailwind CSS, and Shadcn UI components. Features dark/light mode, smooth animations, and a fully responsive design.",
-        // thumbnail removed
         images: [
             "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=800&fit=crop",
             "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop",
@@ -278,7 +261,6 @@ export const projects: Project[] = [
         githubUrl: "https://github.com/dirgaydtm/portfolio",
         category: "Web",
         year: "2024",
-        // status removed
     },
     {
         slug: "real-estate-platform",
@@ -287,7 +269,6 @@ export const projects: Project[] = [
             "A property listing platform with advanced search and virtual tour features.",
         fullDescription:
             "Developed a real estate platform allowing users to browse, search, and filter property listings. Features include map integration, virtual tours, mortgage calculator, and agent contact system.",
-        // thumbnail removed
         images: [
             "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&h=800&fit=crop",
             "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&h=800&fit=crop",
@@ -307,7 +288,6 @@ export const projects: Project[] = [
         githubUrl: "https://github.com/dirgaydtm/real-estate",
         category: "Full Stack",
         year: "2023",
-        // status removed
     },
 ];
 

@@ -13,6 +13,7 @@ export interface Profile {
     title: string;
     bio: string;
     avatar: string;
+    logo: string;
     location: string;
     email: string;
     resumeUrl: string;
