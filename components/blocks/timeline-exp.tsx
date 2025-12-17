@@ -8,7 +8,7 @@ export interface TimelineItem {
   company: string;
   period: string;
   description: string;
-  technologies: string[];
+  skills: string[];
   icon?: LucideIcon;
 }
 
@@ -73,7 +73,7 @@ export function TimelineExp({ items, className }: TimelineExpProps) {
                 </p>
 
                 <div className={`flex flex-wrap gap-2 ${isRight ? "md:justify-start" : "md:justify-end"}`}>
-                  {item.technologies.map((tech) => (
+                  {item.skills.map((tech) => (
                     <Badge key={tech} variant="secondary" className="rounded-full">
                       {tech}
                     </Badge>

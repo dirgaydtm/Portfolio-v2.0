@@ -1,4 +1,4 @@
-import { Github, Linkedin, Instagram, Briefcase, Layers, Code } from "lucide-react";
+import { Github, Linkedin, Instagram, GraduationCap, Code } from "lucide-react";
 import {
     SiJavascript,
     SiTypescript,
@@ -20,9 +20,9 @@ import {
     SiVercel,
     SiLinux,
     SiArchlinux,
+    SiGnubash,
     SiGit,
     SiFigma,
-    SiPostman,
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
@@ -84,6 +84,7 @@ export const techStack: TechStack[] = [
     // DevOps
     { name: "Docker", category: "Container", group: "DevOps", icon: SiDocker },
     { name: "Vercel", category: "Hosting", group: "DevOps", icon: SiVercel },
+    { name: "Bash", category: "Shell", group: "DevOps", icon: SiGnubash },
     { name: "Linux", category: "OS", group: "DevOps", icon: SiLinux },
     { name: "Arch Linux", category: "OS", group: "DevOps", icon: SiArchlinux },
 
@@ -91,36 +92,36 @@ export const techStack: TechStack[] = [
     { name: "Git", category: "VCS", group: "Tools", icon: SiGit },
     { name: "VS Code", category: "Editor", group: "Tools", icon: VscVscode },
     { name: "Figma", category: "Design", group: "Tools", icon: SiFigma },
-    { name: "Postman", category: "API Testing", group: "Tools", icon: SiPostman },
 ];
 
 // ============ EXPERIENCE DATA ============
 export const experiences: Experience[] = [
     {
-        title: "Senior Full Stack Developer",
-        company: "Tech Innovators Inc.",
-        period: "2023 - Present",
+        title: "Teaching Assistant – Fundamental Programming",
+        company: "Faculty of Computer Science (FILKOM), Universitas Brawijaya",
+        period: "Sep – Dec 2025",
         description:
-            "Leading the development of enterprise-level web applications, mentoring junior developers, and implementing best practices across the team.",
-        technologies: ["Next.js", "TypeScript", "PostgreSQL", "AWS", "Docker"],
-        icon: Briefcase,
+            "Assisted teaching fundamental Java programming to 35 students, guided lab sessions, and provided code reviews and feedback.",
+        skills: [
+            "Java",
+            "Object-Oriented Programming",
+            "Code Review",
+            "Teaching"
+        ],
+        icon: GraduationCap,
     },
     {
-        title: "Full Stack Developer",
-        company: "Digital Solutions Co.",
-        period: "2021 - 2023",
+        title: "Frontend Developer",
+        company: "KBMDSI FILKOM UB",
+        period: "Mar 2025 – Present",
         description:
-            "Developed and maintained multiple client projects, from e-commerce platforms to internal tools.",
-        technologies: ["React", "Node.js", "MongoDB", "Redis", "Tailwind CSS"],
-        icon: Layers,
-    },
-    {
-        title: "Junior Developer",
-        company: "StartUp Hub",
-        period: "2020 - 2021",
-        description:
-            "Started my professional journey building MVPs for early-stage startups and learning industry best practices.",
-        technologies: ["JavaScript", "React", "Express", "MySQL", "Bootstrap"],
+            "Developed and maintained responsive web interfaces, collaborated with designers, ensured clean, maintainable frontend code.",
+        skills: [
+            "React.js",
+            "JavaScript",
+            "Tailwind CSS",
+            "Node.js"
+        ],
         icon: Code,
     },
 ];
@@ -128,122 +129,14 @@ export const experiences: Experience[] = [
 // ============ PROJECTS DATA ============
 export const projects: Project[] = [
     {
-        slug: "ecommerce-platform",
-        title: "E-Commerce Platform",
+        slug: "portfolio-v2",
+        title: "Portfolio v2.0",
         shortDescription:
-            "A full-featured e-commerce platform with real-time inventory management and payment processing.",
+            "Modern portfolio website built with Next.js, TypeScript, and Shadcn UI.",
         fullDescription:
-            "Built a comprehensive e-commerce solution featuring user authentication, product catalog, shopping cart, order management, and integrated payment processing. The platform includes an admin dashboard for inventory management and analytics.",
+            "A modern, responsive portfolio website showcasing my projects, skills, and experience. Built with Next.js 16, TypeScript, Tailwind CSS, and Shadcn UI components. Features dark/light mode, smooth animations, and a fully responsive design.",
         images: [
-            "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=800&fit=crop",
-            "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=1200&h=800&fit=crop",
-            "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop",
-        ],
-        technologies: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Stripe", "Tailwind CSS"],
-        features: [
-            "User authentication with OAuth",
-            "Real-time inventory tracking",
-            "Secure payment processing with Stripe",
-            "Admin dashboard with analytics",
-            "Order management system",
-            "Email notifications",
-        ],
-        logo: "/logos/ecommerce.svg",
-        liveUrl: "https://ecommerce-demo.vercel.app",
-        githubUrl: "https://github.com/dirgaydtm/ecommerce-platform",
-        category: "Full Stack",
-        year: "2024",
-    },
-    {
-        slug: "task-management-app",
-        title: "Task Management App",
-        shortDescription:
-            "A collaborative task management application with real-time updates and team features.",
-        fullDescription:
-            "Developed a Trello-like task management application that allows teams to organize projects, assign tasks, set deadlines, and track progress. Features include drag-and-drop functionality, real-time collaboration, and detailed reporting.",
-        images: [
-            "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=1200&h=800&fit=crop",
-            "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=1200&h=800&fit=crop",
-            "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&h=800&fit=crop",
-        ],
-        technologies: ["React", "Node.js", "Socket.io", "MongoDB", "Redux", "Material-UI"],
-        features: [
-            "Drag-and-drop task boards",
-            "Real-time collaboration",
-            "Team management",
-            "Due date reminders",
-            "File attachments",
-            "Activity timeline",
-        ],
-        logo: "/logos/task.svg",
-        liveUrl: "https://taskmanager-demo.vercel.app",
-        githubUrl: "https://github.com/dirgaydtm/task-manager",
-        category: "Productivity",
-        year: "2024",
-    },
-    {
-        slug: "ai-chat-assistant",
-        title: "AI Chat Assistant",
-        shortDescription:
-            "An intelligent chatbot powered by OpenAI with context-aware conversations.",
-        fullDescription:
-            "Created an AI-powered chat assistant that can answer questions, help with coding problems, and engage in natural conversations. Features include conversation history, context awareness, and customizable personality settings.",
-        images: [
-            "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=800&fit=crop",
-            "https://images.unsplash.com/photo-1676299081847-824916de030a?w=1200&h=800&fit=crop",
-            "https://images.unsplash.com/photo-1675557009875-436f7a5a4cf1?w=1200&h=800&fit=crop",
-        ],
-        technologies: ["Next.js", "OpenAI API", "Vercel AI SDK", "Tailwind CSS", "Supabase"],
-        features: [
-            "Natural language processing",
-            "Conversation history",
-            "Code syntax highlighting",
-            "Multiple AI models support",
-            "Export conversations",
-            "Custom system prompts",
-        ],
-        logo: "/logos/ai.svg",
-        liveUrl: "https://ai-chat-demo.vercel.app",
-        githubUrl: "https://github.com/dirgaydtm/ai-chat",
-        category: "AI/ML",
-        year: "2024",
-    },
-    {
-        slug: "fitness-tracker",
-        title: "Fitness Tracker",
-        shortDescription:
-            "A mobile-first fitness application for tracking workouts and nutrition.",
-        fullDescription:
-            "Built a comprehensive fitness tracking application that helps users monitor their workouts, track nutrition, set goals, and visualize progress over time. Includes workout plans, exercise library, and social features.",
-        images: [
-            "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=1200&h=800&fit=crop",
-            "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&h=800&fit=crop",
-            "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1200&h=800&fit=crop",
-        ],
-        technologies: ["React Native", "Expo", "Firebase", "Chart.js", "Node.js"],
-        features: [
-            "Workout logging",
-            "Nutrition tracking",
-            "Progress charts",
-            "Exercise library",
-            "Goal setting",
-            "Social sharing",
-        ],
-        logo: "/logos/fitness.svg",
-        liveUrl: "https://fitness-demo.vercel.app",
-        githubUrl: "https://github.com/dirgaydtm/fitness-tracker",
-        category: "Mobile",
-        year: "2023",
-    },
-    {
-        slug: "portfolio-website",
-        title: "Developer Portfolio",
-        shortDescription:
-            "A modern, responsive portfolio website built with Next.js and Shadcn UI.",
-        fullDescription:
-            "The website you're currently viewing! Built with Next.js 14, Tailwind CSS, and Shadcn UI components. Features dark/light mode, smooth animations, and a fully responsive design.",
-        images: [
-            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=800&fit=crop",
+            "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1200&h=800&fit=crop",
             "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop",
             "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=1200&h=800&fit=crop",
         ],
@@ -254,49 +147,109 @@ export const projects: Project[] = [
             "Smooth animations",
             "SEO optimized",
             "Fast performance",
-            "Accessible",
+            "Project showcase",
         ],
-        logo: "/logos/portfolio.svg",
-        liveUrl: "https://dirgayudhatama.dev",
-        githubUrl: "https://github.com/dirgaydtm/portfolio",
+        logo: "/LogoDirgaaBlack.svg",
+        liveUrl: "https://dirga.site",
+        githubUrl: "https://github.com/dirgaydtm/Portfolio-v2.0",
         category: "Web",
-        year: "2024",
+        year: "2025",
     },
     {
-        slug: "real-estate-platform",
-        title: "Real Estate Platform",
+        slug: "cashfam-app",
+        title: "Cashfam App",
         shortDescription:
-            "A property listing platform with advanced search and virtual tour features.",
+            "Financial management application built with modern web technologies.",
         fullDescription:
-            "Developed a real estate platform allowing users to browse, search, and filter property listings. Features include map integration, virtual tours, mortgage calculator, and agent contact system.",
+            "A comprehensive financial management application designed to help users track expenses, manage budgets, and analyze spending patterns. Built with TypeScript and modern web frameworks.",
         images: [
-            "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&h=800&fit=crop",
-            "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&h=800&fit=crop",
-            "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&h=800&fit=crop",
+            "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&h=800&fit=crop",
+            "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=800&fit=crop",
+            "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop",
         ],
-        technologies: ["Next.js", "Mapbox", "PostgreSQL", "Prisma", "Cloudinary", "Tailwind CSS"],
+        technologies: ["TypeScript", "React", "Next.js"],
         features: [
-            "Advanced property search",
-            "Interactive maps",
-            "Virtual property tours",
-            "Mortgage calculator",
-            "Favorite listings",
-            "Agent messaging",
+            "Expense tracking",
+            "Budget management",
+            "Financial analytics",
+            "User-friendly interface",
         ],
-        logo: "/logos/realestate.svg",
-        liveUrl: "https://realestate-demo.vercel.app",
-        githubUrl: "https://github.com/dirgaydtm/real-estate",
+        logo: "/logos/cashfam.svg",
+        liveUrl: "https://cashfam-app.onrender.com",
+        githubUrl: "https://github.com/dirgaydtm/Cashfam-App",
         category: "Full Stack",
-        year: "2023",
+        year: "2025",
+    },
+    {
+        slug: "devoo-app",
+        title: "Devoo App",
+        shortDescription:
+            "Real-time chat application built with React, TypeScript, and Firebase.",
+        fullDescription:
+            "A modern, real-time chat application featuring user authentication, instant messaging, image sharing, and contact management. Built with React, TypeScript, Firebase, and Zustand for state management.",
+        images: [
+            "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=1200&h=800&fit=crop",
+            "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?w=1200&h=800&fit=crop",
+            "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop",
+        ],
+        technologies: ["React", "TypeScript", "Firebase", "Zustand", "Tailwind CSS"],
+        features: [
+            "Real-time messaging",
+            "User authentication",
+            "Image sharing",
+            "Contact management",
+            "Theme system",
+            "Toast notifications",
+        ],
+        logo: "/logos/devoo.svg",
+        liveUrl: "https://devoo-app.vercel.app",
+        githubUrl: "https://github.com/dirgaydtm/Devoo-App",
+        category: "Full Stack",
+        year: "2025",
+    },
+    {
+        slug: "portfolio-v1",
+        title: "Portfolio v1.0",
+        shortDescription:
+            "First version of my portfolio website built with Next.js.",
+        fullDescription:
+            "The initial version of my portfolio website showcasing my early projects and skills. Built with Next.js and TypeScript, featuring a clean and minimal design.",
+        images: [
+            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=800&fit=crop",
+            "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop",
+            "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=1200&h=800&fit=crop",
+        ],
+        technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
+        features: [
+            "Responsive design",
+            "Project showcase",
+            "Clean UI",
+            "Fast loading",
+        ],
+        logo: "/logos/portfolio.svg",
+        liveUrl: "https://dirgaa-dev.vercel.app",
+        githubUrl: "https://github.com/dirgaydtm/Portfolio-v1.0",
+        category: "Web",
+        year: "2025",
+    },
+    {
+        slug: "taskbuddy",
+        title: "TaskBuddy",
+        shortDescription:
+            "Task management application built with Java.",
+        fullDescription:
+            "A task management application designed to help users organize and track their daily tasks. Built with Java, featuring a user-friendly interface and efficient task management capabilities.",
+        images: [],
+        technologies: ["Java"],
+        features: [
+            "Task creation",
+            "Task organization",
+            "User-friendly interface",
+            "Efficient task management",
+        ],
+        logo: "/logos/taskbuddy.svg",
+        githubUrl: "https://github.com/dirgaydtm/TaskBuddy",
+        category: "Desktop",
+        year: "2025",
     },
 ];
-
-// Helper function to get project by slug
-export function getProjectBySlug(slug: string): Project | undefined {
-    return projects.find((project) => project.slug === slug);
-}
-
-// Helper function to get all project slugs
-export function getAllProjectSlugs(): string[] {
-    return projects.map((project) => project.slug);
-}

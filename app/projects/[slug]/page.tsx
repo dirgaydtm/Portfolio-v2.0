@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { ProjectDetail } from "@/components/sections/project-detail";
-import { getProjectBySlug, projects } from "@/lib/data";
+import { getProjectBySlug } from "@/lib/projects";
+import { projects } from "@/lib/data";
 
 interface ProjectPageProps {
     params: Promise<{
