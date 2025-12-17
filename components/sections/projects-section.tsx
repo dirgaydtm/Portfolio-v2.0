@@ -8,7 +8,7 @@ export function ProjectsSection() {
         <section id="projects" className="relative px-4 py-20 sm:px-6">
 
             {/* Content */}
-            <div className="relative mx-auto max-w-5xl z-1">
+            <div className="flex-col relative mx-auto max-w-5xl z-1">
                 {/* Section Header */}
                 <div className="text-center">
                     <Badge variant="outline" className="mb-4">
@@ -26,7 +26,7 @@ export function ProjectsSection() {
                 <Separator className="mx-auto my-10 w-24" />
 
                 {/* Projects Grid */}
-                <div className="grid gap-6 grid-cols-1 md:grid-cols-3 justify-center">
+                <div className="flex flex-wrap gap-4 justify-center">
                     {projects.map((project) => (
                         <ProjectCard key={project.slug} project={project} />
                     ))}

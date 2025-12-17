@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "motion/react";
 import { MapPin, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -29,12 +30,35 @@ export function HeroSection() {
             <div className="z-1 mx-auto flex max-w-3xl flex-col items-center text-center ">
                 {/* Avatar + Badge */}
                 <div className="relative">
-                    <Avatar className="h-32 w-32 shadow-xl md:h-72 md:w-72">
-                        <AvatarImage src={profile.avatar} alt={profile.name} />
-                        <AvatarFallback className="text-2xl font-bold">
-                            {getInitials(profile.name)}
-                        </AvatarFallback>
-                    </Avatar>
+                    <div className="relative h-32 w-32 overflow-hidden rounded-full shadow-xl md:h-72 md:w-72">
+                        <motion.div
+                            className="absolute inset-0"
+                            initial={{ opacity: 1 }}
+                            whileHover={{ opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                        >
+                            <Avatar className="h-full w-full">
+                                <AvatarImage src={profile.avatar} alt={profile.name} />
+                                <AvatarFallback className="text-2xl font-bold">
+                                    {getInitials(profile.name)}
+                                </AvatarFallback>
+                            </Avatar>
+                        </motion.div>
+                        <motion.div
+                            className="absolute inset-0"
+                            initial={{ opacity: 0 }}
+                            whileHover={{ opacity: 1 }}
+                            transition={{ duration: 0.3 }}
+                        >
+                            <Avatar className="h-full w-full">
+                                <AvatarImage src={profile.logo} alt={profile.name} />
+                                <AvatarFallback className="text-2xl font-bold">
+                                    {getInitials(profile.name)}
+                                </AvatarFallback>
+                            </Avatar>
+                        </motion.div>
+                    </div>
+
 
                     {profile.availableForWork && (
                         <Badge

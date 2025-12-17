@@ -16,8 +16,8 @@ interface ProductCardProps {
 
 const ProjectCard = ({ project }: ProductCardProps) => {
   return (
-    <Card className="max-w-xs shadow-none gap-6 pt-0">
-      <CardHeader className="pt-4 flex flex-row items-center gap-3 font-semibold">
+    <Card className="max-w-xs hover:scale-105 shadow-none gap-6 border-border transition-all transform hover:border-muted-foreground hover:shadow-md">
+      <CardHeader className="flex flex-row items-center gap-3 font-semibold">
         <div className="h-8 w-8 flex items-center justify-center bg-primary text-primary-foreground rounded-full overflow-hidden">
           <Image
             src={project.logo}
@@ -41,19 +41,19 @@ const ProjectCard = ({ project }: ProductCardProps) => {
           ))}
           {project.technologies.length > 2 && (
             <Badge variant="secondary" className="text-xs">
-              +{project.technologies.length - 3}
+              +{project.technologies.length - 2}
             </Badge>
           )}
         </div>
       </CardContent>
 
       <CardFooter className="gap-2">
-        <Button asChild>
+        <Button asChild className="group">
           <a
-            href={`/home/projects/${project.slug}`}
+            href={`/projects/${project.slug}`}
             target="_self"
           >
-            View Project <ArrowRight className="ml-2 h-4 w-4" />
+            View Project <ArrowRight className="group-hover:ml-2 h-4 w-4 transition-all" />
           </a>
         </Button>
         {project.githubUrl && (

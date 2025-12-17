@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { ProjectContent } from "@/components/project-content";
+import { ProjectDetail } from "@/components/sections/project-detail";
 import { getProjectBySlug, projects } from "@/lib/data";
 
 interface ProjectPageProps {
@@ -16,7 +16,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         notFound();
     }
 
-    return <ProjectContent project={project} />;
+    return <ProjectDetail project={project} />;
 }
 
 // Generate static params for all projects

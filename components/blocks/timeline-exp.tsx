@@ -68,7 +68,7 @@ export function TimelineExp({ items, className }: TimelineExpProps) {
                   </div>
                 </div>
 
-                <p className="text-sm sm:text-base text-primary leading-relaxed">
+                <p className="text-sm text-primary leading-relaxed">
                   {item.description}
                 </p>
 
