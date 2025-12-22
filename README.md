@@ -1,5 +1,5 @@
 <div>
-  <img alt="logo" src="public/Avatar.jpeg" height="200" />
+  <img alt="preview" src="public/Preview1.png" height="200" />
   <img alt="logo" src="public/LogoDirgaaBlack.svg" height="200" />
 </div>
 
@@ -23,7 +23,7 @@ A modern, responsive portfolio website built with **Next.js**, **TypeScript**, a
 - ⚡ **Performance** - Fast loading with Next.js App Router and static generation
 
 ## 🛠️ Tech Stack
-
+`
   <img src="https://skillicons.dev/icons?i=ts,nextjs,react,tailwind,vercel,bun" alt="Tech Stack" />
 
 - **Framework**: ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat&logo=next.js&logoColor=white&logoWidth=12)
