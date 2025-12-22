@@ -37,18 +37,18 @@ import type {
 // ============ PROFILE DATA ============
 export const profile: Profile = {
     name: "Dirga Yuditama",
-    title: "Full Stack Developer",
+    title: "Developer",
     bio: "I love creating elegant solutions to complex problems and constantly learning new technologies.",
     avatar: "/Avatar.jpeg",
     logo: "/LogoDirgaaBlack.svg",
-    location: "Jakarta, Indonesia",
-    email: "hello@dirgayudhatama.dev",
+    location: "Malang, Indonesia",
+    email: "dirgayuditama6@gmail.com",
     resumeUrl: "/resume.pdf",
     availableForWork: true,
     socials: [
-        { name: "GitHub", url: "https://github.com/dirgaydtm", icon: Github },
-        { name: "LinkedIn", url: "https://linkedin.com/in/dirgaydtm", icon: Linkedin },
-        { name: "Instagram", url: "https://instagram.com/dirgaa.yd", icon: Instagram },
+        { name: "dirgaydtm", url: "https://github.com/dirgaydtm", icon: Github },
+        { name: "dirgaydtm", url: "https://linkedin.com/in/dirgaydtm", icon: Linkedin },
+        { name: "dirgaa.yd", url: "https://instagram.com/dirgaa.yd", icon: Instagram },
     ],
 };
 
@@ -136,9 +136,9 @@ export const projects: Project[] = [
         fullDescription:
             "A modern, responsive portfolio website showcasing my projects, skills, and experience. Built with Next.js 16, TypeScript, Tailwind CSS, and Shadcn UI components. Features dark/light mode, smooth animations, and a fully responsive design.",
         images: [
-            "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1200&h=800&fit=crop",
-            "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop",
-            "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=1200&h=800&fit=crop",
+            "/Preview1.png",
+            "/Preview2.png",
+            "/Preview3.png",
         ],
         technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI", "Framer Motion"],
         features: [
@@ -152,104 +152,160 @@ export const projects: Project[] = [
         logo: "/LogoDirgaaBlack.svg",
         liveUrl: "https://dirga.site",
         githubUrl: "https://github.com/dirgaydtm/Portfolio-v2.0",
-        category: "Web",
+        category: "Personal Project",
         year: "2025",
     },
     {
-        slug: "cashfam-app",
-        title: "Cashfam App",
-        shortDescription:
-            "Financial management application built with modern web technologies.",
-        fullDescription:
-            "A comprehensive financial management application designed to help users track expenses, manage budgets, and analyze spending patterns. Built with TypeScript and modern web frameworks.",
-        images: [
-            "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&h=800&fit=crop",
-            "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=800&fit=crop",
-            "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop",
+        "slug": "cashfam",
+        "title": "Cashfam",
+        "shortDescription": "Collaborative financial management app with role-based permissions for shared cash books.",
+        "fullDescription": "Cashfam is a collaborative financial management application that enables multiple users to manage shared cash books with role-based permissions. Designed for families, teams, or organizations to track expenses, manage budgets, and analyze spending. The application supports authentication (with Laravel Breeze), book invitation via code, role-based member management, advanced theme system using DaisyUI and GSAP, and comprehensive transaction tracking with real-time balance calculations.",
+        "features": [
+            "User registration and login with Laravel Breeze",
+            "Profile management and theme customization (20+ themes)",
+            "Create and join shared financial books via invite code",
+            "Role-based permissions: Creator, Admin, Member",
+            "Add, filter, and delete income/expense transactions",
+            "Real-time balance and budget tracking",
+            "Member management (promote/demote/remove/leave)",
+            "Modern UI with DaisyUI",
+            "Responsive design for desktop and mobile"
         ],
-        technologies: ["TypeScript", "React", "Next.js"],
-        features: [
-            "Expense tracking",
-            "Budget management",
-            "Financial analytics",
-            "User-friendly interface",
+        "images": [
+            "https://cdn.jsdelivr.net/gh/dirgaydtm/Cashfam-App@main/public/Preview1.png",
+            "https://cdn.jsdelivr.net/gh/dirgaydtm/Cashfam-App@main/public/Preview2.png",
+            "https://cdn.jsdelivr.net/gh/dirgaydtm/Cashfam-App@main/public/Preview3.png",
+            "https://cdn.jsdelivr.net/gh/dirgaydtm/Cashfam-App@main/public/Preview4.png"
         ],
-        logo: "/logos/cashfam.svg",
-        liveUrl: "https://cashfam-app.onrender.com",
-        githubUrl: "https://github.com/dirgaydtm/Cashfam-App",
-        category: "Full Stack",
-        year: "2025",
+        "logo": "https://cdn.jsdelivr.net/gh/dirgaydtm/Cashfam-App@main/public/CashfamLogo.jpeg",
+        "technologies": [
+            "React",
+            "Laravel",
+            "PHP",
+            "TypeScript",
+            "Inertia.js",
+            "DaisyUI",
+            "Tailwind",
+            "MySQL"
+        ],
+        "liveUrl": "https://cashfam-app.onrender.com",
+        "githubUrl": "https://github.com/dirgaydtm/Cashfam-App",
+        "category": "Collaboration Project",
+        "year": "2025",
+        "license": "MIT"
     },
     {
-        slug: "devoo-app",
-        title: "Devoo App",
+        slug: "devoo",
+        title: "Devoo",
         shortDescription:
             "Real-time chat application built with React, TypeScript, and Firebase.",
         fullDescription:
-            "A modern, real-time chat application featuring user authentication, instant messaging, image sharing, and contact management. Built with React, TypeScript, Firebase, and Zustand for state management.",
+            "Devoo is a modern real-time chat application featuring email/password authentication, instant messaging with Firestore, image sharing via Firebase Storage, customizable user profiles, contact management, and a theme system persisted using Zustand. The app is fully responsive and provides rich user feedback through toast notifications.",
         images: [
-            "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=1200&h=800&fit=crop",
-            "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?w=1200&h=800&fit=crop",
-            "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop",
+            "https://cdn.jsdelivr.net/gh/dirgaydtm/Devoo-App@main/public/Preview1.png",
+            "https://cdn.jsdelivr.net/gh/dirgaydtm/Devoo-App@main/public/Preview2.png",
+            "https://cdn.jsdelivr.net/gh/dirgaydtm/Devoo-App@main/public/Preview3.png"
         ],
-        technologies: ["React", "TypeScript", "Firebase", "Zustand", "Tailwind CSS"],
+        technologies: [
+            "React",
+            "Firebase",
+            "TypeScript",
+            "Zustand",
+            "Tailwind CSS",
+            "DaisyUI",
+            "Vercel"
+        ],
         features: [
-            "Real-time messaging",
-            "User authentication",
-            "Image sharing",
-            "Contact management",
-            "Theme system",
-            "Toast notifications",
+            "Email & password authentication",
+            "Profile management and theme customization (20+ themes)",
+            "Real-time messaging with Firestore",
+            "Image sharing using Cloudinary",
+            "Contact management by email",
+            "Theme system with Zustand persistence",
+            "Toast notifications for actions and errors",
+            "Responsive design for desktop and mobile"
         ],
-        logo: "/logos/devoo.svg",
+        logo: "https://cdn.jsdelivr.net/gh/dirgaydtm/Devoo-App@main/public/Devoo.svg",
         liveUrl: "https://devoo-app.vercel.app",
         githubUrl: "https://github.com/dirgaydtm/Devoo-App",
-        category: "Full Stack",
+        category: "Personal Project",
         year: "2025",
+        license: "MIT"
     },
     {
-        slug: "portfolio-v1",
-        title: "Portfolio v1.0",
-        shortDescription:
-            "First version of my portfolio website built with Next.js.",
-        fullDescription:
-            "The initial version of my portfolio website showcasing my early projects and skills. Built with Next.js and TypeScript, featuring a clean and minimal design.",
-        images: [
-            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=800&fit=crop",
-            "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop",
-            "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=1200&h=800&fit=crop",
+        "slug": "kbmdsi-website",
+        "title": "KBMDSI UB 2025",
+        "shortDescription": "The official website of the Information Systems Department Student Association (KBMDSI), Brawijaya University.",
+        "fullDescription": "KBMDSI UB's website is an information and administration portal for the student association representing three study programs within the Faculty of Computer Science at Universitas Brawijaya: Information Systems, Information Technology, and Information Technology Education. Built using Laravel (PHP) for the backend and React (Inertia) for the frontend, it features the 'Navakara' visual theme. The site provides information about the organization, membership, a public landing page, and an admin dashboard.",
+        "images": [],
+        "technologies": [
+            "Laravel",
+            "React",
+            "PHP",
+            "Inertia.js",
+            "JavaScript",
+            "Tailwind"
         ],
-        technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
-        features: [
-            "Responsive design",
-            "Project showcase",
-            "Clean UI",
-            "Fast loading",
+        "features": [
+            "Informative landing page",
+            "Organization profile and logo history",
+            "Administration system and admin dashboard",
+            "Membership and organizational structure",
+            "Navakara visual theme",
+            "SEO optimized and fully responsive"
         ],
-        logo: "/logos/portfolio.svg",
-        liveUrl: "https://dirgaa-dev.vercel.app",
-        githubUrl: "https://github.com/dirgaydtm/Portfolio-v1.0",
-        category: "Web",
-        year: "2025",
+        "logo": "https://cdn.jsdelivr.net/gh/KBMDSI/KBMDSI_NEWBANGET@main/public/Logo-Navakara.png",
+        "liveUrl": "https://kbmdsi.ub.ac.id/",
+        "githubUrl": "https://github.com/KBMDSI/KBMDSI_NEWBANGET",
+        "category": "Organization Website",
+        "year": "2025"
     },
     {
-        slug: "taskbuddy",
-        title: "TaskBuddy",
-        shortDescription:
-            "Task management application built with Java.",
-        fullDescription:
-            "A task management application designed to help users organize and track their daily tasks. Built with Java, featuring a user-friendly interface and efficient task management capabilities.",
-        images: [],
-        technologies: ["Java"],
-        features: [
-            "Task creation",
-            "Task organization",
-            "User-friendly interface",
-            "Efficient task management",
+        "slug": "portfolio-v1",
+        "title": "Portfolio v1.0",
+        "shortDescription": "Personal portfolio website built with React in a modern single-page.",
+        "fullDescription": "A fully responsive single-page portfolio website built with React (TypeScript) and powered by Vite for blazing fast loads. The site displays information about my background, education, organizations, skills, and includes an animated contact form with email delivery. Features a clean dark-themed UI, smooth animated transitions (AOS, Framer Motion, React Spring), interactive animated effects (background grid, click sparks, animated cursor), and modular UI components. Project and skill data is rendered dynamically. No server required – EmailJS handles contact requests.",
+        "images": [
+            "https://cdn.jsdelivr.net/gh/dirgaydtm/Portfolio-v1.0@main/public/Preview1.png",
+            "https://cdn.jsdelivr.net/gh/dirgaydtm/Portfolio-v1.0@main/public/Preview2.png",
+            "https://cdn.jsdelivr.net/gh/dirgaydtm/Portfolio-v1.0@main/public/Preview3.png",
+            "https://cdn.jsdelivr.net/gh/dirgaydtm/Portfolio-v1.0@main/public/Preview4.png"
         ],
-        logo: "/logos/taskbuddy.svg",
-        githubUrl: "https://github.com/dirgaydtm/TaskBuddy",
-        category: "Desktop",
-        year: "2025",
+        "technologies": [
+            "React",
+            "TypeScript",
+            "Tailwind",
+            "EmailJS"
+        ],
+        "features": [
+            "Single page portfolio site with multi-section layout",
+            "Smooth animations using AOS, Framer Motion, React Spring",
+            "Custom animated background grid and click effects",
+            "Contact form with EmailJS integration (no backend required)",
+            "Cursor effects and scroll tracking"
+        ],
+        "liveUrl": "https://dirgaa-dev.vercel.app",
+        "githubUrl": "https://github.com/dirgaydtm/Portfolio-v1.0",
+        "category": "Personal Project",
+        "year": "2025",
+        "license": "MIT"
     },
+    {
+        "slug": "taskbuddy",
+        "title": "TaskBuddy",
+        "shortDescription": "A Java-based task management application.",
+        "fullDescription": "TaskBuddy is a task management application designed to help users organize and track their daily tasks efficiently. The project is built with Java, providing a user-friendly interface and robust task management features. The repository includes all source code and documentation necessary for deployment and contribution.",
+        "images": [],
+        "technologies": ["Java"],
+        "features": [
+            "Task creation and assignment",
+            "Task categorization and organization",
+            "Track and update task status",
+            "Due dates and reminders",
+            "Efficient task management dashboard"
+        ],
+        "githubUrl": "https://github.com/dirgaydtm/TaskBuddy",
+        "category": "Collaboration Project",
+        "year": "2025"
+    }
 ];

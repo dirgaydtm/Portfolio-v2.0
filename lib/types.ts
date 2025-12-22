@@ -51,9 +51,10 @@ export interface Project {
     images: string[];
     technologies: string[];
     features: string[];
-    logo: string; // URL or path to project logo
+    logo?: string;
     liveUrl?: string;
     githubUrl?: string;
     category: string;
     year: string;
+    license?: string;
 }
