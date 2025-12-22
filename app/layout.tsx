@@ -6,6 +6,7 @@ import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { SplashScreen } from "@/components/layout/splash-screen";
+import { profile } from "@/lib/data";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,7 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Dirga Yuditama | Full Stack Developer",
+  title: `${profile.name} | ${profile.title}`,
 };
 
 export default function RootLayout({
