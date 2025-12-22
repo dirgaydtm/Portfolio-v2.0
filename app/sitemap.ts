@@ -2,9 +2,8 @@ import { MetadataRoute } from "next";
 import { projects } from "@/lib/data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = "https://dirgayuditama.dev";
+    const baseUrl = "https://dirga.site";
 
-    // Static pages
     const staticPages: MetadataRoute.Sitemap = [
         {
             url: baseUrl,
@@ -14,7 +13,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
     ];
 
-    // Dynamic project pages
     const projectPages: MetadataRoute.Sitemap = projects.map((project) => ({
         url: `${baseUrl}/projects/${project.slug}`,
         lastModified: new Date(),

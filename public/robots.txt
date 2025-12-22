@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://dirgayuditama.dev/sitemap.xml
+Sitemap: https://dirga.site/sitemap.xml
