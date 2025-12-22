@@ -25,8 +25,8 @@ export function ExperienceSection() {
                 <TimelineExp className="pt-10" items={experiences} />
             </div>
 
-            <div className="absolute inset-0 h-20 bg-background [clip-path:polygon(100%_0,100%_100%,0_0)]" />
-            <div className="absolute left-0 bottom-0 w-full h-20 bg-background [clip-path:polygon(0_0,100%_100%,0_100%)]" />
+            <div className="absolute inset-0 h-10 md:h-20 bg-background [clip-path:polygon(100%_0,100%_100%,0_0)]" />
+            <div className="absolute left-0 bottom-0 w-full h-10 md:h-20 bg-background [clip-path:polygon(0_0,100%_100%,0_100%)]" />
         </section>
     );
 }

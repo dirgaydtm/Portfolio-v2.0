@@ -39,12 +39,11 @@ export default function RootLayout({
         >
           <SplashScreen />
           <div className="relative flex min-h-screen flex-col bg-background">
-            {/* Theme Toggle - Fixed Top Right */}
             <div className="fixed top-4 right-4 z-50">
               <ThemeToggle />
             </div>
 
-            <main className="flex-1 pb-24">{children}</main>
+            <main>{children}</main>
             <Footer />
             <Navbar />
           </div>

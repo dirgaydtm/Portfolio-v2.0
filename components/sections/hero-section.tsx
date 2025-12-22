@@ -116,9 +116,9 @@ export function HeroSection() {
 
                     <div className="flex basis-full md:hidden" />
 
-                    {profile.socials.map((social) => (
+                    {profile.socials.map((social, index) => (
                         <Button
-                            key={social.name}
+                            key={index}
                             variant="outline"
                             size="icon-lg"
                             asChild
