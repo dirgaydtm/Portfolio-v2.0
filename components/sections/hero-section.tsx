@@ -14,7 +14,7 @@ export function HeroSection() {
     return (
         <section
             id="about"
-            className="relative flex h-[95vh] flex-col items-center justify-center px-4 sm:px-6"
+            className="relative flex h-[80vh] flex-col items-center justify-center px-4 sm:px-6"
         >
             {/* Background with glitch + overlay */}
             <div className="absolute inset-0 hidden h-100 dark:flex lg:h-200 z-0">

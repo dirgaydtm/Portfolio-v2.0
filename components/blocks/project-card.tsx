@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/card";
 import { ArrowRight, Github, ExternalLink } from "lucide-react";
 import Image from "next/image";
+import { FolderKanban } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import type { Project } from "@/lib/types";
 
@@ -18,14 +19,20 @@ const ProjectCard = ({ project }: ProductCardProps) => {
   return (
     <Card className="max-w-xs hover:scale-105 shadow-none gap-6 border-border transition-all transform hover:border-muted-foreground hover:shadow-md">
       <CardHeader className="flex flex-row items-center gap-3 font-semibold">
-        <div className="h-8 w-8 flex items-center justify-center bg-primary text-primary-foreground rounded-full overflow-hidden">
-          <Image
-            src={project.logo}
-            alt={project.title + ' logo'}
-            width={32}
-            height={32}
-            className="object-contain h-6 w-6"
-          />
+        <div className="">
+          {project.logo ? (
+            <Image
+              src={project.logo}
+              alt={project.title + ' logo'}
+              width={32}
+              height={32}
+              className="object-contain size-8 flex items-center justify-center bg-primary text-primary-foreground rounded-full overflow-hidden"
+            />
+          ) : (
+            <span className="size-8 flex items-center justify-center bg-primary text-primary-foreground rounded-full">
+              <FolderKanban className="h-5 w-5" />
+            </span>
+          )}
         </div>
         <span>{project.title}</span>
       </CardHeader>

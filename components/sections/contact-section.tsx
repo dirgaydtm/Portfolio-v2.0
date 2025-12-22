@@ -55,7 +55,7 @@ export function ContactSection() {
                     <AccordionItem value="item-1">
                         <AccordionTrigger>Connect with me</AccordionTrigger>
                         <AccordionContent>
-                            <div className="flex gap-3 flex-col mx-2 text-muted-foreground lg:pb-50">
+                            <div className="flex gap-3 flex-col mx-2 text-muted-foreground">
                                 <a href={`mailto:${profile.email}`} className="hover:text-primary transition-colors flex gap-1"><Mail className="h-5 w-5" /> {profile.email}</a>
                                 {profile.socials.map((social, index) => (
                                     <a

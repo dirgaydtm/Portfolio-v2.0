@@ -62,7 +62,7 @@ export function SplashScreen() {
                                 <TypingAnimation delay={2600} duration={40}>
                                     Proceed with installation? [Y/n] Y
                                 </TypingAnimation>
-                                <AnimatedSpan delay={4600} className="text-cyan-400">
+                                <AnimatedSpan delay={4700} className="text-cyan-400">
                                     (1/1) installing portfolio-dirga...
                                 </AnimatedSpan>
                             </Terminal>

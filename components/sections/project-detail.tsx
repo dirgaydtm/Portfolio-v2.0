@@ -44,18 +44,17 @@ export function ProjectDetail({ project }: { project: Project }) {
                             <CarouselContent>
                                 {project.images.map((image, index) => (
                                     <CarouselItem key={index}>
-                                        <Dialog>
-                                            <div className="cursor-pointer group relative overflow-hidden rounded-lg">
-                                                <AspectRatio ratio={16 / 9}>
-                                                    <Image
-                                                        src={image}
-                                                        alt={`${project.title} screenshot ${index + 1}`}
-                                                        fill
-                                                        className="object-cover transition-transform duration-300 group-hover:scale-105"
-                                                    />
-                                                </AspectRatio>
-                                            </div>
-                                        </Dialog>
+
+                                        <div className="cursor-pointer group relative overflow-hidden rounded-lg">
+                                            <AspectRatio ratio={16 / 9}>
+                                                <Image
+                                                    src={image}
+                                                    alt={`${project.title} screenshot ${index + 1}`}
+                                                    fill
+                                                    className="object-cover transition-transform scale-102 duration-300 group-hover:scale-105"
+                                                />
+                                            </AspectRatio>
+                                        </div>
                                     </CarouselItem>
                                 ))}
                             </CarouselContent>
