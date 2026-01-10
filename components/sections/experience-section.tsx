@@ -7,7 +7,7 @@ import { Boxes } from "@/components/blocks/background-boxes";
 
 export function ExperienceSection() {
     return (
-        <section id="experience" className="relative bg-card py-32 md:py-44 px-4 overflow-hidden">
+        <section id="experience" className="relative bg-background py-20 px-4 overflow-hidden">
             <Boxes />
 
             <div className="mx-auto max-w-5xl pointer-events-none text-center">

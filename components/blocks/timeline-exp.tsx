@@ -41,7 +41,7 @@ export function TimelineExp({ items, className }: TimelineExpProps) {
               className={`relative flex items-start pb-12 last:pb-0 ${isRight ? "md:justify-end" : "md:justify-start"}`}
             >
               {/* Icon */}
-              <div className="absolute left-5 md:left-1/2 -translate-x-1/2 size-10 flex items-center justify-center rounded-full border-2 border-border bg-card">
+              <div className="absolute left-5 md:left-1/2 -translate-x-1/2  size-10 flex items-center justify-center rounded-full border-2 border-border bg-card">
                 <Icon className="size-5 text-muted-foreground" />
               </div>
 
