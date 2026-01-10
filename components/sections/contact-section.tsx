@@ -28,20 +28,30 @@ export function ContactSection() {
     } = useContactForm();
 
     return (
-        <section id="contact" className="relative bg-card px-4 py-30 sm:px-6">
+        <section id="contact" className="relative bg-background px-4 py-20 sm:px-6">
             <div className="absolute inset-0 h-10 md:h-20 bg-background [clip-path:polygon(100%_0,100%_100%,0_0)]" />
-            <div className="absolute left-0 bottom-0 w-full h-10 md:h-20 bg-background [clip-path:polygon(0_0,100%_100%,0_100%)]" />
             {/* Section Header */}
             <div className="text-center">
-                <Badge variant="outline" className="mb-4">Contact</Badge>
+                {profile.availableForWork ? (
+                    <Badge
+                        variant="secondary"
+                        className="gap-2 text-xs mb-4 sm:text-sm bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-400">
+                        <span className="relative flex h-2 w-2">
+                            <span className="absolute h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75" />
+                            <span className="relative h-2 w-2 rounded-full bg-emerald-500" />
+                        </span>
+                        Available for work
+                    </Badge>
+                ) : <Badge variant="outline" className="mb-4">Contact</Badge>}
+
                 <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Get In Touch</h2>
                 <p className="mx-auto mt-4 max-w-2xl text-md text-muted-foreground">
-                    Have a project in mind or just want to say hi? Feel free to reach out. I&apos;m always open to discussing new opportunities.
+                    Have a project in mind or just want to say hi? Feel free to reach out. I always open to discussing new opportunities.
                 </p>
             </div>
             <Separator className="mx-auto max-w-5xl my-10 w-24" />
             <div className="flex flex-col mx-auto max-w-5xl md:flex-row gap-5">
-                <Map center={[-7.9666, 112.6326]} zoom={8} className="flex-3 aspect-square rounded-2xl border border-border shadow-sm">
+                <Map center={[-7.9666, 112.6326]} zoom={8} className="flex-3 hidden md:flex aspect-square rounded-2xl border border-border shadow-sm">
                     <MapTileLayer />
                     <MapMarker position={[-7.9666, 112.6326]}>
                         <MapTooltip side="bottom">
