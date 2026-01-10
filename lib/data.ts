@@ -23,6 +23,8 @@ import {
     SiGnubash,
     SiGit,
     SiFigma,
+    SiMariadb,
+    SiShadcnui,
 } from "react-icons/si";
 import { FaJava } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
@@ -55,36 +57,34 @@ export const profile: Profile = {
 // ============ TECH STACK DATA ============
 export const techStack: TechStack[] = [
     // Languages
-    { name: "JavaScript", category: "Language", group: "Languages", icon: SiJavascript },
-    { name: "TypeScript", category: "Language", group: "Languages", icon: SiTypescript },
-    { name: "Java", category: "Language", group: "Languages", icon: FaJava },
-    { name: "Kotlin", category: "Language", group: "Languages", icon: SiKotlin },
-    { name: "Dart", category: "Language", group: "Languages", icon: SiDart },
+    { name: "JavaScript", category: "Web", group: "Languages", icon: SiJavascript },
+    { name: "TypeScript", category: "Web", group: "Languages", icon: SiTypescript },
+    { name: "Java", category: "General", group: "Languages", icon: FaJava },
+    { name: "Dart", category: "Mobile", group: "Languages", icon: SiDart },
 
     // Frontend
     { name: "React", category: "Framework", group: "Frontend", icon: SiReact },
     { name: "Next.js", category: "Framework", group: "Frontend", icon: SiNextdotjs },
     { name: "Tailwind CSS", category: "Styling", group: "Frontend", icon: SiTailwindcss },
     { name: "Bootstrap", category: "Styling", group: "Frontend", icon: SiBootstrap },
+    { name: "Shadcn UI", category: "Styling", group: "Frontend", icon: SiShadcnui },
 
     // Backend
     { name: "Node.js", category: "Runtime", group: "Backend", icon: SiNodedotjs },
-    { name: "Express", category: "Framework", group: "Backend", icon: SiExpress },
     { name: "Bun", category: "Runtime", group: "Backend", icon: SiBun },
+    { name: "Firebase", category: "BaaS", group: "Backend", icon: SiFirebase },
 
     // Database
     { name: "MySQL", category: "SQL", group: "Database", icon: SiMysql },
+    { name: "MariaDB", category: "SQL", group: "Database", icon: SiMariadb },
     { name: "MongoDB", category: "NoSQL", group: "Database", icon: SiMongodb },
-    { name: "Firebase", category: "BaaS", group: "Database", icon: SiFirebase },
 
     // Mobile
     { name: "Flutter", category: "Framework", group: "Mobile", icon: SiFlutter },
-    { name: "Jetpack Compose", category: "Framework", group: "Mobile", icon: SiJetpackcompose },
 
     // DevOps
     { name: "Docker", category: "Container", group: "DevOps", icon: SiDocker },
     { name: "Vercel", category: "Hosting", group: "DevOps", icon: SiVercel },
-    { name: "Bash", category: "Shell", group: "DevOps", icon: SiGnubash },
     { name: "Linux", category: "OS", group: "DevOps", icon: SiLinux },
     { name: "Arch Linux", category: "OS", group: "DevOps", icon: SiArchlinux },
 
@@ -97,16 +97,16 @@ export const techStack: TechStack[] = [
 // ============ EXPERIENCE DATA ============
 export const experiences: Experience[] = [
     {
-        title: "Teaching Assistant – Fundamental Programming",
-        company: "Faculty of Computer Science (FILKOM), Universitas Brawijaya",
-        period: "Sep – Dec 2025",
+        title: "Bakti BCA Awardee 2026",
+        company: "PT Bank Central Asia Tbk",
+        period: "Dec 2025 – Present",
         description:
-            "Assisted teaching fundamental Java programming to 35 students, guided lab sessions, and provided code reviews and feedback.",
+            "Selected as a Bakti BCA Awardee based on academic excellence, leadership potential, and community involvement. Participated in leadership development programs, capacity building workshops, and social contribution initiatives.",
         skills: [
-            "Java",
-            "Object-Oriented Programming",
-            "Code Review",
-            "Teaching"
+            "Leadership",
+            "Communication",
+            "Problem Solving",
+            "Community Engagement"
         ],
         icon: GraduationCap,
     },
@@ -124,6 +124,21 @@ export const experiences: Experience[] = [
         ],
         icon: Code,
     },
+    {
+        title: "Teaching Assistant – Fundamental Programming",
+        company: "Faculty of Computer Science, Brawijaya University",
+        period: "Sep – Dec 2025",
+        description:
+            "Assisted teaching fundamental Java programming to 35 students, guided lab sessions, and provided code reviews and feedback.",
+        skills: [
+            "Java",
+            "Object-Oriented Programming",
+            "Code Review",
+            "Teaching"
+        ],
+        icon: GraduationCap,
+    },
+
 ];
 
 // ============ PROJECTS DATA ============
