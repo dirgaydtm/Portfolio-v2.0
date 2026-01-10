@@ -8,13 +8,13 @@ import { scrollToSection } from "@/lib/utils";
 
 
 export function Navbar() {
-    const [isAtBottom, setIsAtBottom] = useState(false);
+    const [isHidden, setIsHidden] = useState(false);
     useEffect(() => {
         function handleScroll() {
             const scrollY = window.scrollY;
             const innerHeight = window.innerHeight;
             const offsetHeight = document.body.offsetHeight;
-            setIsAtBottom(innerHeight + scrollY >= offsetHeight - 40);
+            setIsHidden(innerHeight + scrollY >= offsetHeight - 40 || scrollY <= 0);
         }
         window.addEventListener("scroll", handleScroll);
         handleScroll();
@@ -51,13 +51,13 @@ export function Navbar() {
 
     return (
         <AnimatePresence>
-            {!isAtBottom && (
+            {!isHidden && (
                 <motion.nav
                     initial={{ y: 100, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: 100, opacity: 0 }}
                     transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                    className="fixed bottom-0 md:bottom-5 lg:bottom-10 inset-x-0 z-50"
+                    className="fixed bottom-0 md:bottom-5 inset-x-0 z-50"
                     aria-label="Main navigation"
                 >
                     <Dock
@@ -66,7 +66,7 @@ export function Navbar() {
                         distance={150}
                         panelHeight={68}
                         dockHeight={68}
-                        className="backdrop-blur-xs"
+                        className="backdrop-blur-md"
                     />
                 </motion.nav>
             )}
