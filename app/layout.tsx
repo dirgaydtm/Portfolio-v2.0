@@ -34,16 +34,15 @@ export default function RootLayout({
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
           <SplashScreen />
-          <div className="relative flex min-h-screen flex-col bg-background">
+          <div className="relative bg-background">
             <div className="fixed top-4 right-4 z-50">
               <ThemeToggle />
             </div>
-
             <main>{children}</main>
             <Footer />
             <Navbar />
