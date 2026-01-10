@@ -25,7 +25,7 @@ export function TechStackSection() {
     ).map(([groupName, skills]) => ({ groupName, skills }));
 
     return (
-        <section id="skills" className="px-4 py-40 sm:px-6 overflow-hidden">
+        <section id="skills" className="px-4 py-20 sm:px-6 overflow-hidden">
 
             <div className="mx-auto max-w-7xl z-1 flex flex-col items-center">
                 {/* Section Header */}
@@ -45,7 +45,7 @@ export function TechStackSection() {
                 {/* Tech Stack Carousel */}
                 <TechStacksCarousel techStack={techStack} />
 
-                <Separator className="mx-auto my-10 w-24" />
+                <Separator className="mx-auto mb-10 w-24" />
 
                 {/* Tech Stack Overview */}
                 <TechStackOverview groups={skillGroups} className="hidden md:grid max-w-5xl" />

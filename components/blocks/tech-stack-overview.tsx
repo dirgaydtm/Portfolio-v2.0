@@ -55,7 +55,7 @@ const TechStackOverview = ({ groups, className }: SkillsOverviewProps) => {
                 return (
                     <HoverCard key={groupName}>
                         <HoverCardTrigger asChild>
-                            <Card className="group cursor-pointer border-border transition-all hover:border-muted-foreground hover:shadow-md">
+                            <Card className="group border-border transition-all hover:border-muted-foreground hover:shadow-md">
                                 <CardContent className="flex flex-col items-center  text-center">
                                     <div className="mb-3 rounded-lg bg-accent p-3 transition-colors group-hover:bg-accent/80">
                                         <Icon className="h-6 w-6 text-muted-foreground" />
@@ -69,11 +69,8 @@ const TechStackOverview = ({ groups, className }: SkillsOverviewProps) => {
                                 </CardContent>
                             </Card>
                         </HoverCardTrigger>
-                        <HoverCardContent className="w-80">
+                        <HoverCardContent className="w-75 m-3">
                             <div className="space-y-3">
-                                <h4 className="text-sm font-semibold text-foreground">
-                                    {groupName}
-                                </h4>
                                 <div className="flex flex-wrap gap-2">
                                     {skills.map((skill) => (
                                         <Badge
