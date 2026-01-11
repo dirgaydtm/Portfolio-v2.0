@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
-import { profile } from "@/lib/data";
+import { profile } from "@/features/hero/data/profile";
 
 export async function POST(req: NextRequest) {
   try {

@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next";
-import { projects } from "@/lib/data";
+import { projects } from "@/features/projects/data/projects";
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = "https://dirga.site";
