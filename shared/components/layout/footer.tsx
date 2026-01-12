@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Separator } from "@/shared/components/ui/separator";
-import { profile } from "@/features/hero/data/profile";
+import { profile } from "@/shared/data/profile";
 
 export function Footer() {
     const currentYear = new Date().getFullYear();

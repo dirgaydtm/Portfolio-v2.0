@@ -6,7 +6,7 @@ import { ThemeToggle } from "@/shared/components/layout/theme-toggle";
 import { Navbar } from "@/shared/components/layout/navbar";
 import { Footer } from "@/shared/components/layout/footer";
 import { SplashScreen } from "@/shared/components/layout/splash-screen";
-import { profile } from "@/features/hero/data/profile";
+import { profile } from "@/shared/data/profile";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

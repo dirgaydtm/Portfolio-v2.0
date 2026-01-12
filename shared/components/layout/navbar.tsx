@@ -25,7 +25,7 @@ export function Navbar() {
         {
             icon: <User />,
             label: "About",
-            onClick: () => scrollToSection("about"),
+            onClick: () => scrollToSection("hero"),
         },
         {
             icon: <Code2 />,

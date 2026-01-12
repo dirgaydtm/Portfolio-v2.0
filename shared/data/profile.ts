@@ -17,3 +17,4 @@ export const profile: Readonly<Profile> = {
         { name: "dirgaa.yd", url: "https://instagram.com/dirgaa.yd", icon: Instagram },
     ],
 };
+

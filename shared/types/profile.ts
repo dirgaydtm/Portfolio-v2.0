@@ -1,13 +1,13 @@
 import type { LucideIcon } from "lucide-react";
 import type { IconType } from "react-icons/lib";
 
-export type SocialLink = Readonly<{
+export type SocialLink = {
     name: string;
     url: string;
     icon: LucideIcon | IconType;
-}>
+};
 
-export type Profile = Readonly<{
+export type Profile = {
     name: string;
     title: string;
     bio: string;
@@ -18,4 +18,4 @@ export type Profile = Readonly<{
     resumeUrl: string;
     availableForWork: boolean;
     socials: SocialLink[];
-}>
+};
