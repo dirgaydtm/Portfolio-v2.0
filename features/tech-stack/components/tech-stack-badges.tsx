@@ -1,11 +1,14 @@
 import { Badge } from "@/shared/components/ui/badge";
-import { techStack } from "../data/tech-stack";
+import type { TechStackItem } from "../types/tech-stack";
 
-const techStackItems = Object.values(techStack).flatMap((group) => group.items);
+interface TechStackBadgesProps {
+    techStackItems: TechStackItem[];
+    className?: string;
+}
 
-export default function TechStackBadges() {
+export default function TechStackBadges({ techStackItems, className }: TechStackBadgesProps) {
     return (
-        <div className="flex flex-wrap justify-center md:hidden gap-2">
+        <div className={className}>
             {techStackItems.map((tech) => (
                 <Badge key={tech.name} variant="secondary" className="text-xs">
                     {tech.name}

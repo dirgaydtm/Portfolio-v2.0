@@ -1,19 +1,17 @@
 "use client";
 
+import { memo, useMemo } from "react";
 import AutoScroll from "embla-carousel-auto-scroll";
 import { motion } from "motion/react";
 import { Carousel, CarouselContent, CarouselItem } from "@/shared/components/ui/carousel";
 import { techStack } from "../data/tech-stack";
 
-interface TechStacksCarouselProps {
-  className?: string;
-}
-
-const techStackItems = Object.values(techStack).flatMap((group) => group.items);
-
-export default function TechStacksCarousel({ className }: TechStacksCarouselProps) {
+function TechStacksCarousel({ className }: { className?: string }) {
+  const techStackItems = useMemo(() => {
+    return Object.values(techStack).flatMap((group) => group.items);
+  }, []);
   return (
-    <section className={`${className} relative mx-auto flex overflow-hidden justify-center items-center w-full`}>
+    <section className={className}>
       <Carousel opts={{ loop: true }} plugins={[AutoScroll({ playOnInit: true, speed: 1 })]}>
         <CarouselContent className="h-35">
           {techStackItems.map((tech, index) => (
@@ -37,3 +35,5 @@ export default function TechStacksCarousel({ className }: TechStacksCarouselProp
     </section>
   );
 }
+
+export default memo(TechStacksCarousel);

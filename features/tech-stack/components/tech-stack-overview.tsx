@@ -1,17 +1,16 @@
-"use client";
-
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/shared/components/ui/hover-card";
 import { Badge } from "@/shared/components/ui/badge";
 import { Card, CardContent } from "@/shared/components/ui/card";
-import { techStack } from "../data/tech-stack";
+import type { TechStack } from "../types/tech-stack";
 
 interface TechStackOverviewProps {
     className?: string;
+    techStack: TechStack;
 }
 
-export default function TechStackOverview({ className }: TechStackOverviewProps) {
+export default function TechStackOverview({ className, techStack }: TechStackOverviewProps) {
     return (
-        <div className={`grid gap-4 grid-cols-7 ${className || ""}`}>
+        <div className={className}>
             {Object.entries(techStack).map(([groupName, group]) => (
                 <HoverCard key={groupName}>
                     <HoverCardTrigger asChild>
@@ -39,4 +38,4 @@ export default function TechStackOverview({ className }: TechStackOverviewProps)
             ))}
         </div>
     );
-}
+} 
