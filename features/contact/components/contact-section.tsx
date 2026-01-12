@@ -14,7 +14,7 @@ import {
     AccordionTrigger,
 } from "@/shared/components/ui/accordion"
 import { Separator } from "@/shared/components/ui/separator";
-import { profile } from "@/features/hero/data/profile";
+import { profile } from "@/shared/data/profile";
 import { useContactForm } from "../hooks/useContactForm";
 
 export function ContactSection() {
