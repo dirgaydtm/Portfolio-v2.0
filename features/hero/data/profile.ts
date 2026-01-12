@@ -1,8 +1,7 @@
-import { Github, Linkedin, Instagram, GraduationCap, Code } from "lucide-react";
+import { Github, Linkedin, Instagram } from "lucide-react";
 import type { Profile } from "../types/profile";
 
-// ============ PROFILE DATA ============
-export const profile: Profile = {
+export const profile: Readonly<Profile> = {
     name: "Dirga Yuditama",
     title: "Developer",
     bio: "I love creating elegant solutions to complex problems and constantly learning new technologies.",
@@ -18,4 +17,3 @@ export const profile: Profile = {
         { name: "dirgaa.yd", url: "https://instagram.com/dirgaa.yd", icon: Instagram },
     ],
 };
-
