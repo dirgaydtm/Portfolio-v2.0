@@ -51,6 +51,17 @@ function DockItem({
 }: DockItemProps) {
   const ref = useRef<HTMLDivElement>(null);
   const isHovered = useMotionValue(0);
+  const x = useMotionValue(0);
+  const tooltipSpringConfig = { stiffness: 100, damping: 5 };
+
+  const rotate = useSpring(
+    useTransform(x, [-100, 100], [-15, 15]),
+    tooltipSpringConfig
+  );
+  const translateX = useSpring(
+    useTransform(x, [-100, 100], [-20, 20]),
+    tooltipSpringConfig
+  );
 
   const mouseDistance = useTransform(mouseX, val => {
     const rect = ref.current?.getBoundingClientRect() ?? {
@@ -63,6 +74,13 @@ function DockItem({
   const targetSize = useTransform(mouseDistance, [-distance, 0, distance], [baseItemSize, magnification, baseItemSize]);
   const size = useSpring(targetSize, spring);
 
+  const handleItemMouseMove = (
+    event: React.MouseEvent<HTMLDivElement, MouseEvent>
+  ) => {
+    const halfWidth = event.currentTarget.offsetWidth / 2;
+    x.set(event.nativeEvent.offsetX - halfWidth);
+  };
+
   return (
     <motion.div
       ref={ref}
@@ -74,6 +92,7 @@ function DockItem({
       onHoverEnd={() => isHovered.set(0)}
       onFocus={() => isHovered.set(1)}
       onBlur={() => isHovered.set(0)}
+      onMouseMove={handleItemMouseMove}
       onClick={onClick}
       className={`relative inline-flex items-center justify-center backdrop-blur-md rounded-lg  border border-border shadow-sm transition-colors ${className}`}
       tabIndex={0}
@@ -82,7 +101,15 @@ function DockItem({
     >
       {Children.map(children, child =>
         React.isValidElement(child)
-          ? cloneElement(child as React.ReactElement<{ isHovered?: MotionValue<number> }>, { isHovered })
+          ? cloneElement(child as React.ReactElement<{
+            isHovered?: MotionValue<number>;
+            rotate?: MotionValue<number>;
+            translateX?: MotionValue<number>;
+          }>, {
+            isHovered,
+            rotate,
+            translateX
+          })
           : child
       )}
     </motion.div>
@@ -93,9 +120,11 @@ type DockLabelProps = {
   className?: string;
   children: React.ReactNode;
   isHovered?: MotionValue<number>;
+  rotate?: MotionValue<number>;
+  translateX?: MotionValue<number>;
 };
 
-function DockLabel({ children, className = '', isHovered }: DockLabelProps) {
+function DockLabel({ children, className = '', isHovered, rotate, translateX }: DockLabelProps) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -110,13 +139,25 @@ function DockLabel({ children, className = '', isHovered }: DockLabelProps) {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          initial={{ opacity: 0, y: 0 }}
-          animate={{ opacity: 1, y: -10 }}
-          exit={{ opacity: 0, y: 0 }}
-          transition={{ duration: 0.2 }}
-          className={`${className} absolute -top-6 left-1/2 hidden lg:flex w-fit whitespace-pre rounded-md border border-border bg-popover px-2 py-0.5 text-xs text-popover-foreground shadow-md`}
+          initial={{ opacity: 0, y: -10, scale: 0.8 }}
+          animate={{
+            opacity: 1,
+            y: -20,
+            scale: 1,
+            transition: {
+              type: "spring",
+              stiffness: 260,
+              damping: 10,
+            },
+          }}
+          exit={{ opacity: 0, y: -10, scale: 0.8 }}
+          style={{
+            translateX: translateX,
+            rotate: rotate,
+            whiteSpace: "nowrap",
+          }}
+          className={`${className} absolute z-50 -translate-x-1/2 -top-12 uppercase font-semibold left-1/2 hidden lg:flex w-fit whitespace-nowrap rounded-md border border-primary/40 bg-background/90  px-4 py-2 text-sm text-popover-foreground shadow-xl`}
           role="tooltip"
-          style={{ x: '-50%' }}
         >
           {children}
         </motion.div>
@@ -163,7 +204,7 @@ export default function Dock({
           isHovered.set(0);
           mouseX.set(Infinity);
         }}
-        className={`${className} absolute bottom-2 left-1/2 transform -translate-x-1/2 flex items-end w-fit gap-4 rounded-2xl border border-border bg-background/20 backdrop-blur-md pb-2 px-4 shadow-lg`}
+        className={`${className} absolute bottom-2 left-1/2 cursor-pointer transform -translate-x-1/2 flex items-end w-fit gap-4 rounded-2xl border border-border bg-background/20 backdrop-blur-md pb-2 px-4 shadow-lg`}
         style={{ height: panelHeight }}
         role="toolbar"
         aria-label="Application dock"
