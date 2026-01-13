@@ -9,7 +9,7 @@ function BackgroundBoxes({ className } : { className?: string }) {
   return (
     <div
       style={{
-        transform: `translate(-40%,-60%) skewX(-48deg) skewY(14deg) scale(1.1) rotate(0deg) translateZ(0)`,
+        transform: `translate(-20%,-10%) skewX(-48deg) skewY(14deg) scale(1.1)`,
       }}
       className={className}
     >

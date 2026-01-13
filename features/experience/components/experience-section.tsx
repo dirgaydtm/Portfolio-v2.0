@@ -2,6 +2,8 @@ import { experiences } from "../data/experiences";
 import Timeline from "./timeline";
 import { Badge } from "@/shared/components/ui/badge";
 import BackgroundBoxes from "@/features/experience/components/background-boxes";
+import Shiny from "@/shared/animations/shiny";
+import Reveal from "@/shared/animations/reveal";
 
 export default function ExperienceSection() {
     return (
@@ -12,17 +14,17 @@ export default function ExperienceSection() {
                 <div className="absolute left-0 bottom-0 w-full h-10 md:h-30 bg-background [clip-path:polygon(0_0,100%_100%,0_100%)]" />
             </div>
 
-            <div className="mx-auto max-w-5xl md:py-10 pointer-events-none text-center">
-                <Badge variant="outline" className="mb-4">
-                    Career
-                </Badge>
-                <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-                    Experience
-                </h2>
-                <p className="mx-auto mt-4 max-w-2xl text-md text-muted-foreground">
+            <div className="mx-auto flex flex-col items-center gap-4 max-w-6xl md:py-10 pointer-events-none text-center">
+                <Badge variant="outline">Career</Badge>
+                <Reveal once>
+                    <Shiny className="text-4xl font-bold tracking-tight text-foreground">
+                        Experience
+                    </Shiny>
+                </Reveal>
+                <Reveal mode="auto" once direction="down" stagger={0.05} className="max-w-lg text-base md:text-lg text-muted-foreground">
                     My professional journey in the tech, building products and
                     growing as a developer.
-                </p>
+                </Reveal>
                 <Timeline className="pt-10" items={experiences} />
             </div>
         </section>
