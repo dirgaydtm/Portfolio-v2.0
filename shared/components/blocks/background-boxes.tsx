@@ -1,20 +1,16 @@
 "use client";
-import { useState, memo } from "react";
+import { memo } from "react";
 import { motion } from "motion/react";
-import { cn } from "@/shared/lib/utils";
 
 export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
-  const rows = 100, cols = 100;
+  const rows = 67, cols = 42;
 
   return (
     <div
       style={{
         transform: `translate(-40%,-60%) skewX(-48deg) skewY(14deg) scale(1.1) rotate(0deg) translateZ(0)`,
       }}
-      className={cn(
-        "absolute z-0 flex h-full w-full p-4",
-        className,
-      )}
+      className={className}
       {...rest}
     >
       {Array.from({ length: rows }, (_, i) => (
@@ -31,7 +27,7 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
                   backgroundColor: undefined,
                   transition: { duration: 0.2 },
                 }}
-                className={cn("relative h-8 w-16 border-t border-r border-foreground/10")}
+                className="relative h-8 w-16 border-t border-r border-foreground/10"
               />
             );
           })}
