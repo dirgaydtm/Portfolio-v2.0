@@ -1,7 +1,6 @@
 import { GraduationCap, Code } from "lucide-react";
 import type { Experience } from "../types/experience";
 
-// ============ EXPERIENCE DATA ============
 export const experiences: Experience[] = [
     {
         title: "Bakti BCA Awardee 2026",

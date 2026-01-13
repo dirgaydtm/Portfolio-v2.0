@@ -1,12 +1,11 @@
-import { type LucideIcon } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
+import type { IconType } from "react-icons";
 
-// ============ EXPERIENCE TYPES ============
-export interface Experience {
+export type Experience = {
     title: string;
     company: string;
     period: string;
     description: string;
     skills: string[];
-    icon?: LucideIcon;
+    icon: LucideIcon | IconType;
 }
-

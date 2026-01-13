@@ -1,8 +1,9 @@
 "use client";
+
 import { memo } from "react";
 import { motion } from "motion/react";
 
-export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
+function BackgroundBoxes({ className } : { className?: string }) {
   const rows = 67, cols = 42;
 
   return (
@@ -11,7 +12,6 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
         transform: `translate(-40%,-60%) skewX(-48deg) skewY(14deg) scale(1.1) rotate(0deg) translateZ(0)`,
       }}
       className={className}
-      {...rest}
     >
       {Array.from({ length: rows }, (_, i) => (
         <motion.div key={i} className="relative h-8 w-16 border-l border-foreground/10">
@@ -37,4 +37,4 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
   );
 };
 
-export const Boxes = memo(BoxesCore);
+export default memo(BackgroundBoxes);
