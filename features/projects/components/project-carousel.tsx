@@ -21,21 +21,21 @@ export default function ProjectCarousel({ project, className }: ProjectCarouselP
                 <CarouselContent>
                     {project.images.map((image, index) => (
                         <CarouselItem key={index}>
-                            <div className="cursor-pointer group relative overflow-hidden rounded-lg">
+                            <div className="relative overflow-hidden rounded-lg">
                                 <AspectRatio ratio={16 / 9}>
                                     <Image
                                         src={image}
                                         alt={`${project.title} screenshot ${index + 1}`}
                                         fill
-                                        className="object-cover transition-transform scale-102 duration-300 group-hover:scale-105"
+                                        className="object-cover transition-transform scale-102 duration-300 hover:scale-105 cursor-grab"
                                     />
                                 </AspectRatio>
                             </div>
                         </CarouselItem>
                     ))}
                 </CarouselContent>
-                <CarouselPrevious className="left-2" />
-                <CarouselNext className="right-2" />
+                <CarouselPrevious className="cursor-pointer md:-left-16 left-2" />
+                <CarouselNext className="cursor-pointer md:-right-16 right-2" />
             </Carousel>
         </section>
     );

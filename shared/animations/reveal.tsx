@@ -112,7 +112,7 @@ export default function Reveal({
   if (mode === "auto" && typeof children === "string") {
     const words = children.split(" ");
     return (
-      <span ref={ref} className={cn("flex justify-center flex-wrap", className)}>
+      <span ref={ref} className={cn("flex flex-wrap", className)}>
         {words.map(renderWord)}
       </span>
     );

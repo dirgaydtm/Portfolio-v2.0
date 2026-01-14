@@ -2,7 +2,7 @@ import type { Project } from "../types/project";
 
 export const projects: Project[] = [
     {
-        slug: "portfolio-v2",
+        slug: "portfolio-v2.0",
         title: "Portfolio v2.0",
         shortDescription:
             "Modern portfolio website built with Next.js, TypeScript, and Shadcn UI.",

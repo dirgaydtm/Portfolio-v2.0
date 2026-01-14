@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/shared/components/ui
 import { ScrollArea } from "@/shared/components/ui/scroll-area";
 import { CheckCircle2 } from "lucide-react";
 import type { Project } from "../types/project";
+import MagicCard from "@/shared/components/ui/magic-card";
 
 interface ProjectFeaturesProps {
     project: Project;
@@ -10,11 +11,12 @@ interface ProjectFeaturesProps {
 
 export default function ProjectFeatures({ project, className }: ProjectFeaturesProps) {
     return (
-        <Card className={`border-border ${className || ""}`}>
-            <CardHeader>
+        <Card className={`p-0 ${className}`}>
+            <MagicCard>
+            <CardHeader className="pt-6 pb-4">
                 <CardTitle>Key Features</CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="pb-6">
                 <ScrollArea className="h-auto">
                     <ul className="grid gap-2 md:grid-cols-2">
                         {project.features.map((feature, index) => (
@@ -26,6 +28,7 @@ export default function ProjectFeatures({ project, className }: ProjectFeaturesP
                     </ul>
                 </ScrollArea>
             </CardContent>
+            </MagicCard>
         </Card>
     );
 }

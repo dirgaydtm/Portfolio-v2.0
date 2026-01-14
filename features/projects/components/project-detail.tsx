@@ -4,33 +4,28 @@ import ProjectCarousel from "./project-carousel";
 import ProjectAbout from "./project-about";
 import ProjectFeatures from "./project-features";
 import ProjectTechnologies from "./project-technologies";
-import ProjectLinks from "./project-links";
+import Fade from "@/shared/animations/fade";
 
-interface ProjectDetailProps {
-    project: Project;
-}
-
-export default function ProjectDetail({ project }: ProjectDetailProps) {
+export default function ProjectDetail({ project }: { project: Project }) {
     return (
         <div className="px-4 py-12 sm:px-6">
             <div className="mx-auto max-w-5xl">
-                <ProjectHeader project={project} />
+                <ProjectHeader project={project} className="mb-8"/>
 
-                <ProjectCarousel project={project} className="mb-12" />
+                <ProjectCarousel project={project} className="mb-6" />
 
-                <div className="grid gap-8 lg:grid-cols-3">
-                    <div className="lg:col-span-2 space-y-6">
-                        <ProjectAbout project={project} />
-                        <ProjectFeatures project={project} />
-                    </div>
-
-                    <div className="space-y-6">
-                        <ProjectTechnologies project={project} />
-                        <ProjectLinks project={project} />
-                    </div>
-                </div>
+                <section className="grid gap-6 lg:grid-cols-3">
+                    <Fade once direction="down" className="order-1 md:order-0 lg:col-span-3">
+                        <ProjectAbout project={project} className="border-border" />
+                    </Fade>
+                    <Fade once direction="down" delay={0.3} className="order-3 md:order-0 lg:col-span-2 space-y-6">
+                        <ProjectFeatures project={project} className="border-border" />
+                    </Fade>
+                    <Fade once direction="down" delay={0.3} className="order-2 md:order-0 space-y-6">
+                        <ProjectTechnologies project={project} className="border-border" />
+                    </Fade>
+                </section>
             </div>
         </div>
     );
 }
-
