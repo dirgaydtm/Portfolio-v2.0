@@ -1,25 +1,22 @@
-import { Button } from "@/shared/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-} from "@/shared/components/ui/card";
-import { ArrowRight, Github, ExternalLink } from "lucide-react";
-import Image from "next/image";
-import { FolderKanban } from "lucide-react";
-import { Badge } from "@/shared/components/ui/badge";
-import type { Project } from "../types/project";
+"use client";
 
-interface ProductCardProps {
+import { Card, CardHeader, CardContent, CardFooter } from "@/shared/components/ui/card";
+import { Badge } from "@/shared/components/ui/badge";
+import { Button } from "@/shared/components/ui/button";
+import { Github, ExternalLink, FolderKanban } from "lucide-react";
+import Image from "next/image";
+import { useRouter } from "next/navigation";  
+import type { Project } from "../types/project";
+interface ProjectCardProps {
   project: Project;
+  className?: string;
 }
 
-const ProjectCard = ({ project }: ProductCardProps) => {
+export default function ProjectCard({ project, className }: ProjectCardProps) {
+  const router = useRouter();
   return (
-    <Card className="max-w-xs hover:scale-105 shadow-none gap-6 border-border transition-all transform hover:border-muted-foreground hover:shadow-md">
+    <Card className={className} onClick={() => router.push(`/projects/${project.slug}`)}>
       <CardHeader className="flex flex-row items-center gap-3 font-semibold">
-        <div className="">
           {project.logo ? (
             <Image
               src={project.logo}
@@ -33,13 +30,12 @@ const ProjectCard = ({ project }: ProductCardProps) => {
               <FolderKanban className="h-5 w-5" />
             </span>
           )}
-        </div>
+        
         <span>{project.title}</span>
       </CardHeader>
 
       <CardContent className="text-[15px] text-muted-foreground -5">
         <p className="line-clamp-2">{project.shortDescription}</p>
-        {/* Tech Badges */}
         <div className="mt-3 flex flex-wrap gap-1">
           {project.technologies.slice(0, 2).map((tech) => (
             <Badge key={tech} variant="secondary" className="text-xs">
@@ -55,14 +51,6 @@ const ProjectCard = ({ project }: ProductCardProps) => {
       </CardContent>
 
       <CardFooter className="gap-2">
-        <Button asChild className="group">
-          <a
-            href={`/projects/${project.slug}`}
-            target="_self"
-          >
-            View Project <ArrowRight className="group-hover:ml-2 h-4 w-4 transition-all" />
-          </a>
-        </Button>
         {project.githubUrl && (
           <Button variant="outline" size="icon" asChild>
             <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
@@ -80,7 +68,5 @@ const ProjectCard = ({ project }: ProductCardProps) => {
       </CardFooter>
     </Card>
   );
-};
-
-export default ProjectCard;
+}
 

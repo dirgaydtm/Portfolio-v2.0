@@ -1,6 +1,5 @@
 import type { Project } from "../types/project";
 
-// ============ PROJECTS DATA ============
 export const projects: Project[] = [
     {
         slug: "portfolio-v2",

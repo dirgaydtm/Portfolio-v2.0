@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { ProjectDetail } from "@/features/projects/components/project-detail";
+import ProjectDetail from "@/features/projects/components/project-detail";
 import { projects } from "@/features/projects/data/projects";
 import type { Project } from "@/features/projects/types/project";
 
@@ -22,7 +22,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     return <ProjectDetail project={project} />;
 }
 
-// Generate static params for all projects
 export function generateStaticParams() {
     return projects.map((project) => ({
         slug: project.slug,
