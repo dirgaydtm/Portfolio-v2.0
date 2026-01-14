@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 
 export interface ContactFormState {
     name: string;
@@ -9,46 +9,74 @@ export interface ContactFormState {
     message: string;
 }
 
+const INITIAL_FORM_STATE: ContactFormState = {
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+};
+
+const RESET_TIMEOUT = 3000;
+
 export function useContactForm() {
-    const [form, setForm] = useState<ContactFormState>({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-    });
+    const [form, setForm] = useState<ContactFormState>(INITIAL_FORM_STATE);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [error, setError] = useState<string | null>(null);
+    const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-    const handleChange = (
-        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-    ) => {
-        setForm({ ...form, [e.target.id]: e.target.value });
-    };
+    const handleChange = useCallback(
+        (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+            setForm((prev) => ({
+                ...prev,
+                [e.target.id]: e.target.value,
+            }));
+        },
+        []
+    );
 
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        setIsSubmitting(true);
-        setError(null);
-        try {
-            const res = await fetch("/api/contact", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(form),
-            });
-            if (!res.ok) {
-                const data = await res.json();
-                throw new Error(data.error || "Failed to send message");
+    const handleSubmit = useCallback(
+        async (e: React.FormEvent<HTMLFormElement>) => {
+            e.preventDefault();
+            setIsSubmitting(true);
+            setError(null);
+
+            try {
+                const response = await fetch("/api/contact", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(form),
+                });
+
+                if (!response.ok) {
+                    const data = await response.json().catch(() => ({}));
+                    throw new Error(data.error || "Failed to send message");
+                }
+
+                setIsSubmitted(true);
+                setForm(INITIAL_FORM_STATE);
+
+                timeoutRef.current = setTimeout(() => {
+                    setIsSubmitted(false);
+                }, RESET_TIMEOUT);
+            } catch (err) {
+                setError(
+                    err instanceof Error ? err.message : "Something went wrong"
+                );
+            } finally {
+                setIsSubmitting(false);
             }
-            setIsSubmitted(true);
-            setForm({ name: "", email: "", subject: "", message: "" });
-            setTimeout(() => setIsSubmitted(false), 3000);
-        } catch (err) {
-            setError(err instanceof Error ? err.message : "Something went wrong");
-        } finally {
-            setIsSubmitting(false);
-        }
-    };
+        },
+        [form]
+    );
+
+    useEffect(() => {
+        return () => {
+            if (timeoutRef.current) {
+                clearTimeout(timeoutRef.current);
+            }
+        };
+    }, []);
 
     return {
         form,
