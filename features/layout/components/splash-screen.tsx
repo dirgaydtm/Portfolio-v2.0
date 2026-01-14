@@ -1,31 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import {
-    Terminal,
-    TypingAnimation,
-    AnimatedSpan,
-} from "@/shared/components/blocks/terminal";
+import { Terminal, TypingAnimation, AnimatedSpan } from "@/features/layout/components/terminal";
+import { useSplashScreen } from "../hooks/useSplashScreen";
 
-export function SplashScreen() {
-    const [show, setShow] = useState(true);
-
-    useEffect(() => {
-        const visited = sessionStorage.getItem("hasVisited");
-
-        if (visited) {
-            setTimeout(() => setShow(false), 0);
-            return;
-        }
-
-        const timer = setTimeout(() => {
-            setShow(false);
-            sessionStorage.setItem("hasVisited", "true");
-        }, 6000);
-
-        return () => clearTimeout(timer);
-    }, []);
+export default function SplashScreen() {
+    const show = useSplashScreen();
 
     return (
         <div suppressHydrationWarning>
@@ -36,7 +16,7 @@ export function SplashScreen() {
                         exit={{ opacity: 0 }}
                         transition={{
                             duration: 1,
-                            ease: [0.43, 0.13, 0.23, 0.96]
+                            ease: [0.43, 0.13, 0.23, 0.96],
                         }}
                         className="fixed inset-0 z-100 flex items-center justify-center bg-background"
                     >
@@ -46,23 +26,26 @@ export function SplashScreen() {
                             exit={{ scale: 0.95, opacity: 0, y: -100 }}
                             transition={{
                                 duration: 0.6,
-                                ease: "easeOut"
+                                ease: "easeOut",
                             }}
                         >
-                            <Terminal className="w-xs lg:w-5xl shadow-2xl">
-                                <TypingAnimation delay={100} duration={40}>
+                            <Terminal className="w-xs lg:w-sm shadow-2xl">
+                                <TypingAnimation duration={50}>
                                     $ sudo pacman -S portfolio
                                 </TypingAnimation>
-                                <AnimatedSpan delay={2000} className="text-green-500">
+                                <AnimatedSpan delay={2200} className="text-green-500">
                                     Packages (1) portfolio-dirga-2.0.0
                                 </AnimatedSpan>
-                                <AnimatedSpan delay={2200}>
+                                <AnimatedSpan delay={2400}>
                                     Total Installed Size: 42.0 MiB
                                 </AnimatedSpan>
-                                <TypingAnimation delay={2600} duration={40}>
-                                    Proceed with installation? [Y/n] Y
+                                <AnimatedSpan delay={2600}>
+                                    Proceed with installation? [Y/n]
+                                </AnimatedSpan>
+                                <TypingAnimation delay={3000} duration={10}>
+                                    Y
                                 </TypingAnimation>
-                                <AnimatedSpan delay={4700} className="text-cyan-400">
+                                <AnimatedSpan delay={4000} className="text-cyan-400">
                                     (1/1) installing portfolio-dirga...
                                 </AnimatedSpan>
                             </Terminal>
@@ -73,3 +56,4 @@ export function SplashScreen() {
         </div>
     );
 }
+

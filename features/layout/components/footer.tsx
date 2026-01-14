@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Separator } from "@/shared/components/ui/separator";
 import { profile } from "@/shared/data/profile";
 
-export function Footer() {
+export default function Footer() {
     const currentYear = new Date().getFullYear();
 
     return (
@@ -17,24 +17,26 @@ export function Footer() {
                             {profile.name.split(" ")[0]}
                         </Link>
                         <Separator orientation="vertical" className="h-6" />
-                        <p className="text-sm text-muted-foreground">
-                            {profile.title}
-                        </p>
+                        <p className="text-sm text-muted-foreground">{profile.title}</p>
                     </div>
 
                     <div className="flex items-center gap-2 md:gap-4">
-                        {profile.socials.map((social, index) => (
-                            <a
-                                key={index}
-                                href={social.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-muted-foreground transition-colors hover:text-foreground"
-                            >
-                                <social.icon className="h-5 w-5" />
-                                <span className="sr-only">{social.name}</span>
-                            </a>
-                        ))}
+                        {profile.socials.map((social) => {
+                            const Icon = social.icon;
+                            return (
+                                <a
+                                    key={`${social.name}-${social.url}`}
+                                    href={social.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-muted-foreground transition-colors hover:text-foreground"
+                                    aria-label={social.name}
+                                >
+                                    <Icon className="h-5 w-5" />
+                                    <span className="sr-only">{social.name}</span>
+                                </a>
+                            );
+                        })}
                     </div>
                 </div>
 
@@ -47,3 +49,4 @@ export function Footer() {
         </footer>
     );
 }
+

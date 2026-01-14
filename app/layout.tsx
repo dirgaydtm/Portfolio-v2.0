@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "@/style/globals.css";
-import { ThemeProvider } from "@/shared/components/layout/theme-provider";
-import { ThemeToggle } from "@/shared/components/layout/theme-toggle";
-import { Navbar } from "@/shared/components/layout/navbar";
-import { Footer } from "@/shared/components/layout/footer";
-import { SplashScreen } from "@/shared/components/layout/splash-screen";
+import { ThemeProvider } from "next-themes";
+import ThemeToggle from "@/features/layout/components/theme-toggle";
+import SplashScreen from "@/features/layout/components/splash-screen";
 import { profile } from "@/shared/data/profile";
 
 const geistSans = Geist({
@@ -40,12 +38,8 @@ export default function RootLayout({
         >
           <SplashScreen />
           <div className="relative bg-background">
-            <div className="fixed top-4 right-4 z-50">
-              <ThemeToggle />
-            </div>
+            <ThemeToggle className="fixed top-4 right-4 z-50" />
             <main>{children}</main>
-            <Footer />
-            <Navbar />
           </div>
         </ThemeProvider>
       </body>

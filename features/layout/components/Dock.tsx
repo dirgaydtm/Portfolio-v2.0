@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import {
   motion,
@@ -8,8 +8,8 @@ import {
   useTransform,
   type SpringOptions,
   AnimatePresence
-} from 'motion/react';
-import React, { Children, cloneElement, useEffect, useMemo, useRef, useState } from 'react';
+} from "motion/react";
+import React, { Children, cloneElement, useEffect, useMemo, useRef, useState } from "react";
 
 export type DockItemData = {
   icon: React.ReactNode;
@@ -94,7 +94,7 @@ function DockItem({
       onBlur={() => isHovered.set(0)}
       onMouseMove={handleItemMouseMove}
       onClick={onClick}
-      className={`relative inline-flex items-center justify-center backdrop-blur-md rounded-lg  border border-border shadow-sm transition-colors ${className}`}
+      className={`relative inline-flex items-center justify-center backdrop-blur-md rounded-lg border border-border shadow-sm transition-colors ${className || ""}`}
       tabIndex={0}
       role="button"
       aria-haspopup="true"
@@ -129,7 +129,7 @@ function DockLabel({ children, className = '', isHovered, rotate, translateX }: 
 
   useEffect(() => {
     if (!isHovered) return;
-    const unsubscribe = isHovered.on('change', latest => {
+    const unsubscribe = isHovered.on("change", (latest) => {
       setIsVisible(latest === 1);
     });
     return () => unsubscribe();
@@ -156,7 +156,7 @@ function DockLabel({ children, className = '', isHovered, rotate, translateX }: 
             rotate: rotate,
             whiteSpace: "nowrap",
           }}
-          className={`${className} absolute z-50 -translate-x-1/2 -top-12 uppercase font-semibold left-1/2 hidden lg:flex w-fit whitespace-nowrap rounded-md border border-primary/40 bg-background/90  px-4 py-2 text-sm text-popover-foreground shadow-xl`}
+          className={`absolute z-50 -translate-x-1/2 -top-12 uppercase font-semibold left-1/2 hidden lg:flex w-fit whitespace-nowrap rounded-md border border-primary/40 bg-background/90 px-4 py-2 text-sm text-popover-foreground shadow-xl ${className || ""}`}
           role="tooltip"
         >
           {children}
@@ -194,7 +194,7 @@ export default function Dock({
   const height = useSpring(heightRow, spring);
 
   return (
-    <motion.div style={{ height, scrollbarWidth: 'none' }} className="mx-2 flex max-w-full items-center">
+    <motion.div style={{ height, scrollbarWidth: "none" }} className="mx-2 flex max-w-full items-center">
       <motion.div
         onMouseMove={({ pageX }) => {
           isHovered.set(1);
@@ -204,14 +204,14 @@ export default function Dock({
           isHovered.set(0);
           mouseX.set(Infinity);
         }}
-        className={`${className} absolute bottom-2 left-1/2 cursor-pointer transform -translate-x-1/2 flex items-end w-fit gap-4 rounded-2xl border border-border bg-background/20 backdrop-blur-md pb-2 px-4 shadow-lg`}
+        className={`absolute bottom-2 left-1/2 cursor-pointer transform -translate-x-1/2 flex items-end w-fit gap-4 rounded-2xl border border-border bg-background/20 backdrop-blur-md pb-2 px-4 shadow-lg ${className || ""}`}
         style={{ height: panelHeight }}
         role="toolbar"
         aria-label="Application dock"
       >
-        {items.map((item, index) => (
+        {items.map((item) => (
           <DockItem
-            key={index}
+            key={item.label}
             onClick={item.onClick}
             mouseX={mouseX}
             spring={spring}
