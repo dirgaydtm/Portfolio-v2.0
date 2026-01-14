@@ -16,7 +16,7 @@ export default function ExperienceSection() {
 
             <div className="mx-auto flex flex-col items-center gap-4 max-w-6xl md:py-10 pointer-events-none text-center">
                 <Badge variant="outline">Career</Badge>
-                <Reveal once>
+                <Reveal className="justify-center" once>
                     <Shiny className="text-4xl font-bold tracking-tight text-foreground">
                         Experience
                     </Shiny>
