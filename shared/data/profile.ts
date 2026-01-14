@@ -1,7 +1,7 @@
-import { Github, Linkedin, Instagram } from "lucide-react";
 import type { Profile } from "../types/profile";
-
-export const profile: Readonly<Profile> = {
+import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+    
+export const profile: Profile = {
     name: "Dirga Yuditama",
     title: "Developer",
     bio: "I love creating elegant solutions to complex problems and constantly learning new technologies.",
@@ -12,9 +12,8 @@ export const profile: Readonly<Profile> = {
     resumeUrl: "/resume.pdf",
     availableForWork: true,
     socials: [
-        { name: "dirgaydtm", url: "https://github.com/dirgaydtm", icon: Github },
-        { name: "dirgaydtm", url: "https://linkedin.com/in/dirgaydtm", icon: Linkedin },
-        { name: "dirgaa.yd", url: "https://instagram.com/dirgaa.yd", icon: Instagram },
+        { name: "dirgaydtm", url: "https://github.com/dirgaydtm", icon: FaGithub },
+        { name: "dirgaydtm", url: "https://linkedin.com/in/dirgaydtm", icon: FaLinkedin },
+        { name: "dirgaa.yd", url: "https://instagram.com/dirgaa.yd", icon: FaInstagram },
     ],
 };
-

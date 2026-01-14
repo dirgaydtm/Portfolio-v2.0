@@ -1,10 +1,9 @@
-import type { LucideIcon } from "lucide-react";
 import type { IconType } from "react-icons/lib";
 
 export type SocialLink = {
     name: string;
     url: string;
-    icon: LucideIcon | IconType;
+    icon: IconType;
 };
 
 export type Profile = {
