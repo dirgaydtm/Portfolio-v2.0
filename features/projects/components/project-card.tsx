@@ -2,7 +2,7 @@
 
 import { Card, CardHeader, CardContent } from "@/shared/components/ui/card";
 import { Badge } from "@/shared/components/ui/badge";
-import { Button } from "@/shared/components/ui/button";
+import { LayeredButton } from "@/shared/components/layered-button";
 import { ExternalLink, FolderKanban } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import Image from "next/image";
@@ -38,7 +38,7 @@ export default function ProjectCard({ project, className }: ProjectCardProps) {
               )}
               <span className="line-clamp-1 min-w-0 flex-1">{project.title}</span>
               {project.githubUrl && (
-                <Button
+                <LayeredButton
                   variant="outline"
                   size="icon"
                   className="ml-auto"
@@ -48,10 +48,10 @@ export default function ProjectCard({ project, className }: ProjectCardProps) {
                   <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
                     <FaGithub className="h-4 w-4" />
                   </a>
-                </Button>
+                </LayeredButton>
               )}
               {project.liveUrl && (
-                <Button
+                <LayeredButton
                   variant="outline"
                   size="icon"
                   asChild
@@ -60,7 +60,7 @@ export default function ProjectCard({ project, className }: ProjectCardProps) {
                   <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
                     <ExternalLink className="h-4 w-4" />
                   </a>
-                </Button>
+                </LayeredButton>
               )}
             </CardHeader>
             <CardContent className="flex flex-col text-sm md:text-base text-muted-foreground md:h-34 py-4 justify-between">

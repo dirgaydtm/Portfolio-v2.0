@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/shared/components/ui/card";
 import type { Project } from "../types/project";
-import { Button } from "@/shared/components/ui/button";
+import { LayeredButton } from "@/shared/components/layered-button";
 import { ExternalLink } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import MagicCard from "@/shared/components/ui/magic-card";
@@ -17,18 +17,18 @@ export default function ProjectAbout({ project, className }: ProjectAboutProps) 
                 <CardHeader className="flex py-4 flex-row items-center gap-2 font-semibold md:text-lg">
                     <CardTitle>About the Project</CardTitle>
                     {project.liveUrl && (
-                        <Button variant="outline" className="ml-auto" asChild>
+                        <LayeredButton variant="outline" size="icon-lg" className="ml-auto" asChild>
                             <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                                 <ExternalLink className="h-4 w-4" />
                             </a>
-                        </Button>
+                        </LayeredButton>
                     )}
                     {project.githubUrl && (
-                        <Button variant="outline" asChild>
+                        <LayeredButton variant="outline" size="icon-lg" asChild>
                             <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                                 <FaGithub className="h-4 w-4" />
                             </a>
-                        </Button>
+                        </LayeredButton>
                     )}
                 </CardHeader>
                 <CardContent className="pb-4">
