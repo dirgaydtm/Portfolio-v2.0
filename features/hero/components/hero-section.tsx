@@ -6,6 +6,7 @@ import SocialButton from "./social-button";
 import { LayeredButton } from "@/shared/components/layered-button";
 import { PiDownloadSimple } from "react-icons/pi";
 import { PiHandWaving } from "react-icons/pi";
+import { SiArchlinux } from "react-icons/si";
 
 export default function HeroSection() {
     return (
@@ -29,13 +30,13 @@ export default function HeroSection() {
                     className="relative group my-6 w-46 h-60 md:w-80 md:h-96"
                 />
                 <div className="flex flex-col gap-6 items-center">
-                    <p className="block md:hidden max-w-xl text-base text-center leading-relaxed text-muted-foreground">{profile.bio}</p>
-                    <p className="md:block hidden max-w-xl text-base text-center leading-relaxed text-muted-foreground">{profile.description}</p>
+                    <span className="block md:hidden max-w-xl text-base text-center leading-relaxed text-muted-foreground">{profile.bio} I use <SiArchlinux className="inline-flex"/> btw.</span>
+                    <span className="md:block hidden max-w-xl text-base text-center text-muted-foreground">{profile.description} I use <SiArchlinux className="inline-flex"/> btw.</span>
                     <Separator className="md:block hidden w-full" />
                     <span className="flex flex-wrap items-center justify-center gap-4">
                         <LayeredButton variant="outline" size="lg" className="w-30 md:w-auto" asChild>
                             <a href="#contact">
-                            <PiHandWaving className="h-4 w-4" />  
+                                <PiHandWaving className="h-4 w-4" />
                                 Say Hi!
                             </a>
                         </LayeredButton>

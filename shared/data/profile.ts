@@ -4,8 +4,8 @@ import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 export const profile: Profile = {
     name: "Dirga Yuditama",
     title: "Developer",
-    bio: "I love creating elegant solutions to complex problems and constantly learning new technologies.",
-    description: "I enjoy building modern frontend interfaces, paying attention to small details, smooth interactions, and user experience. Always curious about new tools and better ways to build things.",
+    bio: "I love creating elegant solutions to complex problems and constantly learning new technologies. I use Arch btw.",
+    description: "I enjoy building modern frontend interfaces, caring about details, smooth interactions, and user experience. Always curious about new tools and better ways to build things.",
     avatar: "/Avatar.jpeg",
     logo: "/LogoDirgaaBlack.svg",
     location: "Malang, Indonesia",
