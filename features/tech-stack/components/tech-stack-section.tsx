@@ -2,28 +2,43 @@ import { Badge } from "@/shared/components/ui/badge";
 import { Separator } from "@/shared/components/ui/separator";
 import { techStack } from "../data/tech-stack";
 import TechStacksCarousel from "./tech-stack-carousel";
-import TechStackOverview from "./tech-stack-overview";
+import TechStackCard from "./tech-stack-card";
 import TechStackBadges from "./tech-stack-badges";
+import Reveal from "@/shared/animations/reveal";
+import Shiny from "@/shared/animations/shiny";
+import Fade from "@/shared/animations/fade";
 
 export default function TechStackSection() {
     const techStackItems = Object.values(techStack).flatMap((group) => group.items);
 
     return (
-        <section id="skills" className="px-4 py-20 sm:px-6 overflow-hidden">
-            <div className="mx-auto max-w-7xl z-1 flex flex-col items-center">
-                <div className="text-center">
-                    <Badge variant="outline" className="mb-4">Tech Stack</Badge>
-                    <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-                        Skills & Technologies
-                    </h2>
-                    <p className="mx-auto mt-4 max-w-2xl text-md text-muted-foreground">
+        <section id="skills" className="relative flex px-4 items-center justify-center py-20 sm:px-6 overflow-hidden">
+            <div className="flex flex-col relative gap-10 max-w-7xl z-1">
+                <div className="mx-auto flex flex-col items-center gap-4 max-w-6xl text-center">
+                    <Badge variant="outline">Tech Stack</Badge>
+                    <Reveal once>
+                        <Shiny className="text-4xl font-bold tracking-tight text-foreground sm:text-4xl">
+                            Skills & Technologies
+                        </Shiny>
+                    </Reveal>
+                    <Reveal mode="auto" once direction="down" stagger={0.05} className="justify-center max-w-2xl text-base md:text-lg text-muted-foreground">
                         Here are the technologies I work with on a daily basis to build modern, scalable applications.
-                    </p>
+                    </Reveal>
                 </div>
-                <TechStacksCarousel className="relative mx-auto flex overflow-hidden justify-center items-center w-full" />
-                <Separator className="mx-auto mb-10 w-24" />
-                <TechStackOverview techStack={techStack} className="hidden md:grid max-w-5xl grid-cols-7 gap-4" />
-                <TechStackBadges techStackItems={techStackItems} className="flex flex-wrap justify-center md:hidden gap-2" />
+                <div className="flex flex-col">
+                    <Fade once direction="down" delay={0.8} className="relative">
+                        <TechStacksCarousel className="relative w-sm sm:w-full flex overflow-hidden" />
+                    </Fade>
+                    <Separator className="mx-auto mb-10 py-0 w-24" />
+                    <Fade once direction="down" delay={1} className="flex items-center justify-center">
+                        <div className="hidden md:flex flex-wrap gap-4">
+                            {Object.entries(techStack).map(([groupName, group]) => (
+                                <TechStackCard key={groupName} groupName={groupName} group={group} />
+                            ))}
+                        </div>
+                        <TechStackBadges techStackItems={techStackItems} className="flex flex-wrap max-w-xl items-center justify-center md:hidden gap-2" />
+                    </Fade>
+                </div>
             </div>
         </section>
     );

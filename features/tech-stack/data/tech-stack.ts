@@ -20,8 +20,11 @@ import {
     SiFigma,
     SiMariadb,
     SiShadcnui,
+    SiPostman,
+    SiGnubash,
+    SiFishshell,
 } from "react-icons/si";
-import { FaJava } from "react-icons/fa";
+import { FaJava, FaDatabase } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
 import { Globe, Server, Database, Smartphone, Cloud, GitBranch, Code } from "lucide-react";
 import type { TechStack } from "../types/tech-stack";
@@ -75,6 +78,8 @@ export const techStack: TechStack = {
             { name: "Vercel", category: "Hosting", icon: SiVercel },
             { name: "Linux", category: "OS", icon: SiLinux },
             { name: "Arch Linux", category: "OS", icon: SiArchlinux },
+            { name: "Bash", category: "Shell", icon: SiGnubash },
+            { name: "Fish", category: "Shell", icon: SiFishshell },
         ],
     },
     Tools: {
@@ -83,6 +88,8 @@ export const techStack: TechStack = {
             { name: "Git", category: "VCS", icon: SiGit },
             { name: "VS Code", category: "Editor", icon: VscVscode },
             { name: "Figma", category: "Design", icon: SiFigma },
+            { name: "Postman", category: "API", icon: SiPostman },
+            { name: "DBeaver", category: "Database", icon: FaDatabase },
         ],
     },
 };
