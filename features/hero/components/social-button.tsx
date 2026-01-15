@@ -1,3 +1,4 @@
+import { LayeredButton } from '@/shared/components/layered-button';
 import { Button } from '@/shared/components/ui/button'
 import type { SocialLink } from '@/shared/types/profile'
 
@@ -10,7 +11,7 @@ export default function SocialButton({ socials, className }: SocialButtonProps) 
     return (
         <div className={className}>
             {socials.map((social) => (
-                <Button
+                <LayeredButton
                     key={`${social.name}-${social.url}`}
                     variant="outline"
                     size="icon-lg"
@@ -24,7 +25,7 @@ export default function SocialButton({ socials, className }: SocialButtonProps) 
                     >
                         <social.icon className="h-5 w-5" />
                     </a>
-                </Button>
+                </LayeredButton>
             ))}
         </div>
     )

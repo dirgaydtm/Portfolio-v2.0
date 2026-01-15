@@ -2,15 +2,16 @@ import { Separator } from "@/shared/components/ui/separator";
 import { profile } from "@/shared/data/profile";
 import LetterGlitch from "./letter-glitch";
 import ProfilePicture from "./profile-picture";
-import ScrollButton from "./scroll-button";
 import SocialButton from "./social-button";
-import CvButton from "./cv-button";
+import { LayeredButton } from "@/shared/components/layered-button";
+import { PiDownloadSimple } from "react-icons/pi";
+import { PiHandWaving } from "react-icons/pi";
 
 export default function HeroSection() {
     return (
-        <section id="hero" className="relative flex h-screen flex-col items-center justify-center px-4 sm:px-6">
+        <section id="hero" className="relative flex h-screen flex-col items-center justify-center px-4 sm:px-6 overflow-hidden">
             {/* Background with glitch + overlay */}
-            <div className="absolute inset-0 hidden h-100 dark:flex lg:h-200 z-0">
+            <div className="absolute inset-0 hidden h-screen dark:flex z-0">
                 <LetterGlitch
                     smooth={false}
                     glitchSpeed={100}
@@ -20,21 +21,35 @@ export default function HeroSection() {
             </div>
 
             {/* Main content */}
-            <div className="z-1 mx-auto flex gap-6 max-w-3xl flex-col items-center">
+            <div className="z-1 mx-auto flex gap-12 max-w-3xl flex-col items-center">
                 <ProfilePicture
                     name={profile.name}
                     title={profile.title}
                     avatar={profile.avatar}
                     className="relative group my-6 w-46 h-60 md:w-80 md:h-96"
                 />
-                <p className="max-w-xl text-md text-center leading-relaxed text-muted-foreground">{profile.bio}</p>
-                <Separator className="w-full" />
-                <span className="flex flex-wrap items-center justify-center gap-4 gap-y-2">
-                    <ScrollButton />
-                    <CvButton resumeUrl={profile?.resumeUrl} />
-                    <SocialButton socials={profile.socials} className="flex gap-4" />
-                </span>
+                <div className="flex flex-col gap-6 items-center">
+                    <p className="block md:hidden max-w-xl text-base text-center leading-relaxed text-muted-foreground">{profile.bio}</p>
+                    <p className="md:block hidden max-w-xl text-base text-center leading-relaxed text-muted-foreground">{profile.description}</p>
+                    <Separator className="md:block hidden w-full" />
+                    <span className="flex flex-wrap items-center justify-center gap-4">
+                        <LayeredButton variant="outline" size="lg" className="w-30 md:w-auto" asChild>
+                            <a href="#contact">
+                            <PiHandWaving className="h-4 w-4" />  
+                                Say Hi!
+                            </a>
+                        </LayeredButton>
+                        <LayeredButton size="lg" className="w-30 md:w-auto" asChild>
+                            <a href={profile.resumeUrl} download>
+                                <PiDownloadSimple className="h-4 w-4" />
+                                Resume
+                            </a>
+                        </LayeredButton>
+                        <SocialButton socials={profile.socials} className="flex gap-4" />
+                    </span>
+                </div>
             </div>
+            <Separator className="absolute bottom-0 max-w-400" />
         </section>
     );
 }

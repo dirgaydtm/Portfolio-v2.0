@@ -10,6 +10,7 @@ export type Profile = {
     name: string;
     title: string;
     bio: string;
+    description: string;
     avatar: string;
     logo: string;
     location: string;
