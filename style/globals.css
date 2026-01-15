@@ -59,6 +59,14 @@
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
+
+  /* Curious Buddies Characters - Light Mode */
+  --buddy-alto: #8b5cf6; /* Tall purple character */
+  --buddy-shade: #1f2937; /* Dark character */
+  --buddy-peach: #fb923c; /* Round orange character */
+  --buddy-sunny: #fbbf24; /* Yellow character with mouth */
+  --buddy-pupil: #1f2937;
+  --buddy-eye: #ffffff;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -93,6 +101,14 @@
 .dark {
   --background: oklch(0 0 0);
   --foreground: oklch(0.985 0 0);
+
+  /* Curious Buddies Characters - Dark Mode (Monochromatic) */
+  --buddy-alto: #1a1a1a; /* Tall character */
+  --buddy-shade: #0f0f0f; /* Dark character */
+  --buddy-peach: #262626; /* Round character */
+  --buddy-sunny: #333333; /* Character with mouth */
+  --buddy-pupil: #000000;
+  --buddy-eye: #ffffff;
   --card: oklch(0.14 0 0);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.14 0 0);
