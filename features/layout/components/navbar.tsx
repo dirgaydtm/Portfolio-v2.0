@@ -4,7 +4,6 @@ import { useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { User, Code2, Briefcase, FolderKanban, Mail } from "lucide-react";
 import Dock, { type DockItemData } from "@/features/layout/components/Dock";
-import { scrollToSection } from "@/shared/lib/utils";
 import { useScrollVisibility } from "../hooks/useScrollVisibility";
 
 export default function Navbar() {
@@ -15,27 +14,37 @@ export default function Navbar() {
             {
                 icon: <User />,
                 label: "About",
-                onClick: () => scrollToSection("hero"),
+                onClick: () => {
+                    window.location.hash = "#hero";
+                },
             },
             {
                 icon: <Code2 />,
                 label: "Skills",
-                onClick: () => scrollToSection("skills"),
+                onClick: () => {
+                    window.location.hash = "#skills";
+                },
             },
             {
                 icon: <Briefcase />,
                 label: "Experience",
-                onClick: () => scrollToSection("experience"),
+                onClick: () => {
+                    window.location.hash = "#experience";
+                },
             },
             {
                 icon: <FolderKanban />,
                 label: "Projects",
-                onClick: () => scrollToSection("projects"),
+                onClick: () => {
+                    window.location.hash = "#projects";
+                },
             },
             {
                 icon: <Mail />,
                 label: "Contact",
-                onClick: () => scrollToSection("contact"),
+                onClick: () => {
+                    window.location.hash = "#contact";
+                },
             },
         ],
         []
