@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { Button } from "@/shared/components/ui/button";
+import { Button } from "@/shared/components/button";
 import { AlertCircle, RefreshCw } from "lucide-react";
 
 export default function Error({
@@ -12,8 +12,9 @@ export default function Error({
     reset: () => void;
 }) {
     useEffect(() => {
-        // Log error to console (bisa diganti dengan error reporting service)
-        console.error(error);
+        if (process.env.NODE_ENV === "development") {
+            console.error(error);
+        }
     }, [error]);
 
     return (

@@ -1,7 +1,7 @@
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/shared/components/ui/hover-card";
-import { Badge } from "@/shared/components/ui/badge";
-import { Card, CardContent } from "@/shared/components/ui/card";
-import MagicCard from "@/shared/components/ui/magic-card";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/shared/components/hover-card";
+import { Badge } from "@/shared/components/badge";
+import { Card, CardContent } from "@/shared/components/card";
+import MagicCard from "@/shared/components/magic-card";
 import type { TechStackGroup } from "../types/tech-stack";
 
 interface TechStackCardProps {

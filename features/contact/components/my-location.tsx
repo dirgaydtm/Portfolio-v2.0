@@ -1,6 +1,6 @@
 "use client";
 
-import { Map, MapMarker, MapTileLayer, MapTooltip, MapZoomControl } from "@/shared/components/ui/map";
+import { Map, MapMarker, MapTileLayer, MapTooltip, MapZoomControl } from "@/shared/components/map";
 
 interface MyLocationProps {
     location: string;

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Separator } from "@/shared/components/ui/separator";
+import { Separator } from "@/shared/components/separator";
 import { profile } from "@/shared/data/profile";
 
 export default function Footer() {

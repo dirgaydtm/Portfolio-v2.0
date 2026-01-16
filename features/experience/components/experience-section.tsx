@@ -1,6 +1,6 @@
 import { experiences } from "../data/experiences";
 import Timeline from "./timeline";
-import { Badge } from "@/shared/components/ui/badge";
+import { Badge } from "@/shared/components/badge";
 import BackgroundBoxes from "@/features/experience/components/background-boxes";
 import Shiny from "@/shared/animations/shiny";
 import Reveal from "@/shared/animations/reveal";

@@ -1,7 +1,7 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/shared/components/ui/card";
-import { Badge } from "@/shared/components/ui/badge";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/shared/components/card";
+import { Badge } from "@/shared/components/badge";
 import type { Project } from "../types/project";
-import MagicCard from "@/shared/components/ui/magic-card";
+import MagicCard from "@/shared/components/magic-card";
 
 interface ProjectTechnologiesProps {
     project: Project;

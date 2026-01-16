@@ -1,5 +1,5 @@
-import { Badge } from "@/shared/components/ui/badge";
-import { Separator } from "@/shared/components/ui/separator";
+import { Badge } from "@/shared/components/badge";
+import { Separator } from "@/shared/components/separator";
 import { projects } from "../data/projects";
 import ProjectCard from "./project-card";
 import Reveal from "@/shared/animations/reveal";

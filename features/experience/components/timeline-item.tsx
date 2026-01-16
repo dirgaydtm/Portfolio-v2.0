@@ -1,4 +1,4 @@
-import { Badge } from "@/shared/components/ui/badge";
+import { Badge } from "@/shared/components/badge";
 import { Building2, Calendar } from "lucide-react";
 import type { Experience } from "../types/experience";
 import Fade from "@/shared/animations/fade";

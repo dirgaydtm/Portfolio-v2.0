@@ -1,5 +1,5 @@
-import { Separator } from "@/shared/components/ui/separator";
-import { Card, CardContent } from "@/shared/components/ui/card";
+import { Separator } from "@/shared/components/separator";
+import { Card, CardContent } from "@/shared/components/card";
 import { profile } from "@/shared/data/profile";
 import MyLocation from "./my-location";
 import ContactSocials from "./contact-socials";
@@ -8,7 +8,7 @@ import AvailableBadge from "./available-badge";
 import Reveal from "@/shared/animations/reveal";
 import Shiny from "@/shared/animations/shiny";
 import Fade from "@/shared/animations/fade";
-import MagicCard from "@/shared/components/ui/magic-card";
+import MagicCard from "@/shared/components/magic-card";
 
 export default function ContactSection() {
     return (

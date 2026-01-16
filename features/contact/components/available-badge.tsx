@@ -1,4 +1,4 @@
-import { Badge } from "@/shared/components/ui/badge";
+import { Badge } from "@/shared/components/badge";
 
 interface AvailableBadgeProps {
     availableForWork: boolean;

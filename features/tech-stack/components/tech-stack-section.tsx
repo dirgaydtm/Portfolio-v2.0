@@ -1,5 +1,5 @@
-import { Badge } from "@/shared/components/ui/badge";
-import { Separator } from "@/shared/components/ui/separator";
+import { Badge } from "@/shared/components/badge";
+import { Separator } from "@/shared/components/separator";
 import { techStack } from "../data/tech-stack";
 import TechStacksCarousel from "./tech-stack-carousel";
 import TechStackCard from "./tech-stack-card";
