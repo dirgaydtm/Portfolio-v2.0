@@ -1,8 +1,8 @@
 "use client"
 
 import { cn } from "@/shared/lib/utils"
-import { Button } from "@/shared/components/ui/button"
-import { ButtonGroup } from "@/shared/components/ui/button-group"
+import { Button } from "@/shared/components/button"
+import { ButtonGroup } from "@/shared/components/button-group"
 import {
     DropdownMenu,
     DropdownMenuCheckboxItem,
@@ -12,7 +12,7 @@ import {
     DropdownMenuRadioItem,
     DropdownMenuSeparator,
     DropdownMenuTrigger,
-} from "@/shared/components/ui/dropdown-menu"
+} from "@/shared/components/dropdown-menu"
 import type { CheckboxItem } from "@radix-ui/react-dropdown-menu"
 import type {
     Circle,
@@ -216,7 +216,7 @@ function MapTileLayer({
         resolvedTheme === "dark" && darkAttribution
             ? darkAttribution
             : (attribution ??
-              '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attributions">CARTO</a>')
+                '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attributions">CARTO</a>')
 
     useEffect(() => {
         if (context) {
@@ -339,7 +339,7 @@ function MapLayers({
         if (tileLayers.length > 0 && !selectedTileLayer) {
             const validDefaultValue =
                 defaultTileLayer &&
-                tileLayers.some((layer) => layer.name === defaultTileLayer)
+                    tileLayers.some((layer) => layer.name === defaultTileLayer)
                     ? defaultTileLayer
                     : tileLayers[0].name
             setSelectedTileLayer(validDefaultValue)
@@ -763,15 +763,15 @@ function MapLocateControl({
                     isLocating
                         ? "Locating..."
                         : position
-                          ? "Stop tracking"
-                          : "Track location"
+                            ? "Stop tracking"
+                            : "Track location"
                 }
                 aria-label={
                     isLocating
                         ? "Locating..."
                         : position
-                          ? "Stop location tracking"
-                          : "Start location tracking"
+                            ? "Stop location tracking"
+                            : "Start location tracking"
                 }
                 className={cn(
                     "absolute right-1 bottom-1 z-1000 border",
@@ -968,9 +968,9 @@ function MapDrawPolyline({
                 new L.Draw.Polyline(map, {
                     ...(mapDrawHandleIcon
                         ? {
-                              icon: mapDrawHandleIcon,
-                              touchIcon: mapDrawHandleIcon,
-                          }
+                            icon: mapDrawHandleIcon,
+                            touchIcon: mapDrawHandleIcon,
+                        }
                         : {}),
                     showLength,
                     drawError,
@@ -1051,9 +1051,9 @@ function MapDrawPolygon({
                 new L.Draw.Polygon(map, {
                     ...(mapDrawHandleIcon
                         ? {
-                              icon: mapDrawHandleIcon,
-                              touchIcon: mapDrawHandleIcon,
-                          }
+                            icon: mapDrawHandleIcon,
+                            touchIcon: mapDrawHandleIcon,
+                        }
                         : {}),
                     drawError,
                     shapeOptions,
