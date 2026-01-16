@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { CuriousBuddies } from "./curious-buddies";
+import type { CharacterColors } from "./curious-buddies";
 import { LayeredButton } from "@/shared/components/layered-button";
 import { IoHomeSharp } from "react-icons/io5";
 import Reveal from "@/shared/animations/reveal";
 
-const buddyColors = {
+const buddyColors: CharacterColors = {
   alto: "var(--buddy-alto)",
   shade: "var(--buddy-shade)",
   peach: "var(--buddy-peach)",
@@ -15,7 +16,7 @@ const buddyColors = {
 
 export default function NotFoundSection() {
   return (
-    <div className="h-screen relative flex justify-center items-center flex-col overflow-hidden bg-background">
+    <main className="h-screen relative flex justify-center items-center flex-col overflow-hidden bg-background">
       <div className="flex z-10 flex-col items-center text-center px-4">
         <h1 className="text-[12rem] md:text-[16rem] font-black leading-none tracking-tighter text-foreground/5 select-none dark:[text-shadow:0_0_80px_var(--foreground)]">
           404
@@ -30,8 +31,8 @@ export default function NotFoundSection() {
           </Reveal>
           <div className="pt-6">
             <LayeredButton size="lg" asChild>
-              <Link href="/">
-                <IoHomeSharp />
+              <Link href="/" aria-label="Navigate to home page">
+                <IoHomeSharp aria-hidden="true" />
                 Take me home
               </Link>
             </LayeredButton>
@@ -40,13 +41,12 @@ export default function NotFoundSection() {
       </div>
 
       {/* Curious Buddies - They're looking around confused */}
-      <div className="absolute bottom-0 group left-0 overflow-hidden">
+      <div className="absolute bottom-0 group left-0 overflow-hidden" aria-hidden="true">
         <CuriousBuddies
           colors={buddyColors}
           className="transition-transform duration-500 group-hover:translate-y-60"
         />
       </div>
-
-    </div>
+    </main>
   );
 }

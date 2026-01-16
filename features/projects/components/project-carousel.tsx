@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/shared/components/ui/carousel";
-import { AspectRatio } from "@/shared/components/ui/aspect-ratio";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/shared/components/carousel";
+import { AspectRatio } from "@/shared/components/aspect-ratio";
 import type { Project } from "../types/project";
 
 interface ProjectCarouselProps {
@@ -16,28 +16,29 @@ export default function ProjectCarousel({ project, className }: ProjectCarouselP
     }
 
     return (
-        <section className={className}>
+        <section className={className} aria-label={`${project.title} image gallery`}>
             <Carousel className="w-full">
                 <CarouselContent>
                     {project.images.map((image, index) => (
-                        <CarouselItem key={index}>
+                        <CarouselItem key={`${project.slug}-image-${index}`}>
                             <div className="relative overflow-hidden rounded-lg">
                                 <AspectRatio ratio={16 / 9}>
                                     <Image
                                         src={image}
-                                        alt={`${project.title} screenshot ${index + 1}`}
+                                        alt={`${project.title} screenshot ${index + 1} of ${project.images.length}`}
                                         fill
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
                                         className="object-cover transition-transform scale-102 duration-300 hover:scale-105 cursor-grab"
+                                        loading={index === 0 ? "eager" : "lazy"}
                                     />
                                 </AspectRatio>
                             </div>
                         </CarouselItem>
                     ))}
                 </CarouselContent>
-                <CarouselPrevious className="cursor-pointer md:-left-16 left-2" />
-                <CarouselNext className="cursor-pointer md:-right-16 right-2" />
+                <CarouselPrevious className="cursor-pointer md:-left-16 left-2" aria-label="Previous image" />
+                <CarouselNext className="cursor-pointer md:-right-16 right-2" aria-label="Next image" />
             </Carousel>
         </section>
     );
 }
-

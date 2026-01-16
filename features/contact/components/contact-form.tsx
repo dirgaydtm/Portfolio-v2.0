@@ -1,10 +1,10 @@
 "use client";
 
 import { Send, Loader2 } from "lucide-react";
-import { Button } from "@/shared/components/ui/button";
-import { Input } from "@/shared/components/ui/input";
-import { Textarea } from "@/shared/components/ui/textarea";
-import { Label } from "@/shared/components/ui/label";
+import { Button } from "@/shared/components/button";
+import { Input } from "@/shared/components/input";
+import { Textarea } from "@/shared/components/textarea";
+import { Label } from "@/shared/components/label";
 import { useContactForm } from "../hooks/useContactForm";
 
 export default function ContactForm({ className }: React.ComponentProps<"form">) {
@@ -68,17 +68,36 @@ export default function ContactForm({ className }: React.ComponentProps<"form">)
                     className="resize-none h-24"
                 />
             </div>
-            {error && <div className="text-red-500 text-sm">{error}</div>}
+            {error && (
+                <div
+                    className="text-destructive text-sm"
+                    role="alert"
+                    aria-live="polite"
+                >
+                    {error}
+                </div>
+            )}
+            {isSubmitted && !error && (
+                <div
+                    className="text-green-600 dark:text-green-400 text-sm"
+                    role="alert"
+                    aria-live="polite"
+                >
+                    Message sent successfully! I&apos;ll get back to you soon.
+                </div>
+            )}
             <Button type="submit" className="w-full" disabled={isSubmitting || isSubmitted}>
                 {isSubmitting ? (
                     <>
-                        <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Sending...
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden="true" />
+                        Sending...
                     </>
                 ) : isSubmitted ? (
                     <>Message Sent!</>
                 ) : (
                     <>
-                        <Send className="mr-2 h-4 w-4" /> Send Message
+                        <Send className="mr-2 h-4 w-4" aria-hidden="true" />
+                        Send Message
                     </>
                 )}
             </Button>

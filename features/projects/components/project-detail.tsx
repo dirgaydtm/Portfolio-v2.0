@@ -6,15 +6,19 @@ import ProjectFeatures from "./project-features";
 import ProjectTechnologies from "./project-technologies";
 import Fade from "@/shared/animations/fade";
 
-export default function ProjectDetail({ project }: { project: Project }) {
+interface ProjectDetailProps {
+    project: Project;
+}
+
+export default function ProjectDetail({ project }: ProjectDetailProps) {
     return (
-        <div className="px-4 py-12 sm:px-6">
+        <main className="px-4 py-12 sm:px-6">
             <div className="mx-auto max-w-5xl">
-                <ProjectHeader project={project} className="mb-8"/>
+                <ProjectHeader project={project} className="mb-8" />
 
                 <ProjectCarousel project={project} className="mb-6" />
 
-                <section className="grid gap-6 lg:grid-cols-3">
+                <section className="grid gap-6 lg:grid-cols-3" aria-label="Project details">
                     <Fade once direction="down" className="order-1 md:order-0 lg:col-span-3">
                         <ProjectAbout project={project} className="border-border" />
                     </Fade>
@@ -26,6 +30,6 @@ export default function ProjectDetail({ project }: { project: Project }) {
                     </Fade>
                 </section>
             </div>
-        </div>
+        </main>
     );
 }

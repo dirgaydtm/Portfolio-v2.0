@@ -1,5 +1,4 @@
 import { LayeredButton } from '@/shared/components/layered-button';
-import { Button } from '@/shared/components/ui/button'
 import type { SocialLink } from '@/shared/types/profile'
 
 interface SocialButtonProps {
@@ -23,7 +22,7 @@ export default function SocialButton({ socials, className }: SocialButtonProps) 
                         rel="noopener noreferrer"
                         aria-label={`Visit ${social.name} profile`}
                     >
-                        <social.icon className="h-5 w-5" />
+                        <social.icon className="h-5 w-5" aria-hidden="true" />
                     </a>
                 </LayeredButton>
             ))}

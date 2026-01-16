@@ -1,4 +1,4 @@
-import { Separator } from "@/shared/components/ui/separator";
+import { Separator } from "@/shared/components/separator";
 import { profile } from "@/shared/data/profile";
 import LetterGlitch from "./letter-glitch";
 import ProfilePicture from "./profile-picture";
@@ -12,7 +12,7 @@ export default function HeroSection() {
     return (
         <section id="hero" className="relative flex h-screen flex-col items-center justify-center px-4 sm:px-6 overflow-hidden">
             {/* Background with glitch + overlay */}
-            <div className="absolute inset-0 hidden h-screen dark:flex z-0">
+            <div className="absolute inset-0 hidden h-[60vh] dark:flex z-0">
                 <LetterGlitch
                     smooth={false}
                     glitchSpeed={100}
@@ -30,19 +30,19 @@ export default function HeroSection() {
                     className="relative group my-6 w-46 h-60 md:w-80 md:h-96"
                 />
                 <div className="flex flex-col gap-6 items-center">
-                    <span className="block md:hidden max-w-xl text-base text-center leading-relaxed text-muted-foreground">{profile.bio} I use <SiArchlinux className="inline-flex"/> btw.</span>
-                    <span className="md:block hidden max-w-xl text-base text-center text-muted-foreground">{profile.description} I use <SiArchlinux className="inline-flex"/> btw.</span>
+                    <span className="block md:hidden max-w-xl text-base text-center leading-relaxed text-muted-foreground">{profile.bio} I use <SiArchlinux className="inline-flex" /> btw.</span>
+                    <span className="md:block hidden max-w-xl text-base text-center text-muted-foreground">{profile.description} I use <SiArchlinux className="inline-flex" /> btw.</span>
                     <Separator className="md:block hidden w-full" />
                     <span className="flex flex-wrap items-center justify-center gap-4">
                         <LayeredButton variant="outline" size="lg" className="w-30 md:w-auto" asChild>
-                            <a href="#contact">
-                                <PiHandWaving className="h-4 w-4" />
+                            <a href="#contact" aria-label="Navigate to contact section">
+                                <PiHandWaving className="h-4 w-4" aria-hidden="true" />
                                 Say Hi!
                             </a>
                         </LayeredButton>
                         <LayeredButton size="lg" className="w-30 md:w-auto" asChild>
-                            <a href={profile.resumeUrl} download>
-                                <PiDownloadSimple className="h-4 w-4" />
+                            <a href={profile.resumeUrl} download aria-label="Download resume">
+                                <PiDownloadSimple className="h-4 w-4" aria-hidden="true" />
                                 Resume
                             </a>
                         </LayeredButton>

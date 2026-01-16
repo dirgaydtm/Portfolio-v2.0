@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowLeft, Calendar, Tag } from "lucide-react";
-import { Button } from "@/shared/components/ui/button";
+import { Button } from "@/shared/components/button";
 import type { Project } from "../types/project";
 import Shiny from "@/shared/animations/shiny";
 import Reveal from "@/shared/animations/reveal";

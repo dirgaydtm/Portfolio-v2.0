@@ -1,21 +1,23 @@
 "use client";
 
-import { Card, CardHeader, CardContent } from "@/shared/components/ui/card";
-import { Badge } from "@/shared/components/ui/badge";
+import { memo } from "react";
+import { Card, CardHeader, CardContent } from "@/shared/components/card";
+import { Badge } from "@/shared/components/badge";
 import { LayeredButton } from "@/shared/components/layered-button";
 import { ExternalLink, FolderKanban } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import type { Project } from "../types/project";
-import MagicCard from "@/shared/components/ui/magic-card";
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/shared/components/ui/hover-card";
+import MagicCard from "@/shared/components/magic-card";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/shared/components/hover-card";
+
 interface ProjectCardProps {
   project: Project;
   className?: string;
 }
 
-export default function ProjectCard({ project, className }: ProjectCardProps) {
+function ProjectCard({ project, className }: ProjectCardProps) {
   const router = useRouter();
   return (
     <HoverCard openDelay={10} closeDelay={100}>
@@ -26,7 +28,7 @@ export default function ProjectCard({ project, className }: ProjectCardProps) {
               {project.logo ? (
                 <Image
                   src={project.logo}
-                  alt={project.title + 'logo'}
+                  alt={`${project.title} logo`}
                   width={32}
                   height={32}
                   className="object-contain size-8 flex items-center justify-center bg-transparent text-primary-foreground rounded-full overflow-hidden"
@@ -45,8 +47,14 @@ export default function ProjectCard({ project, className }: ProjectCardProps) {
                   asChild
                   onClick={(e) => e.stopPropagation()}
                 >
-                  <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
-                    <FaGithub className="h-4 w-4" />
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    aria-label={`View ${project.title} source code on GitHub`}
+                  >
+                    <FaGithub className="h-4 w-4" aria-hidden="true" />
                   </a>
                 </LayeredButton>
               )}
@@ -57,8 +65,14 @@ export default function ProjectCard({ project, className }: ProjectCardProps) {
                   asChild
                   onClick={(e) => e.stopPropagation()}
                 >
-                  <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
-                    <ExternalLink className="h-4 w-4" />
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    aria-label={`Visit ${project.title} live site`}
+                  >
+                    <ExternalLink className="h-4 w-4" aria-hidden="true" />
                   </a>
                 </LayeredButton>
               )}
@@ -88,7 +102,9 @@ export default function ProjectCard({ project, className }: ProjectCardProps) {
               src={project.images[0]}
               alt={`${project.title} preview`}
               fill
+              sizes="(max-width: 768px) 100vw, 400px"
               className="object-cover"
+              loading="lazy"
             />
           </div>
         </HoverCardContent>
@@ -97,3 +113,4 @@ export default function ProjectCard({ project, className }: ProjectCardProps) {
   );
 }
 
+export default memo(ProjectCard);
