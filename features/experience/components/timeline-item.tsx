@@ -26,7 +26,7 @@ export default function TimelineItem({ item, isRight, className }: TimelineItemP
                     <Building2 className="size-5 shrink-0 h-full hidden md:flex text-muted-foreground" />
                     <span className="text-sm md:text-base font-medium text-foreground">{item.company}</span>
                 </Reveal>
-                <Fade direction="down" once delay={1} className="space-y-3">
+                <Fade direction="down" once delay={0.5} className="space-y-3">
                     <div className="space-y-1">
                         <Shiny className="text-xl md:text-2xl font-semibold tracking-tight text-foreground">{item.title}</Shiny>
                         <div className={`flex items-center gap-2 mt-1 text-sm md:text-base text-muted-foreground ${justifyClass}`}>

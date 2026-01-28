@@ -4,12 +4,12 @@ import { memo } from "react";
 import { motion } from "motion/react";
 
 function BackgroundBoxes({ className } : { className?: string }) {
-  const rows = 67, cols = 42;
+  const rows = 55, cols = 50;
 
   return (
     <div
       style={{
-        transform: `translate(-20%,-10%) skewX(-48deg) skewY(14deg) scale(1.1)`,
+        transform: `translate(-20%,-10%) skewX(-48deg) skewY(14deg) scale(1.2)`,
       }}
       className={className}
     >

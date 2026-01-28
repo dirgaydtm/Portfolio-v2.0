@@ -28,7 +28,7 @@ export default function ProjectCarousel({ project, className }: ProjectCarouselP
                                         alt={`${project.title} screenshot ${index + 1} of ${project.images.length}`}
                                         fill
                                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
-                                        className="object-cover transition-transform scale-102 duration-300 hover:scale-105 cursor-grab"
+                                        className="object-contain transition-transform scale-102 duration-300 hover:scale-105 cursor-grab"
                                         loading={index === 0 ? "eager" : "lazy"}
                                     />
                                 </AspectRatio>

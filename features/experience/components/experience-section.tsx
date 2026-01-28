@@ -8,10 +8,8 @@ import Reveal from "@/shared/animations/reveal";
 export default function ExperienceSection() {
     return (
         <section id="experience" className="relative bg-background py-20 px-4 overflow-hidden">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 z-0 max-w-600 overflow-hidden h-full">
-                <BackgroundBoxes className="flex h-full" />
-                <div className="absolute inset-0 h-10 md:h-30 bg-background [clip-path:polygon(100%_0,100%_100%,0_0)]" />
-                <div className="absolute left-0 bottom-0 w-full h-10 md:h-30 bg-background [clip-path:polygon(0_0,100%_100%,0_100%)]" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 max-w-600 overflow-hidden h-full">
+                <BackgroundBoxes className="flex h-full z-0" />
             </div>
 
             <div className="mx-auto flex flex-col items-center gap-4 max-w-6xl md:py-10 pointer-events-none">
@@ -27,6 +25,9 @@ export default function ExperienceSection() {
                 </Reveal>
                 <Timeline className="pt-10" items={experiences} />
             </div>
+
+            <div className="absolute z-10 inset-0 h-10 md:h-30 bg-background [clip-path:polygon(100%_0,100%_100%,0_0)]" />
+            <div className="absolute z-10 left-0 bottom-0 w-full h-10 md:h-30 bg-background [clip-path:polygon(0_0,100%_100%,0_100%)]" />
         </section>
     );
 }

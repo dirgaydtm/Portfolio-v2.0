@@ -8,8 +8,8 @@ import Fade from "@/shared/animations/fade";
 
 export default function ProjectsSection() {
     return (
-        <section id="projects" className="relative flex px-4 items-center justify-center py-20 sm:px-6">
-            <div className="flex flex-col relative gap-10 max-w-7xl z-1">
+        <section id="projects" className="relative flex items-center justify-center py-20 px-4 overflow-hidden">
+            <div className="flex flex-col relative gap-10 max-w-7xl">
                 <div className="mx-auto flex flex-col items-center gap-4 max-w-6xl text-center">
                     <Badge variant="outline">
                         Portfolio
@@ -19,14 +19,14 @@ export default function ProjectsSection() {
                             Featured Projects
                         </Shiny>
                     </Reveal>
-                    <Reveal mode="auto" once direction="down" stagger={0.05} className="justify-center max-w-lg text-base md:text-lg text-muted-foreground">
+                    <Reveal mode="auto" once direction="down" stagger={0.05} className="justify-center max-w-2xl text-base md:text-lg text-muted-foreground">
                         A selection of projects I&apos;ve worked on, from web to
                         mobile apps.
                     </Reveal>
                 </div>
                 <Fade once direction="down" delay={0.4} className="flex flex-wrap gap-4 justify-center">
                     {projects.map((project) => (
-                        <ProjectCard key={project.slug} project={project} className="w-sm md:w-sm  hover:-translate-y-2 cursor-pointer transition-all shadow-none hover:shadow-primary/5  hover:shadow-xl" />
+                        <ProjectCard key={project.slug} project={project} className="w-xs md:w-sm hover:-translate-y-2 cursor-pointer transition-all shadow-none hover:shadow-primary/5  hover:shadow-xl" />
                     ))}
                 </Fade>
             </div>

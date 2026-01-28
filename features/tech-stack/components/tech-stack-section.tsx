@@ -12,12 +12,12 @@ export default function TechStackSection() {
     const techStackItems = Object.values(techStack).flatMap((group) => group.items);
 
     return (
-        <section id="skills" className="relative flex px-4 items-center justify-center py-20 sm:px-6 overflow-hidden">
+        <section id="skills" className="relative flex items-center justify-center py-20 px-6 overflow-hidden">
             <div className="flex flex-col relative gap-10 max-w-7xl z-1">
                 <div className="mx-auto flex flex-col items-center gap-4 max-w-6xl text-center">
                     <Badge variant="outline">Tech Stack</Badge>
                     <Reveal once>
-                        <Shiny className="text-4xl font-bold tracking-tight text-foreground sm:text-4xl">
+                        <Shiny className="text-4xl font-bold tracking-tight text-foreground">
                             Skills & Technologies
                         </Shiny>
                     </Reveal>
@@ -26,9 +26,8 @@ export default function TechStackSection() {
                     </Reveal>
                 </div>
                 <div className="flex flex-col">
-                    <Fade once direction="down" delay={0.8} className="relative">
-                        <TechStacksCarousel className="relative w-sm sm:w-full flex overflow-hidden" />
-                    </Fade>
+                        <TechStacksCarousel className="relative w-sm sm:w-full flex items-center overflow-hidden" />
+           
                     <Separator className="mx-auto mb-10 py-0 w-24" />
                     <Fade once direction="down" delay={1} className="flex items-center justify-center">
                         <div className="hidden md:flex flex-wrap gap-4">

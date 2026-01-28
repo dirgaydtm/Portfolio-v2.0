@@ -13,12 +13,10 @@ function TechStacksCarousel({ className }: { className?: string }) {
     <section className={className}>
       <Carousel opts={{ loop: true }} plugins={[AutoScroll({ playOnInit: true, speed: 1 })]}>
         <CarouselContent className="h-40">
-          {techStackItems.map((tech, index) => (
-            <CarouselItem key={tech.name} className="flex basis-1/12 animate-float-1 justify-center lg:basis-1/8"
-              style={{ animationDelay: `${index * 0.15}s` }}>
-              <div
-                className="flex shrink-0 items-center justify-center hover:animate-spin"
-              >
+          {techStackItems.map((tech) => (
+            <CarouselItem key={tech.name}
+              className="flex justify-center basis-1/12 md:basis-1/8">
+              <div className="flex shrink-0 items-center justify-center hover:animate-spin">
                 <tech.icon
                   className="h-10 w-10 text-foreground/80"
                   aria-label={tech.name}

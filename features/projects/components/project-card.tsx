@@ -79,15 +79,15 @@ function ProjectCard({ project, className }: ProjectCardProps) {
             </CardHeader>
             <CardContent className="flex flex-col text-sm md:text-base text-muted-foreground md:h-34 py-4 justify-between">
               <p className="line-clamp-2">{project.shortDescription}</p>
-              <div className="mt-3 flex flex-wrap gap-1">
-                {project.technologies.slice(0, 2).map((tech) => (
+              <div className="pt-6 flex flex-wrap gap-1">
+                {project.technologies.slice(0, 3).map((tech) => (
                   <Badge key={tech} variant="secondary" className="text-xs">
                     {tech}
                   </Badge>
                 ))}
-                {project.technologies.length > 2 && (
+                {project.technologies.length > 3 && (
                   <Badge variant="secondary" className="text-xs">
-                    +{project.technologies.length - 2}
+                    +{project.technologies.length - 3}
                   </Badge>
                 )}
               </div>
@@ -103,7 +103,7 @@ function ProjectCard({ project, className }: ProjectCardProps) {
               alt={`${project.title} preview`}
               fill
               sizes="(max-width: 768px) 100vw, 400px"
-              className="object-cover"
+              className="object-contain"
               loading="lazy"
             />
           </div>

@@ -20,12 +20,12 @@ export default function ContactSection() {
                 <Reveal once>
                     <Shiny className="text-4xl font-bold tracking-tight text-foreground">Get In Touch</Shiny>
                 </Reveal>
-                <Reveal mode="auto" once direction="down" stagger={0.05} className="max-w-lg justify-center text-base md:text-lg text-muted-foreground">
+                <Reveal mode="auto" once direction="down" stagger={0.03} className="max-w-lg justify-center text-base md:text-lg text-muted-foreground">
                     Have a project in mind or just want to say hi? Feel free to reach out. I always open to discussing new opportunities.
                 </Reveal>
             </div>
 
-            <Fade once direction="down" staggerChildren={0.5} delay={0.2}>
+            <Fade once direction="down" staggerChildren={0.5} delay={0.5}>
                 <div className="flex flex-col mx-auto max-w-5xl md:h-116 md:flex-row overflow-hidden justify-center gap-5">
                     <MyLocation location={profile.location} position={[-7.9666, 112.6326]} className="flex-3 hidden xl:flex rounded-2xl border border-border shadow-sm" />
                     <Card className="p-0">
