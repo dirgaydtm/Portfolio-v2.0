@@ -3,6 +3,21 @@ import type { Experience } from "../types/experience";
 
 export const experiences: Experience[] = [
     {
+        title: "Vice Head of Information Technology Publication Department",
+        company: "KBMDSI FILKOM UB",
+        period: "Jan 2026 – Present",
+        description:
+            "Coordinated and supervised the development of IT publication platforms, managed task distribution within the technical team, ensured code quality and consistency, and acted as a bridge between designers, developers, and organizational stakeholders.",
+        skills: [
+            "Technical Leadership",
+            "Project Coordination",
+            "Code Review",
+            "Team Collaboration"
+        ],
+        icon: Code,
+    },
+
+    {
         title: "Bakti BCA Awardee 2026",
         company: "PT Bank Central Asia Tbk",
         period: "Dec 2025 – Present",
@@ -19,9 +34,9 @@ export const experiences: Experience[] = [
     {
         title: "Frontend Developer",
         company: "KBMDSI FILKOM UB",
-        period: "Mar 2025 – Present",
+        period: "Mar 2025 – Jan 2026",
         description:
-            "Developed and maintained responsive web interfaces, collaborated with designers, ensured clean, maintainable frontend code.",
+            "Developed and maintained responsive web interfaces using React, collaborated with designers and backend teams to implement features, and ensured code consistency and maintainability across the application.",
         skills: [
             "React.js",
             "JavaScript",
@@ -35,14 +50,16 @@ export const experiences: Experience[] = [
         company: "Faculty of Computer Science, Brawijaya University",
         period: "Sep – Dec 2025",
         description:
-            "Assisted teaching fundamental Java programming to 35 students, guided lab sessions, and provided code reviews and feedback.",
+            "Assisted a fundamental Java programming course for 35 students by facilitating lab sessions, reviewing assignments, guiding students in object-oriented programming and debugging practices, and supporting their understanding of core programming concepts.",
         skills: [
             "Java",
             "Object-Oriented Programming",
             "Code Review",
-            "Teaching"
+            "Debugging",
+            "Technical Mentoring"
         ],
         icon: GraduationCap,
     },
+
 ];
 

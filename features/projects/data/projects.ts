@@ -2,6 +2,36 @@ import type { Project } from "../types/project";
 
 export const projects: Project[] = [
     {
+        slug: "weathix",
+        title: "Weathix",
+        shortDescription:
+            "Cross-platform weather application built with Flutter and Dart.",
+        fullDescription:
+            "Weathix is a modern, cross-platform weather app built using Flutter (Dart) that provides real-time weather data, location-based forecasts, and smooth animated UI. It integrates the OpenWeatherMap API, adapts UI between day and night modes, and supports Android, iOS, and web platforms.",
+        images: [
+            "https://cdn.jsdelivr.net/gh/dirgaydtm/weathix@main/assets/images/Preview1.jpg",
+            "https://cdn.jsdelivr.net/gh/dirgaydtm/weathix@main/assets/images/Preview2.jpg"
+        ],
+        technologies: [
+            "Flutter",
+            "Dart",
+            "OpenWeatherMap API",
+            "Geolocator",
+            "Lottie Animations"
+        ],
+        features: [
+            "Real-time weather data",
+            "Location-based forecasts",
+            "Day/Night UI mode",
+            "Animated interface with Lottie",
+            "Cross-platform support (Android, iOS, Web)"
+        ],
+        logo: "https://cdn.jsdelivr.net/gh/dirgaydtm/weathix@main/assets/icons/wheatix.png",
+        githubUrl: "https://github.com/dirgaydtm/weathix",
+        category: "Mobile App",
+        year: "2025"
+    },
+    {
         slug: "portfolio-v2.0",
         title: "Portfolio v2.0",
         shortDescription:
@@ -25,7 +55,7 @@ export const projects: Project[] = [
         logo: "/LogoDirgaaBlack.svg",
         liveUrl: "https://dirga.site",
         githubUrl: "https://github.com/dirgaydtm/Portfolio-v2.0",
-        category: "Personal Project",
+        category: "Web App",
         year: "2025",
     },
     {
@@ -63,7 +93,7 @@ export const projects: Project[] = [
         ],
         "liveUrl": "https://cashfam-app.onrender.com",
         "githubUrl": "https://github.com/dirgaydtm/Cashfam-App",
-        "category": "Collaboration Project",
+        "category": "Web App",
         "year": "2025",
         "license": "MIT"
     },
@@ -101,7 +131,7 @@ export const projects: Project[] = [
         logo: "https://cdn.jsdelivr.net/gh/dirgaydtm/Devoo-App@main/public/Devoo.svg",
         liveUrl: "https://devoo-app.vercel.app",
         githubUrl: "https://github.com/dirgaydtm/Devoo-App",
-        category: "Personal Project",
+        category: "Web App",
         year: "2025",
         license: "MIT"
     },
@@ -130,7 +160,7 @@ export const projects: Project[] = [
         "logo": "https://cdn.jsdelivr.net/gh/KBMDSI/KBMDSI_NEWBANGET@main/public/Logo-Navakara.png",
         "liveUrl": "https://kbmdsi.ub.ac.id/",
         "githubUrl": "https://github.com/KBMDSI/KBMDSI_NEWBANGET",
-        "category": "Organization Website",
+        "category": "Web App",
         "year": "2025"
     },
     {
@@ -159,27 +189,10 @@ export const projects: Project[] = [
         ],
         "liveUrl": "https://dirgaa-dev.vercel.app",
         "githubUrl": "https://github.com/dirgaydtm/Portfolio-v1.0",
-        "category": "Personal Project",
+        "category": "Web App",
         "year": "2025",
         "license": "MIT"
     },
-    {
-        "slug": "taskbuddy",
-        "title": "TaskBuddy",
-        "shortDescription": "A Java-based task management application.",
-        "fullDescription": "TaskBuddy is a task management application designed to help users organize and track their daily tasks efficiently. The project is built with Java, providing a user-friendly interface and robust task management features. The repository includes all source code and documentation necessary for deployment and contribution.",
-        "images": [],
-        "technologies": ["Java"],
-        "features": [
-            "Task creation and assignment",
-            "Task categorization and organization",
-            "Track and update task status",
-            "Due dates and reminders",
-            "Efficient task management dashboard"
-        ],
-        "githubUrl": "https://github.com/dirgaydtm/TaskBuddy",
-        "category": "Collaboration Project",
-        "year": "2025"
-    }
+
 ];
 

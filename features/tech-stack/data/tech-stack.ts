@@ -8,7 +8,6 @@ import {
     SiBootstrap,
     SiNodedotjs,
     SiBun,
-    SiMysql,
     SiMongodb,
     SiFirebase,
     SiFlutter,
@@ -27,6 +26,7 @@ import {
 import { FaJava, FaDatabase } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
 import { Globe, Server, Database, Smartphone, Cloud, GitBranch, Code } from "lucide-react";
+import { GrMysql } from "react-icons/gr";
 import type { TechStack } from "../types/tech-stack";
 
 export const techStack: TechStack = {
@@ -60,7 +60,7 @@ export const techStack: TechStack = {
     Database: {
         icon: Database,
         items: [
-            { name: "MySQL", category: "SQL", icon: SiMysql },
+            { name: "MySQL", category: "SQL", icon: GrMysql },
             { name: "MariaDB", category: "SQL", icon: SiMariadb },
             { name: "MongoDB", category: "NoSQL", icon: SiMongodb },
         ],
