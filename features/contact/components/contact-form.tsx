@@ -8,10 +8,10 @@ import { Label } from "@/shared/components/label";
 import { useContactForm } from "../hooks/useContactForm";
 
 export default function ContactForm({ className }: React.ComponentProps<"form">) {
-    const { form, isSubmitting, isSubmitted, error, handleChange, handleSubmit } = useContactForm();
+    const { form, isSubmitting, isSubmitted, handleChange, handleSubmit } = useContactForm();
 
     return (
-        <form onSubmit={handleSubmit} className={className}>
+        <form onSubmit={handleSubmit} className={className} noValidate>
             <div className="grid gap-4 sm:grid-cols-2">
                 <div className="space-y-2">
                     <Label htmlFor="name">Name</Label>
@@ -68,25 +68,7 @@ export default function ContactForm({ className }: React.ComponentProps<"form">)
                     className="resize-none h-24"
                 />
             </div>
-            {error && (
-                <div
-                    className="text-destructive text-sm"
-                    role="alert"
-                    aria-live="polite"
-                >
-                    {error}
-                </div>
-            )}
-            {isSubmitted && !error && (
-                <div
-                    className="text-green-600 dark:text-green-400 text-sm"
-                    role="alert"
-                    aria-live="polite"
-                >
-                    Message sent successfully! I&apos;ll get back to you soon.
-                </div>
-            )}
-            <Button type="submit" className="w-full" disabled={isSubmitting || isSubmitted}>
+            <Button type="submit" className="w-full cursor-pointer" disabled={isSubmitting || isSubmitted}>
                 {isSubmitting ? (
                     <>
                         <Loader2 className="mr-2 h-4 w-4 animate-spin" aria-hidden="true" />

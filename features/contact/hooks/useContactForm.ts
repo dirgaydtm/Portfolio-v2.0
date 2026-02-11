@@ -1,90 +1,63 @@
 "use client";
 
-import { useState, useCallback, useEffect, useRef } from "react";
-
-export interface ContactFormState {
-    name: string;
-    email: string;
-    subject: string;
-    message: string;
-}
-
-const INITIAL_FORM_STATE: ContactFormState = {
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-};
-
-const RESET_TIMEOUT = 3000;
+import { useState } from "react";
+import { toast } from "sonner";
+import { ContactSchema } from "../schemas/contact";
 
 export function useContactForm() {
-    const [form, setForm] = useState<ContactFormState>(INITIAL_FORM_STATE);
+    const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const [error, setError] = useState<string | null>(null);
-    const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-    const handleChange = useCallback(
-        (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-            setForm((prev) => ({
-                ...prev,
-                [e.target.id]: e.target.value,
-            }));
-        },
-        []
-    );
+    function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
+        setForm({ ...form, [e.target.id]: e.target.value });
+    }
 
-    const handleSubmit = useCallback(
-        async (e: React.FormEvent<HTMLFormElement>) => {
-            e.preventDefault();
-            setIsSubmitting(true);
-            setError(null);
+    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault();
+        setIsSubmitting(true);
 
-            try {
-                const response = await fetch("/api/contact", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(form),
-                });
-
-                if (!response.ok) {
-                    const data = await response.json().catch(() => ({}));
-                    throw new Error(data.error || "Failed to send message");
-                }
-
-                setIsSubmitted(true);
-                setForm(INITIAL_FORM_STATE);
-
-                timeoutRef.current = setTimeout(() => {
-                    setIsSubmitted(false);
-                }, RESET_TIMEOUT);
-            } catch (err) {
-                setError(
-                    err instanceof Error ? err.message : "Something went wrong"
-                );
-            } finally {
-                setIsSubmitting(false);
+        try {
+            const empty = Object.values(form).some(v => !v.trim());
+            if (empty) {
+                toast.error("Please fill in all fields");
+                return;
             }
-        },
-        [form]
-    );
 
-    useEffect(() => {
-        return () => {
-            if (timeoutRef.current) {
-                clearTimeout(timeoutRef.current);
+            const validation = ContactSchema.safeParse(form);
+            if (!validation.success) {
+                toast.error(validation.error.issues[0]?.message || "Invalid input");
+                return;
             }
-        };
-    }, []);
+
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(validation.data),
+            });
+
+            if (!res.ok) {
+                const data = await res.json();
+                toast.error(data.error || "Failed to send message");
+                return;
+            }
+
+            toast.success("Message sent successfully! I'll get back to you soon.");
+            setIsSubmitted(true);
+            setForm({ name: "", email: "", subject: "", message: "" });
+            setTimeout(() => setIsSubmitted(false), 3000);
+        } catch {
+            toast.error("Failed to send message");
+        } finally {
+            setIsSubmitting(false);
+        }
+    }
 
     return {
         form,
         isSubmitting,
         isSubmitted,
-        error,
         handleChange,
         handleSubmit,
     };
 }
-

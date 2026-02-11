@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "@/style/globals.css";
 import { ThemeProvider } from "next-themes";
+import { Toaster } from "@/shared/components/sonner";
 import ThemeToggle from "@/features/layout/components/theme-toggle";
 import SplashScreen from "@/features/layout/components/splash-screen";
 import { profile } from "@/shared/data/profile";
@@ -36,6 +37,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <Toaster
+            position="top-center"
+            richColors
+          />
           <SplashScreen />
           <div className="relative bg-background">
             <ThemeToggle className="fixed top-4 right-4 z-50" />
