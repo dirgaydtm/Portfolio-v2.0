@@ -4,7 +4,7 @@ import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/shared/components/button";
 import { cn } from "@/shared/lib/utils";
-import { useMounted } from "../hooks/useMounted";
+import { useMounted } from "../hooks/use-mounted";
 
 export default function ThemeToggle({ className }: { className?: string }) {
     const { theme, setTheme } = useTheme();

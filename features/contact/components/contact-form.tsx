@@ -5,7 +5,7 @@ import { Button } from "@/shared/components/button";
 import { Input } from "@/shared/components/input";
 import { Textarea } from "@/shared/components/textarea";
 import { Label } from "@/shared/components/label";
-import { useContactForm } from "../hooks/useContactForm";
+import { useContactForm } from "../hooks/use-contact-form";
 
 export default function ContactForm({ className }: React.ComponentProps<"form">) {
     const { form, isSubmitting, isSubmitted, handleChange, handleSubmit } = useContactForm();

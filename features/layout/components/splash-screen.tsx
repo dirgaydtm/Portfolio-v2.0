@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "motion/react";
 import { Terminal, TypingAnimation, AnimatedSpan } from "@/features/layout/components/terminal";
-import { useSplashScreen } from "../hooks/useSplashScreen";
+import { useSplashScreen } from "../hooks/use-splash-screen";
 
 export default function SplashScreen() {
     const show = useSplashScreen();

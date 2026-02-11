@@ -3,8 +3,8 @@
 import { useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { User, Code2, Briefcase, FolderKanban, Mail } from "lucide-react";
-import Dock, { type DockItemData } from "@/features/layout/components/Dock";
-import { useScrollVisibility } from "../hooks/useScrollVisibility";
+import Dock, { type DockItemData } from "@/features/layout/components/dock";
+import { useScrollVisibility } from "../hooks/use-scroll-visibility";
 
 export default function Navbar() {
     const isHidden = useScrollVisibility();
