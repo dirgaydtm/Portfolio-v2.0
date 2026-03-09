@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "@/style/globals.css";
-import { ThemeProvider } from "next-themes";
-import { Toaster } from "@/shared/components/sonner";
-import ThemeToggle from "@/features/layout/components/theme-toggle";
-import SplashScreen from "@/features/layout/components/splash-screen";
 import { profile } from "@/shared/data/profile";
+import Provider from "./provider";
+import SplashScreen from '@/features/layout/components/splash-screen'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,22 +29,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Toaster
-            position="top-center"
-            richColors
-          />
+        <Provider>
+          
           <SplashScreen />
-          <div className="relative bg-background">
-            <ThemeToggle className="fixed top-4 right-4 z-50" />
-            <main>{children}</main>
-          </div>
-        </ThemeProvider>
+          
+          {children}
+        </Provider>
       </body>
     </html>
   );
