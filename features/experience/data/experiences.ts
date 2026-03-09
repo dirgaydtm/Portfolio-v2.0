@@ -1,65 +1,89 @@
-import { GraduationCap, Code } from "lucide-react";
+import { GraduationCap, Code, Crown } from "lucide-react";
 import type { Experience } from "../types/experience";
 
 export const experiences: Experience[] = [
     {
-        title: "Vice Head of Information Technology Publication Department",
-        company: "KBMDSI FILKOM UB",
-        period: "Jan 2026 – Present",
+        title: "Mobile Engineer",
+        company: "Raion Community",
+        period: "Feb 2026 – Present",
         description:
-            "Coordinated and supervised the development of IT publication platforms, managed task distribution within the technical team, ensured code quality and consistency, and acted as a bridge between designers, developers, and organizational stakeholders.",
+            "Developed cross-platform mobile applications using Flutter and Firebase, writing clean, modular, and maintainable code to implement scalable and reusable features efficiently.",
         skills: [
-            "Technical Leadership",
-            "Project Coordination",
-            "Code Review",
-            "Team Collaboration"
+            "Flutter",
+            "Dart",
+            "Firebase",
+            "Mobile App Architecture"
         ],
         icon: Code,
     },
-
+    {
+        title: "Vice Head of IT Development Department",
+        company: "KBMDSI Brawijaya University",
+        period: "Jan 2026 – Present",
+        description:
+            "Coordinated and supervised the internal IT development department, acted as a bridge between designers, developers, and stakeholders, and developed and maintained reliable web systems using Next.js, Docker, and Linux.",
+        skills: [
+            "Next.js",
+            "Linux",
+            "Docker",
+            "Technical Leadership",
+            "Code Review"
+        ],
+        icon: Crown,
+    },
     {
         title: "Bakti BCA Awardee 2026",
-        company: "PT Bank Central Asia Tbk",
+        company: "PT Bank Central Asia Tbk.",
         period: "Dec 2025 – Present",
         description:
-            "Selected as a Bakti BCA Awardee based on academic excellence, leadership potential, and community involvement. Participated in leadership development programs, capacity building workshops, and social contribution initiatives.",
+            "Selected as a Bakti BCA Awardee, 1 of 700 from over 10,000 nationwide applicants. Participated in leadership development, capacity building, and community empowerment programs.",
         skills: [
             "Leadership",
             "Communication",
-            "Problem Solving",
-            "Community Engagement"
+            "Problem Solving"
         ],
         icon: GraduationCap,
     },
     {
         title: "Frontend Developer",
-        company: "KBMDSI FILKOM UB",
+        company: "KBMDSI Brawijaya University",
         period: "Mar 2025 – Jan 2026",
         description:
-            "Developed and maintained responsive web interfaces using React, collaborated with designers and backend teams to implement features, and ensured code consistency and maintainability across the application.",
+            "Developed and maintained responsive KBMDSI web applications using React.js, collaborated with designers and backend teams, and refactored code to ensure performance, and maintainability.",
         skills: [
             "React.js",
-            "JavaScript",
-            "Tailwind CSS",
-            "Node.js"
+            "TypeScript",
+            "Tailwind",
+            "Vercel"
         ],
         icon: Code,
     },
     {
-        title: "Teaching Assistant – Fundamental Programming",
+        title: "Teaching Assistant: Basic Programming",
         company: "Faculty of Computer Science, Brawijaya University",
         period: "Sep – Dec 2025",
         description:
-            "Assisted a fundamental Java programming course for 35 students by facilitating lab sessions, reviewing assignments, guiding students in object-oriented programming and debugging practices, and supporting their understanding of core programming concepts.",
+            "Taught core Java concepts (data structures, functions, OOP) to 35 students, facilitated labs, reviewed assignments, and provided feedback on code quality and best practices.",
         skills: [
             "Java",
             "Object-Oriented Programming",
             "Code Review",
-            "Debugging",
             "Technical Mentoring"
         ],
         icon: GraduationCap,
     },
-
+    {
+        title: "Mobile Engineer Intern",
+        company: "Raion Community",
+        period: "Feb - Mar 2025",
+        description:
+            "Collaborated with the development team to build modern Android app using Jetpack Compose. Focused on implementing UI components and integrating Firebase services.",
+        skills: [
+            "Kotlin",
+            "Jetpack Compose",
+            "Firebase",
+        ],
+        icon: Code,
+    },
 ];
 
