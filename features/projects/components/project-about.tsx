@@ -14,32 +14,34 @@ export default function ProjectAbout({ project, className }: ProjectAboutProps) 
     return (
         <Card className={`p-0 ${className}`}>
             <MagicCard className="">
-                <CardHeader className="flex py-4 flex-row items-center gap-2 font-semibold md:text-lg">
+                <CardHeader className="flex py-4 flex-row items-center gap-2 font-semibold md:text-lg justify-between">
                     <CardTitle>About the Project</CardTitle>
-                    {project.liveUrl && (
-                        <LayeredButton variant="outline" size="icon-lg" className="ml-auto" asChild>
-                            <a
-                                href={project.liveUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label={`Visit ${project.title} live site`}
-                            >
-                                <ExternalLink className="h-4 w-4" aria-hidden="true" />
-                            </a>
-                        </LayeredButton>
-                    )}
-                    {project.githubUrl && (
-                        <LayeredButton variant="outline" size="icon-lg" asChild>
-                            <a
-                                href={project.githubUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label={`View ${project.title} source code on GitHub`}
-                            >
-                                <FaGithub className="h-4 w-4" aria-hidden="true" />
-                            </a>
-                        </LayeredButton>
-                    )}
+                    <div className="flex gap-3">
+                        {project.liveUrl && (
+                            <LayeredButton variant="outline" size="icon-lg" asChild>
+                                <a
+                                    href={project.liveUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label={`Visit ${project.title} live site`}
+                                >
+                                    <ExternalLink className="h-4 w-4" aria-hidden="true" />
+                                </a>
+                            </LayeredButton>
+                        )}
+                        {project.githubUrl && (
+                            <LayeredButton variant="outline" size="icon-lg" asChild>
+                                <a
+                                    href={project.githubUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label={`View ${project.title} source code on GitHub`}
+                                >
+                                    <FaGithub className="h-4 w-4" aria-hidden="true" />
+                                </a>
+                            </LayeredButton>
+                        )}
+                    </div>
                 </CardHeader>
                 <CardContent className="pb-4">
                     <p className="text-muted-foreground text-base md:text-base leading-relaxed">{project.fullDescription}</p>

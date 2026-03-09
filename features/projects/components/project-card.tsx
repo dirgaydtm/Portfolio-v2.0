@@ -1,10 +1,10 @@
 "use client";
 
 import { memo } from "react";
-import { Card, CardHeader, CardContent } from "@/shared/components/card";
+import { Card, CardHeader, CardContent, CardFooter } from "@/shared/components/card";
 import { Badge } from "@/shared/components/badge";
 import { LayeredButton } from "@/shared/components/layered-button";
-import { ExternalLink, FolderKanban } from "lucide-react";
+import { ArrowRight, ArrowRightCircle, ExternalLink, FolderKanban } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
@@ -22,7 +22,7 @@ function ProjectCard({ project, className }: ProjectCardProps) {
   return (
     <HoverCard openDelay={10} closeDelay={100}>
       <HoverCardTrigger asChild>
-        <Card className={`p-0 ${className}`} onClick={() => router.push(`/projects/${project.slug}`)} >
+        <Card className={`p-0 group ${className}`} onClick={() => router.push(`/projects/${project.slug}`)} >
           <MagicCard className="pt-4">
             <CardHeader className="flex flex-row items-center gap-3 font-semibold md:text-lg">
               {project.logo ? (
@@ -77,8 +77,9 @@ function ProjectCard({ project, className }: ProjectCardProps) {
                 </LayeredButton>
               )}
             </CardHeader>
-            <CardContent className="flex flex-col text-sm md:text-base text-muted-foreground md:h-34 py-4 justify-between">
+            <CardContent className="flex flex-col text-sm md:text-base text-muted-foreground md:h-48 py-4">
               <p className="line-clamp-2">{project.shortDescription}</p>
+
               <div className="pt-6 flex flex-wrap gap-1">
                 {project.technologies.slice(0, 3).map((tech) => (
                   <Badge key={tech} variant="secondary" className="text-xs">
@@ -92,6 +93,12 @@ function ProjectCard({ project, className }: ProjectCardProps) {
                 )}
               </div>
             </CardContent>
+            <CardFooter className="not-md:hidden justify-end">
+              <p className="justify-end text-muted group-hover:text-muted-foreground mb-6 mr-2 inline-block">
+                View Details
+                <ArrowRight className="inline-block ml-1 size-5 group-hover:translate-x-2 transition-transform duration-200" />
+              </p>
+            </CardFooter>
           </MagicCard>
         </Card>
       </HoverCardTrigger>

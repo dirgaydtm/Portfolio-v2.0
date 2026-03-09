@@ -24,9 +24,9 @@ export default function ProjectsSection() {
                         mobile apps.
                     </Reveal>
                 </div>
-                <Fade once direction="down" delay={0.4} className="flex flex-wrap gap-4 justify-center">
+                <Fade once direction="down" delay={0.4} className="flex flex-wrap gap-4 md:gap-6 justify-center">
                     {projects.map((project) => (
-                        <ProjectCard key={project.slug} project={project} className="w-xs md:w-sm hover:-translate-y-2 cursor-pointer transition-all shadow-none hover:shadow-primary/5  hover:shadow-xl" />
+                        <ProjectCard key={project.slug} project={project} className="w-xs hover:-translate-y-2 cursor-pointer transition-all shadow-none hover:shadow-primary/5  hover:shadow-xl" />
                     ))}
                 </Fade>
             </div>

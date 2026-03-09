@@ -2,6 +2,39 @@ import type { Project } from "../types/project";
 
 export const projects: Project[] = [
     {
+        slug: "echion",
+        title: "Echion",
+        shortDescription:
+            "A modern cross-platform music streaming and player application built with Flutter.",
+        fullDescription:
+            "Echion is a sophisticated music application developed using Flutter and Riverpod for robust state management. It features a seamless audio playback experience powered by just_audio and audio_service, supporting background playback and local storage via Hive. The app includes a clean UI with support for both light and dark modes, custom animations using the 'animations' package, and efficient network handling with Dio.",
+        images: [
+            "https://cdn.jsdelivr.net/gh/dirgaydtm/echion@main/assets/Preview1.png",
+            "https://cdn.jsdelivr.net/gh/dirgaydtm/echion@main/assets/Preview2.png",
+            "https://cdn.jsdelivr.net/gh/dirgaydtm/echion@main/assets/Preview3.png",
+            "https://cdn.jsdelivr.net/gh/dirgaydtm/echion@main/assets/Preview4.png"
+        ],
+        technologies: [
+            "Flutter",
+            "Dart",
+            "Riverpod",
+            "Hive",
+            "Dio"
+        ],
+        features: [
+            "Audio streaming & playback",
+            "Background audio service",
+            "Local data persistence",
+            "Riverpod state management",
+            "Dark/Light mode",
+            "Cross-platform support",
+        ],
+        logo: "https://cdn.jsdelivr.net/gh/dirgaydtm/echion@main/assets/echion-app.png",
+        githubUrl: "https://github.com/dirgaydtm/echion",
+        category: "Mobile App",
+        year: "2025"
+    },
+    {
         slug: "weathix",
         title: "Weathix",
         shortDescription:
@@ -15,7 +48,7 @@ export const projects: Project[] = [
         technologies: [
             "Flutter",
             "Dart",
-            "OpenWeatherMap API",
+            "OpenWeatherMap",
             "Geolocator",
             "Lottie Animations"
         ],
@@ -23,8 +56,8 @@ export const projects: Project[] = [
             "Real-time weather data",
             "Location-based forecasts",
             "Day/Night UI mode",
-            "Animated interface with Lottie",
-            "Cross-platform support (Android, iOS, Web)"
+            "Lottie animations",
+            "Cross-platform support",
         ],
         logo: "https://cdn.jsdelivr.net/gh/dirgaydtm/weathix@main/assets/icons/wheatix.png",
         githubUrl: "https://github.com/dirgaydtm/weathix",
@@ -64,19 +97,16 @@ export const projects: Project[] = [
         "shortDescription": "Collaborative financial management app with role-based permissions for shared cash books.",
         "fullDescription": "Cashfam is a collaborative financial management application that enables multiple users to manage shared cash books with role-based permissions. Designed for families, teams, or organizations to track expenses, manage budgets, and analyze spending. The application supports authentication (with Laravel Breeze), book invitation via code, role-based member management, advanced theme system using DaisyUI and GSAP, and comprehensive transaction tracking with real-time balance calculations.",
         "features": [
-            "User registration and login with Laravel Breeze",
-            "Profile management and theme customization (20+ themes)",
-            "Create and join shared financial books via invite code",
-            "Role-based permissions: Creator, Admin, Member",
-            "Add, filter, and delete income/expense transactions",
-            "Real-time balance and budget tracking",
-            "Member management (promote/demote/remove/leave)",
-            "Modern UI with DaisyUI",
-            "Responsive design for desktop and mobile"
+            "Auth with Laravel Breeze",
+            "20+ theme customization",
+            "Shared books via invite code",
+            "Role-based permissions",
+            "Transaction management",
+            "Real-time budget tracking",
         ],
         "images": [
-            "https://cdn.jsdelivr.net/gh/dirgaydtm/Cashfam-App@main/public/Preview1.png",
             "https://cdn.jsdelivr.net/gh/dirgaydtm/Cashfam-App@main/public/Preview2.png",
+            "https://cdn.jsdelivr.net/gh/dirgaydtm/Cashfam-App@main/public/Preview1.png",
             "https://cdn.jsdelivr.net/gh/dirgaydtm/Cashfam-App@main/public/Preview3.png",
             "https://cdn.jsdelivr.net/gh/dirgaydtm/Cashfam-App@main/public/Preview4.png"
         ],
@@ -105,8 +135,8 @@ export const projects: Project[] = [
         fullDescription:
             "Devoo is a modern real-time chat application featuring email/password authentication, instant messaging with Firestore, image sharing via Firebase Storage, customizable user profiles, contact management, and a theme system persisted using Zustand. The app is fully responsive and provides rich user feedback through toast notifications.",
         images: [
-            "https://cdn.jsdelivr.net/gh/dirgaydtm/Devoo-App@main/public/Preview1.png",
             "https://cdn.jsdelivr.net/gh/dirgaydtm/Devoo-App@main/public/Preview2.png",
+            "https://cdn.jsdelivr.net/gh/dirgaydtm/Devoo-App@main/public/Preview1.png",
             "https://cdn.jsdelivr.net/gh/dirgaydtm/Devoo-App@main/public/Preview3.png"
         ],
         technologies: [
@@ -119,14 +149,12 @@ export const projects: Project[] = [
             "Vercel"
         ],
         features: [
-            "Email & password authentication",
-            "Profile management and theme customization (20+ themes)",
-            "Real-time messaging with Firestore",
-            "Image sharing using Cloudinary",
-            "Contact management by email",
-            "Theme system with Zustand persistence",
-            "Toast notifications for actions and errors",
-            "Responsive design for desktop and mobile"
+            "Email authentication",
+            "20+ theme customization",
+            "Real-time messaging",
+            "Image sharing",
+            "Contact management",
+            "Persistent theme system",
         ],
         logo: "https://cdn.jsdelivr.net/gh/dirgaydtm/Devoo-App@main/public/Devoo.svg",
         liveUrl: "https://devoo-app.vercel.app",
@@ -151,11 +179,11 @@ export const projects: Project[] = [
         ],
         "features": [
             "Informative landing page",
-            "Organization profile and logo history",
-            "Administration system and admin dashboard",
-            "Membership and organizational structure",
+            "Organization profile",
+            "Admin dashboard",
+            "Member management",
             "Navakara visual theme",
-            "SEO optimized and fully responsive"
+            "SEO optimized",
         ],
         "logo": "https://cdn.jsdelivr.net/gh/KBMDSI/KBMDSI_NEWBANGET@main/public/Logo-Navakara.png",
         "liveUrl": "https://kbmdsi.ub.ac.id/",
@@ -181,11 +209,11 @@ export const projects: Project[] = [
             "EmailJS"
         ],
         "features": [
-            "Single page portfolio site with multi-section layout",
-            "Smooth animations using AOS, Framer Motion, React Spring",
-            "Custom animated background grid and click effects",
-            "Contact form with EmailJS integration (no backend required)",
-            "Cursor effects and scroll tracking"
+            "Multi-section SPA",
+            "Smooth animations",
+            "Animated background effects",
+            "Serverless contact form",
+            "Cursor & scroll effects",
         ],
         "liveUrl": "https://dirgaa-dev.vercel.app",
         "githubUrl": "https://github.com/dirgaydtm/Portfolio-v1.0",
