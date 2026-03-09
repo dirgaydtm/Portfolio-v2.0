@@ -15,8 +15,26 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteDescription = "Hi, I'm Dirga. I build impressive things for the web. Grab a coffee and take a look around my coding journey.";
+
 export const metadata: Metadata = {
   title: `${profile.name} | ${profile.title}`,
+  description: siteDescription,
+  metadataBase: new URL('https://dirga.site'),
+  openGraph: {
+    title: `${profile.name} | ${profile.title}`,
+    description: siteDescription,
+    url: 'https://dirga.site',
+    siteName: `${profile.name} | ${profile.title}`,
+    locale: 'en_US',
+    type: 'website',
+  },
+
+  twitter: {
+    card: 'summary_large_image',
+    title: `${profile.name} | ${profile.title}`,
+    description: siteDescription,
+  },
 };
 
 export default function RootLayout({
@@ -30,9 +48,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Provider>
-          
           <SplashScreen />
-          
           {children}
         </Provider>
       </body>
