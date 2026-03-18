@@ -11,7 +11,7 @@ export default function ExperienceSection() {
             <Hexagon />
 
             <div className="mx-auto flex flex-col items-center gap-4 max-w-6xl md:py-10 pointer-events-none">
-                <Badge variant="outline">Career</Badge>
+                <Badge variant="outline" className="z-1">Career</Badge>
                 <Reveal once>
                     <Shiny className="text-4xl font-bold tracking-tight text-foreground">
                         Experience

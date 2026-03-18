@@ -4,6 +4,7 @@ import "@/style/globals.css";
 import { profile } from "@/shared/data/profile";
 import Provider from "./provider";
 import SplashScreen from '@/features/layout/components/splash-screen'
+import { Analytics } from "@vercel/analytics/next"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -44,9 +45,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <Analytics />
         <Provider>
           <SplashScreen />
           {children}
